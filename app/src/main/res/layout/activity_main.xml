@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#89CFF0">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Campus Connect"
+        android:textStyle="bold"
+        android:textSize="35dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/black"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/adminImg"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        app:cardCornerRadius="130dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginLeft="45dp">
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/admin"
+            android:scaleType="centerCrop" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Admin"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_below="@id/adminImg"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="70dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/teacherImg"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        app:cardCornerRadius="130dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginLeft="239dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/teacher"
+            />
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Teacher"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_below="@id/teacherImg"
+        android:layout_marginTop="12sp"
+        android:layout_marginLeft="250dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/studentImg"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        app:cardCornerRadius="130dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="40dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/student"
+            android:scaleType="centerCrop"
+            />
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_below="@id/studentImg"
+        android:layout_marginLeft="60dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/parentImg"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        app:cardCornerRadius="130dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="230dp">
+
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/parent" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Parent"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_below="@id/parentImg"
+        android:layout_marginLeft="260dp"/>
+
+
+
+</RelativeLayout>
