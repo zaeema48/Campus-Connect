@@ -5,25 +5,25 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.HomeFragment"
-    android:background="#000080">
+    android:background="@drawable/background">
 
     <LinearLayout
-        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/addBatch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                     android:text="Add new Batch"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -41,9 +41,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/addBatch"
-                android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -52,7 +52,7 @@
                     android:text="List of Batches"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -61,9 +61,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/batchList"
-                android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -72,7 +72,7 @@
                     android:text="Search a Batch"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -81,9 +81,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/searchBatch"
-                android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -92,7 +92,7 @@
                     android:text="Update Semester"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -101,9 +101,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/updateSem"
-                android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -112,7 +112,7 @@
                     android:text="Add Student"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -121,9 +121,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/addStudent"
-                android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -132,7 +132,7 @@
                     android:text="Remove Student"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -141,9 +141,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/removeStudent"
-                android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -152,7 +152,7 @@
                     android:text="Update Student"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -161,9 +161,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/updateStudent"
-                android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -172,7 +172,7 @@
                     android:text="Search Student"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -181,9 +181,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/searchStudent"
-                android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -192,7 +192,7 @@
                     android:text="Update Schedule"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -200,15 +200,16 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginLeft="40dp">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/addTeacher"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -217,7 +218,7 @@
                     android:text="Add Teacher"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -226,7 +227,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/addTeacher"
-                android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
                 app:cardCornerRadius="10dp"
                 app:cardBackgroundColor="@color/white">
@@ -238,7 +238,7 @@
                     android:text="Remove Teacher"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -247,9 +247,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/removeTeacher"
-                android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -258,7 +258,7 @@
                     android:text="Search Teacher"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -267,9 +267,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/searchTeacher"
-                android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -278,7 +278,7 @@
                     android:text="List of Teacher"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -287,9 +287,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/teacherList"
-                android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -298,7 +298,7 @@
                     android:text="Update Teacher"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -307,9 +307,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/updateTeacher"
-                android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -318,7 +318,7 @@
                     android:text="List of Subject"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -327,9 +327,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/subjectList"
-                android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -338,7 +338,7 @@
                     android:text="Search Subject"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -347,9 +347,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/searchSubject"
-                android:layout_marginLeft="25dp"
                 android:layout_marginTop="20dp"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -358,7 +358,7 @@
                     android:text="Update Fees"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
@@ -367,9 +367,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/updateFee"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="20dp"
-                app:cardCornerRadius="10dp">
+                android:layout_marginTop="15dp"
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="@color/white">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -378,7 +378,7 @@
                     android:text="Exam Schedule"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 

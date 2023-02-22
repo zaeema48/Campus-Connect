@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashScreen"
-    android:background="#89CFF0">
+    android:background="@drawable/background">
 <androidx.cardview.widget.CardView
     android:layout_width="140dp"
     android:layout_height="140dp"

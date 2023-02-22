@@ -14,6 +14,11 @@
         android:theme="@style/Theme.CampusConnect"
         tools:targetApi="31">
         <activity
+            android:name=".TeacherList"
+            android:exported="false"
+            android:label="@string/title_activity_teacher_list"
+            android:theme="@style/Theme.CampusConnect.NoActionBar" />
+        <activity
             android:name=".ExamSchedule"
             android:exported="false" />
         <activity
@@ -28,11 +33,6 @@
         <activity
             android:name=".UpdateTeacher"
             android:exported="false" />
-        <activity
-            android:name=".TeacherList"
-            android:exported="false"
-            android:label="@string/title_activity_teacher_list"
-            android:theme="@style/Theme.CampusConnect.NoActionBar" />
         <activity
             android:name=".SearchTeacher"
             android:exported="false" />

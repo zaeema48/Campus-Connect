@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.campusconnect.R;
+
 public class UpdateTeacher extends AppCompatActivity {
 
     @Override
