@@ -1,9 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin.AddBatch">
+    tools:context=".Admin.AddBatch"
+    android:background="@drawable/background">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#E489CFF0"
+        app:cardCornerRadius="8dp"
+        android:layout_marginTop="105dp"
+        android:layout_marginLeft="45dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD A NEW BATCH"
+            android:layout_margin="5dp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="28dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/addbatch"
+        android:layout_width="320dp"
+        android:layout_height="420dp"
+        android:layout_below="@id/tag"
+        android:layout_marginLeft="45dp"
+        app:cardBackgroundColor="#FAFFFFFF"
+        app:cardCornerRadius="20dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="80dp"
+            app:cardBackgroundColor="@color/white">
+
+            <AutoCompleteTextView
+                android:id="@+id/course"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:layout_weight="1"
+                android:text="Course name"
+                android:textColor="@color/black"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="130dp"
+            android:layout_height="65dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="180dp"
+            app:cardBackgroundColor="@color/white">
+
+            <AutoCompleteTextView
+                android:id="@+id/duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:layout_weight="1"
+                android:text="Duration"
+                android:textColor="@color/black"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="115dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="170dp"
+            android:layout_marginTop="180dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@color/white">
+
+            <EditText
+                android:id="@+id/fees"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Fees amount"
+                android:textColor="@color/black"/>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="115dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="170dp"
+            android:layout_marginTop="80dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@color/white">
+
+                <EditText
+                    android:id="@+id/year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Year"
+                    android:textColor="@color/black"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/addbatchbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="450dp"
+        app:cardBackgroundColor="#000080"
+        app:cardCornerRadius="9dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="18dp"
+            android:text="Add schedule"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>
