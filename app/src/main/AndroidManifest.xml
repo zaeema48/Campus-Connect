@@ -14,63 +14,57 @@
         android:theme="@style/Theme.CampusConnect"
         tools:targetApi="31">
         <activity
-            android:name=".UpdateTeacherSchedule"
+            android:name=".Admin.UpdateTeacherSchedule"
             android:exported="false" />
         <activity
-            android:name=".UpdateStudentSchedule"
+            android:name=".Admin.UpdateStudentSchedule"
             android:exported="false" />
         <activity
-            android:name=".TeacherList"
+            android:name=".Admin.TeacherList"
             android:exported="false"
             android:label="@string/title_activity_teacher_list"
             android:theme="@style/Theme.CampusConnect.NoActionBar" />
         <activity
-            android:name=".ExamSchedule"
+            android:name=".Admin.ExamSchedule"
             android:exported="false" />
         <activity
-            android:name=".UpdateFees"
+            android:name=".Admin.UpdateFees"
             android:exported="false" />
         <activity
-            android:name=".SearchSubject"
+            android:name=".Admin.SubjectList"
             android:exported="false" />
         <activity
-            android:name=".SubjectList"
+            android:name=".Admin.UpdateTeacher"
             android:exported="false" />
         <activity
-            android:name=".UpdateTeacher"
+            android:name=".Admin.SearchTeacher"
             android:exported="false" />
         <activity
-            android:name=".SearchTeacher"
+            android:name=".Admin.RemoveTeacher"
             android:exported="false" />
         <activity
-            android:name=".RemoveTeacher"
+            android:name=".Admin.AddTeacher"
             android:exported="false" />
         <activity
-            android:name=".AddTeacher"
+            android:name=".Admin.SearchStudent"
             android:exported="false" />
         <activity
-            android:name=".UpdateSchedule"
+            android:name=".Admin.UpdateStudent"
             android:exported="false" />
         <activity
-            android:name=".SearchStudent"
+            android:name=".Admin.RemoveStudent"
             android:exported="false" />
         <activity
-            android:name=".UpdateStudent"
+            android:name=".Admin.AddStudent"
             android:exported="false" />
         <activity
-            android:name=".RemoveStudent"
+            android:name=".Admin.UpdateSemester"
             android:exported="false" />
         <activity
-            android:name=".AddStudent"
+            android:name=".Admin.BatchesList"
             android:exported="false" />
         <activity
-            android:name=".UpdateSemester"
-            android:exported="false" />
-        <activity
-            android:name=".BatchesList"
-            android:exported="false" />
-        <activity
-            android:name=".AddBatch"
+            android:name=".Admin.AddBatch"
             android:exported="false" />
         <activity
             android:name=".AdminPage"
