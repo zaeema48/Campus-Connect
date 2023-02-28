@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.campusconnect.Models.BatchModel;
 import com.example.campusconnect.Models.ScheduleModel;
@@ -53,9 +54,9 @@ public class AddBatch extends AppCompatActivity {
             public void onClick(View view) {
                 String yr = year.getText().toString();
                 String fees = feesAmount.getText().toString();
-                if(yr!=null && fees!=null && acTextView.isSelected()){
+                if(!yr.isEmpty() && !fees.isEmpty()){
                     batchModel.setCourseName(acTextView.getText().toString());
-//                    batchModel.setCourseDuration(acTextView2.toString());
+                    batchModel.setCourseDuration(acTextView2.toString());
                     batchModel.setCourseYear(yr);
                     batchModel.setFeesAmount(fees);
 
@@ -100,6 +101,8 @@ public class AddBatch extends AppCompatActivity {
                     batchModel.setSchedules(schedules);
 
                 }
+                else
+                    Toast.makeText(AddBatch.this, "PLease fill the Required Details!!", Toast.LENGTH_SHORT).show();
             }
         });
 
