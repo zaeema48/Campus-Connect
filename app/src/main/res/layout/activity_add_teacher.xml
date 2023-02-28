@@ -31,7 +31,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:text="ADD TEACHER"
-                    android:textColor="#000000"
+                    android:textColor="@color/white"
                     android:textSize="28dp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
@@ -109,7 +109,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:text="TEACHER SCHEDULE"
-                    android:textColor="#000000"
+                    android:textColor="@color/white"
                     android:textSize="28dp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>

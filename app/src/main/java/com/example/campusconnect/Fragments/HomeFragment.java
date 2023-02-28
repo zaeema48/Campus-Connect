@@ -18,6 +18,7 @@ import com.example.campusconnect.Admin.AddTeacher;
 import com.example.campusconnect.Admin.BatchesList;
 import com.example.campusconnect.Admin.ExamSchedule;
 import com.example.campusconnect.Admin.RemoveStudent;
+import com.example.campusconnect.Admin.RemoveTeacher;
 import com.example.campusconnect.Admin.SearchBatch;
 import com.example.campusconnect.Admin.SearchStudent;
 import com.example.campusconnect.Admin.SearchTeacher;
@@ -140,10 +141,10 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        removeStudent.setOnClickListener(new View.OnClickListener() {
+        removeTeacher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (getContext(), RemoveStudent.class);
+                Intent intent = new Intent (getContext(), RemoveTeacher.class);
                 startActivity(intent);
             }
         });

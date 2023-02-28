@@ -26,12 +26,12 @@ CardView button;
         password = findViewById(R.id.password);
         button = findViewById(R.id.button);
 
-        String admin_id=adminId.getText().toString();
-        String admin_password=password.getText().toString();
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               if(admin_id != null && admin_password !=null) {
+                String admin_id=adminId.getText().toString();
+                String admin_password=password.getText().toString();
+               if(!admin_id.isEmpty() && !admin_password.isEmpty()) {
                    admin.setAdminId(admin_id);
                    admin.setPassword(admin_password);
                    Intent intent = new Intent(AdminLogin.this, AdminPage.class);

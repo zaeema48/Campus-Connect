@@ -3,12 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_add_batch.xml" value="0.25" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_add_student.xml" value="0.25" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_add_teacher.xml" value="0.25" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_admin_login.xml" value="0.25" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_admin_page.xml" value="0.25" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_parent_login.xml" value="0.25" />
+        <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_remove_teacher.xml" value="0.25" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_student_login.xml" value="0.25" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_teacher_list.xml" value="0.6015037593984962" />
