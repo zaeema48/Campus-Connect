@@ -64,6 +64,9 @@
             android:name=".Admin.BatchesList"
             android:exported="false" />
         <activity
+            android:name=".Admin.SearchBatch"
+            android:exported="false" />
+        <activity
             android:name=".Admin.AddBatch"
             android:exported="false" />
         <activity
