@@ -11,7 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.campusconnect.AdminPage;
 import com.example.campusconnect.Fragments.HomeFragment;
+import com.example.campusconnect.MainActivity;
 import com.example.campusconnect.Models.StudentModel;
 import com.example.campusconnect.R;
 
@@ -30,12 +32,12 @@ public class AddStudent extends AppCompatActivity {
         student_email = findViewById(R.id.student_email);
         parent_email = findViewById(R.id.parent_email);
         batch_id=findViewById(R.id.batch_id);
-        save_and_exit=findViewById(R.id.save);
+        save_and_exit=findViewById(R.id.save_and_exit);
         save_and_add_more=findViewById(R.id.save_and_add_more);
 
         StudentModel studentModel=new StudentModel();
 
-        ArrayList<StudentModel> student = new ArrayList<>();
+        ArrayList<StudentModel> students = new ArrayList<>();
 
         save_and_add_more.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +52,7 @@ public class AddStudent extends AppCompatActivity {
                         studentModel.setStudentEmail(studentEmail);
                         studentModel.setParentEmail(parentsEmail);
 
-                        student.add(studentModel);
+                        students.add(studentModel);
 
                         student_name.setText("");
                         student_email.setText("");
@@ -76,10 +78,10 @@ public class AddStudent extends AppCompatActivity {
                     studentModel.setStudentName(studentName);
                     studentModel.setStudentEmail(studentEmail);
                     studentModel.setParentEmail(parentsEmail);
+                    students.add(studentModel);
 
-                    student.add(studentModel);
-
-                    Intent intent = new Intent(AddStudent.this, HomeFragment.class);
+                    Intent intent = new Intent(AddStudent.this, AdminPage.class);
+                    startActivity(intent);
 
                 }
                 else
