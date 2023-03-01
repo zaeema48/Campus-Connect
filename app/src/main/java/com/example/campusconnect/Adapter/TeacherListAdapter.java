@@ -28,7 +28,7 @@ public class TeacherListAdapter extends RecyclerView.Adapter<TeacherListAdapter.
     }
 
     Context context;
-    ArrayList<TeacherModel> teachers;
+    ArrayList<TeacherModel> teachers= new ArrayList<>();
 
     public TeacherListAdapter(Context context, ArrayList<TeacherModel> teachers) {
         this.context = context;
@@ -38,13 +38,14 @@ public class TeacherListAdapter extends RecyclerView.Adapter<TeacherListAdapter.
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(context).inflate(R.layout.layout_teacher_list,null,false);
+        View view= LayoutInflater.from(context).inflate(R.layout.layout_teacher_list,parent,false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.teacherID.setText(teachers.get(position).getTeacherId());
+        String id= String.valueOf(teachers.get(position).getTeacherId());
+        holder.teacherID.setText(id);
         holder.teacherName.setText(teachers.get(position).getTeacherName());
         holder.salary.setText(teachers.get(position).getSalary());
         holder.subject.setText(teachers.get(position).getSubject().getSubjectName());

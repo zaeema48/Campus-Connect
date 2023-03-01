@@ -33,9 +33,6 @@ android {
         main {
             res.srcDirs =
                     [
-                            'src/main/res/layouts/admin/fragments',
-                            'src/main/res/layouts/admin/activities',
-                            'src/main/res/layouts/admin',
                             'src/main/res/layouts',
                             'src/main/res'
                     ]
