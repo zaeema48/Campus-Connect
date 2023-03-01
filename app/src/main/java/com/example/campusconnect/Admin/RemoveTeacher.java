@@ -29,11 +29,10 @@ public class RemoveTeacher extends AppCompatActivity {
             public void onClick(View view) {
                 if(!tID.getText().toString().isEmpty()){
                     int teacherId= Integer.parseInt(tID.getText().toString());
-                    Toast.makeText(RemoveTeacher.this, ""+teacherId, Toast.LENGTH_SHORT).show();
                     //CONNECTING REST API (retrofit)
                 }
                 else {
-                    Toast.makeText(RemoveTeacher.this, "No Teacher ID Found!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RemoveTeacher.this, "Enter the Teacher ID!!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
