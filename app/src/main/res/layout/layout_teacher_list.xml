@@ -7,7 +7,7 @@
         android:id="@+id/teacherTable"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:stretchColumns="1,2,3,4">
 
         <TableRow
@@ -16,40 +16,40 @@
 
             <TextView
                 android:id="@+id/teacherId"
-                android:layout_width="wrap_content"
+                android:layout_width="90dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 android:text="teacherId"
                 android:textColor="@color/black"
-                android:textSize="15dp" />
+                android:textSize="20dp" />
 
 
             <TextView
                 android:id="@+id/teacherName"
-                android:layout_width="wrap_content"
+                android:layout_width="90dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="7dp"
                 android:text="Name"
                 android:textColor="@color/black"
-                android:textSize="15dp" />
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/salary"
-                android:layout_width="wrap_content"
+                android:layout_width="90dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="7dp"
                 android:text="salary"
                 android:textColor="@color/black"
-                android:textSize="15dp" />
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/subject"
-                android:layout_width="wrap_content"
+                android:layout_width="90dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="7dp"
                 android:text="subject"
                 android:textColor="@color/black"
-                android:textSize="15dp" />
+                android:textSize="20dp" />
         </TableRow>
     </TableLayout>
 
