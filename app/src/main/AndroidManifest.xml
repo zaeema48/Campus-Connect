@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CampusConnect"
         tools:targetApi="31">
+
         <activity
             android:name=".Admin.UpdateTeacherSchedule"
             android:exported="false" />
@@ -29,6 +30,9 @@
             android:exported="false" />
         <activity
             android:name=".Admin.UpdateFees"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.AddBatch"
             android:exported="false" />
         <activity
             android:name=".Admin.SubjectList"
@@ -65,9 +69,6 @@
             android:exported="false" />
         <activity
             android:name=".Admin.SearchBatch"
-            android:exported="false" />
-        <activity
-            android:name=".Admin.AddBatch"
             android:exported="false" />
         <activity
             android:name=".AdminPage"

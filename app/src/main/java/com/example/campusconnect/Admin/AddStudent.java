@@ -30,7 +30,7 @@ public class AddStudent extends AppCompatActivity {
         student_email = findViewById(R.id.student_email);
         parent_email = findViewById(R.id.parent_email);
         batch_id=findViewById(R.id.batch_id);
-        save_and_exit=findViewById(R.id.save);
+        save_and_exit=findViewById(R.id.save_and_exit);
         save_and_add_more=findViewById(R.id.save_and_add_more);
 
         StudentModel studentModel=new StudentModel();
@@ -80,6 +80,7 @@ public class AddStudent extends AppCompatActivity {
                     student.add(studentModel);
 
                     Intent intent = new Intent(AddStudent.this, HomeFragment.class);
+                    startActivity(intent);
 
                 }
                 else
