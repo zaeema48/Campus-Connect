@@ -78,17 +78,11 @@ public class AddStudent extends AppCompatActivity {
                     studentModel.setStudentName(studentName);
                     studentModel.setStudentEmail(studentEmail);
                     studentModel.setParentEmail(parentsEmail);
+
                     students.add(studentModel);
 
-<<<<<<< HEAD
-                    student.add(studentModel);
-
-                    Intent intent = new Intent(AddStudent.this, HomeFragment.class);
-=======
-                    Intent intent = new Intent(AddStudent.this, AdminPage.class);
->>>>>>> 0b313f4ca684c26d60526a10f3d49564c954f0bd
-                    startActivity(intent);
-
+                  Intent intent = new Intent(AddStudent.this, HomeFragment.class);
+                  startActivity(intent);
                 }
                 else
                     Toast.makeText(AddStudent.this, "Fill the required details!", Toast.LENGTH_SHORT).show();
