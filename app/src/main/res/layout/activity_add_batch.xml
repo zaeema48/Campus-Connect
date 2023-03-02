@@ -185,6 +185,7 @@
                             android:text="SLOT 1"
                             android:textSize="20dp"
                             android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:background="#FCEAEAEA"/>
 
                         <androidx.appcompat.widget.AppCompatButton
@@ -193,6 +194,7 @@
                             android:layout_margin="10dp"
                             android:text="SLOT 2"
                             android:textSize="20dp"
+                            android:textColor="@color/black"
                             android:textStyle="bold"
                             android:background="#FCEAEAEA"/>
 
@@ -203,6 +205,7 @@
                             android:text="SLOT 3"
                             android:textSize="20dp"
                             android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:background="#FCEAEAEA"/>
 
                         <androidx.appcompat.widget.AppCompatButton
@@ -212,6 +215,7 @@
                             android:text="SLOT 4"
                             android:textSize="20dp"
                             android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:background="#FCEAEAEA"/>
 
                         <androidx.appcompat.widget.AppCompatButton
@@ -221,6 +225,7 @@
                             android:text="SLOT 5"
                             android:textSize="20dp"
                             android:textStyle="bold"
+                            android:textColor="@color/black"
                             android:background="#FCEAEAEA"/>
 
                     </TableRow>

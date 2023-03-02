@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TableLayout
+        android:id="@+id/batchTable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:stretchColumns="1,2,3,4">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/batchId"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:text="BatchId"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/course"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="7dp"
+                android:text="Curse"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/batchYear"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="7dp"
+                android:text="Year"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/duration"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="7dp"
+                android:text="Duration"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+            <TextView
+                android:id="@+id/fees"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="7dp"
+                android:text="Fees"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/currSemester"
+                android:layout_width="110dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="7dp"
+                android:text="CurrSemester"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>
