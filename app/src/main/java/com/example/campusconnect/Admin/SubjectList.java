@@ -34,7 +34,7 @@ public class SubjectList extends AppCompatActivity {
         SubjectModel subject2 = new SubjectModel(1103, "C#");
         subjectList.add(subject2);
 
-        SubjectModel subject3 = new SubjectModel(11044, "C Programming");
+        SubjectModel subject3 = new SubjectModel(1104, "C Programming");
         subjectList.add(subject3);
 
 

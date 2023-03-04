@@ -42,7 +42,7 @@ public class SubjectListAdapter extends RecyclerView.Adapter<SubjectListAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull SubjectListAdapter.ViewHolder holder, int position) {
-       int id=Integer.valueOf(subjectList.get(position).getSubjectId());
+        String id=String.valueOf(subjectList.get(position).getSubjectId());
         holder.subjectId.setText(id);
         holder.subjectName.setText(subjectList.get(position).getSubjectName());
     }
