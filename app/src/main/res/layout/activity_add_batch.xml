@@ -103,7 +103,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="none"
-                        android:hint="Duration"
                         android:text="Duration"
                         android:textColorHint="#75000000"
                         android:textSize="15dp"

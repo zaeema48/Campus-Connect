@@ -62,6 +62,7 @@ public class AddBatch extends AppCompatActivity {
 
 //                    ADDING SCHEDULES
                     ArrayList<ScheduleModel> schedules = new ArrayList<>();
+
                     schedules.get(0).setDay("Monday");
                     schedules.get(0).setSlot1(m1.getText().toString());
                     schedules.get(0).setSlot2(m2.getText().toString());
