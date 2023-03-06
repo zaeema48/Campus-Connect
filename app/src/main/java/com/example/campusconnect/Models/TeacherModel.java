@@ -6,6 +6,7 @@ public class TeacherModel {
     int teacherId;
     String teacherPassword;
     String teacherName;
+    String teacherEmail;
     String salary;
     SubjectModel subject;
     List<TeacherScheduleModel> teacherSchedules;
@@ -13,13 +14,13 @@ public class TeacherModel {
     public TeacherModel() {
     }
 
-    public TeacherModel(int teacherId, String teacherPassword, String teacherName, String salary, SubjectModel subject, List<TeacherScheduleModel> teacherSchedules) {
+    public TeacherModel(int teacherId, String teacherPassword, String teacherName, String teacherEmail, String salary, SubjectModel subject) {
         this.teacherId = teacherId;
         this.teacherPassword = teacherPassword;
         this.teacherName = teacherName;
+        this.teacherEmail = teacherEmail;
         this.salary = salary;
         this.subject = subject;
-        this.teacherSchedules = teacherSchedules;
     }
 
     public int getTeacherId() {
@@ -68,5 +69,13 @@ public class TeacherModel {
 
     public void setTeacherSchedules(List<TeacherScheduleModel> teacherSchedules) {
         this.teacherSchedules = teacherSchedules;
+    }
+
+    public String getTeacherEmail() {
+        return teacherEmail;
+    }
+
+    public void setTeacherEmail(String teacherEmail) {
+        this.teacherEmail = teacherEmail;
     }
 }

@@ -47,12 +47,12 @@ public class SearchStudentAdapter extends RecyclerView.Adapter<SearchStudentAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.studentId.setText("Student ID: \n"+students.get(position).getStudentId());
-        holder.studentName.setText("Student Name: \n"+students.get(position).getStudentName());
-        holder.studentPasw.setText("Password: \n"+students.get(position).getPassword());
-        holder.fees.setText("Fee Status: \n"+students.get(position).getFeesPaid());
-        holder.studentEmail.setText("Student Email: \n"+students.get(position).getStudentEmail());
-        holder.parentEmail.setText("Parent Email: \n"+students.get(position).getParentEmail());
+        holder.studentId.setText("Student ID \n"+students.get(position).getStudentId());
+        holder.studentName.setText("Student Name \n"+students.get(position).getStudentName());
+        holder.studentPasw.setText("Password \n"+students.get(position).getPassword());
+        holder.fees.setText("Fee Status \n"+students.get(position).getFeesPaid());
+        holder.studentEmail.setText("Student Email \n"+students.get(position).getStudentEmail());
+        holder.parentEmail.setText("Parent Email \n"+students.get(position).getParentEmail());
     }
 
     @Override

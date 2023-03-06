@@ -16,7 +16,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/student"
+            android:src="@drawable/teacher"
             android:scaleType="centerCrop"
             />
     </androidx.cardview.widget.CardView>
@@ -28,62 +28,62 @@
         app:columnCount="2">
 
         <TextView
-            android:id="@+id/studentId"
+            android:id="@+id/teacherId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:text="Student ID"
+            android:text="Teacher ID"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/studentName"
+            android:id="@+id/teacherName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:text="Student Name"
+            android:text="Teacher Name"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/studentPasw"
+            android:id="@+id/teacherPasw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:text="Student Pasw"
+            android:text="Teacher Pasw"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/feeStatus"
+            android:id="@+id/salary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:text="Fees Status"
+            android:text="Salary"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/studentEmail"
+            android:id="@+id/teacherEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:text="Student Email"
+            android:text="Teacher Email"
             android:textColor="@color/black"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/parentEmail"
+            android:id="@+id/subject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:text="Parent Name"
+            android:text="Subject"
             android:textColor="@color/black"
             android:textSize="15sp" />
 

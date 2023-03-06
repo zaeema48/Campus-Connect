@@ -25,8 +25,6 @@ public class ExamSchedule extends AppCompatActivity {
 
         fetchView();
 
-        ExamScheduleModel examScheduleModel= new ExamScheduleModel();
-
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -20,7 +20,7 @@ import javax.security.auth.Subject;
 
 public class AddTeacher extends AppCompatActivity {
 
-    EditText teacherName, salary, subject;
+    EditText teacherName, salary, subject,email;
     EditText m1,  m2, m3, m4, m5, t1, t2, t3, t4, t5, w1, w2, w3, w4, w5, th1, th2, th3, th4, th5, f1, f2, f3, f4, f5;
     Button save;
 
@@ -38,10 +38,12 @@ public class AddTeacher extends AppCompatActivity {
                 String tname = teacherName.getText().toString();
                 String tsalary= salary.getText().toString();
                 String tsubject = subject.getText().toString();
+                String temail=email.getText().toString();
 
-                if(tname != null && tsalary != null && tsubject!=null){
+                if(!tname.isEmpty()&& !tsalary.isEmpty() && !tsubject.isEmpty() && !temail.isEmpty()){
                     teacher.setTeacherName(tname);
                     teacher.setSalary(tsalary);
+                    teacher.setTeacherEmail(temail);
                     SubjectModel subject = new SubjectModel();
                     subject.setSubjectName(tsubject);
                     teacher.setSubject(subject);
@@ -105,6 +107,7 @@ public class AddTeacher extends AppCompatActivity {
         teacherName = findViewById(R.id.teacher_name);
         salary = findViewById(R.id.salary);
         subject = findViewById(R.id.subject);
+        email=findViewById(R.id.teacherEmail);
         save=findViewById(R.id.save);
     }
 }

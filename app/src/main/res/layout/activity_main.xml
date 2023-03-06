@@ -34,12 +34,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/adminImg"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="10dp"
         android:text="Admin"
         android:textColor="@color/black"
-        android:textSize="25sp"
-        android:layout_below="@id/adminImg"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="70dp"/>
+        android:textSize="25sp" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/teacherImg"
@@ -86,11 +86,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/studentImg"
+        android:layout_marginLeft="60dp"
         android:text="Student"
         android:textColor="@color/black"
-        android:textSize="25sp"
-        android:layout_below="@id/studentImg"
-        android:layout_marginLeft="60dp"/>
+        android:layout_marginTop="10dp"
+        android:textSize="25sp" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/parentImg"
@@ -111,11 +112,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/parentImg"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="260dp"
         android:text="Parent"
         android:textColor="@color/black"
-        android:textSize="25sp"
-        android:layout_below="@id/parentImg"
-        android:layout_marginLeft="260dp"/>
+        android:textSize="25sp" />
 
 
 
