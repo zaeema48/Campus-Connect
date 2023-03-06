@@ -26,7 +26,7 @@ public class SubjectListAdapter extends RecyclerView.Adapter<SubjectListAdapter.
     }
 
     Context context;
-    ArrayList<SubjectModel> subjectList= new ArrayList<>();
+    ArrayList<SubjectModel> subjectList;
 
     public SubjectListAdapter(Context context, ArrayList<SubjectModel> subjectList) {
         this.context = context;

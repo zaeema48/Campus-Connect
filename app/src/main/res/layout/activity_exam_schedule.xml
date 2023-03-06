@@ -1,9 +1,295 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Admin.ExamSchedule">
+    tools:context=".Admin.ExamSchedule"
+    android:background="@drawable/background">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:layout_centerHorizontal="true"
+        app:cardBackgroundColor="#E489CFF0"
+        app:cardCornerRadius="8dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="ADD EXAM SCHEDULES"
+            android:textColor="@color/white"
+            android:textSize="28dp"
+            android:textStyle="bold"/>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/tag"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:text="Enter Batch Id: "
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/batchId"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:hint="Batch Id"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/tableView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linearLayout"
+        android:layout_marginTop="10dp">
+
+      <TableLayout
+          android:id="@+id/table"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content">
+
+          <TableRow
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content">
+
+              <androidx.appcompat.widget.AppCompatButton
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:text="SUBJECTS"
+                  android:textSize="20dp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:background="#FCEAEAEA"/>
+
+              <androidx.appcompat.widget.AppCompatButton
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:text="DATE"
+                  android:textSize="20dp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:background="#FCEAEAEA"/>
+
+              <androidx.appcompat.widget.AppCompatButton
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:text="TIME"
+                  android:textSize="20dp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:background="#FCEAEAEA"/>
+
+              <androidx.appcompat.widget.AppCompatButton
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:text="ROOM No."
+                  android:textSize="20dp"
+                  android:textStyle="bold"
+                  android:textColor="@color/black"
+                  android:background="#FCEAEAEA"/>
+
+          </TableRow>
+
+          <TableRow
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content">
+
+              <EditText
+              android:id="@+id/s1"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_margin="10dp"
+              android:hint="Subject"/>
+
+              <EditText
+                  android:id="@+id/d1"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:hint="DATE"/>
+
+              <EditText
+                  android:id="@+id/t1"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:hint="Time" />
+
+              <EditText
+                  android:id="@+id/r1"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:hint="Room" />
+          </TableRow>
+
+          <TableRow>
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content">
+
+              <EditText
+                  android:id="@+id/s2"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:hint="Subject"/>
+
+              <EditText
+                  android:id="@+id/d2"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:hint="DATE"/>
+
+              <EditText
+                  android:id="@+id/t2"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:hint="Time" />
+
+              <EditText
+                  android:id="@+id/r2"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:hint="Room" />
+          </TableRow>
+
+          <TableRow>
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content">
+
+              <EditText
+                  android:id="@+id/s3"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:hint="Subject"/>
+
+              <EditText
+                  android:id="@+id/d3"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:hint="DATE"/>
+
+              <EditText
+                  android:id="@+id/t3"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:hint="Time" />
+
+              <EditText
+                  android:id="@+id/r3"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:hint="Room" />
+          </TableRow>
+
+          <TableRow>
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content">
+
+              <EditText
+                  android:id="@+id/s4"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:hint="Subject"/>
+
+              <EditText
+                  android:id="@+id/d4"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:hint="DATE"/>
+
+              <EditText
+                  android:id="@+id/t4"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:hint="Time" />
+
+              <EditText
+                  android:id="@+id/r4"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:hint="Room" />
+          </TableRow>
+
+          <TableRow>
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content">
+
+              <EditText
+                  android:id="@+id/s5"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:hint="Subject"/>
+
+              <EditText
+                  android:id="@+id/d5"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:hint="DATE"/>
+
+              <EditText
+                  android:id="@+id/t5"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:hint="Time" />
+
+              <EditText
+                  android:id="@+id/r5"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="10dp"
+                  android:hint="Room" />
+          </TableRow>
+      </TableLayout>
+
+    </HorizontalScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ExamSave"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/tableView"
+        android:layout_marginTop="25dp"
+        android:background="#E489CFF0"
+        android:layout_centerHorizontal="true"
+        android:text="SAVE"
+        android:textSize="22dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
