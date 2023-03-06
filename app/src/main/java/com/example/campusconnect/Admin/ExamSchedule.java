@@ -60,19 +60,23 @@ public class ExamSchedule extends AppCompatActivity {
                     examSchedule.get(4).setTime(t5.getText().toString());
                     examSchedule.get(4).setRoomAllocated(r5.getText().toString());
 
+<<<<<<< HEAD
 
+=======
+                    //REST API WORK FOR SENDING THE ARRAYLIST
+>>>>>>> refs/remotes/origin/main
 
                 }
 
                 else
-                    Toast.makeText(ExamSchedule.this, "PLease fill the Required Details!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ExamSchedule.this, "Please fill the Required Details!!", Toast.LENGTH_SHORT).show();
 
             }
         });
     }
 
     public void fetchView(){
-        batchId=findViewById(R.id.edit);
+        batchId=findViewById(R.id.batchId);
         saveBtn=findViewById(R.id.ExamSave);
         s1=findViewById(R.id.s1);
         s2=findViewById(R.id.s2);

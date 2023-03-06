@@ -10,8 +10,6 @@ public class ExamScheduleModel {
     String time;
     String roomAllocated;
 
-    List<ExamScheduleModel> examSchedule;
-
     public ExamScheduleModel() {
     }
 
@@ -63,11 +61,4 @@ public class ExamScheduleModel {
         this.roomAllocated = roomAllocated;
     }
 
-    public List<ExamScheduleModel> getExamSchedule() {
-        return examSchedule;
-    }
-
-    public void setExamSchedule(List<ExamScheduleModel> examSchedule) {
-        this.examSchedule = examSchedule;
-    }
 }
