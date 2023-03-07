@@ -50,7 +50,10 @@ public class SearchStudentAdapter extends RecyclerView.Adapter<SearchStudentAdap
         holder.studentId.setText("Student ID \n"+students.get(position).getStudentId());
         holder.studentName.setText("Student Name \n"+students.get(position).getStudentName());
         holder.studentPasw.setText("Password \n"+students.get(position).getPassword());
-        holder.fees.setText("Fee Status \n"+students.get(position).getFeesPaid());
+        if(students.get(position).getFeesPaid())
+            holder.fees.setText("Fee Status \nPaid, "+students.get(position).getTransactionId());
+        else
+            holder.fees.setText("Fee Status \nNot Paid");
         holder.studentEmail.setText("Student Email \n"+students.get(position).getStudentEmail());
         holder.parentEmail.setText("Parent Email \n"+students.get(position).getParentEmail());
     }

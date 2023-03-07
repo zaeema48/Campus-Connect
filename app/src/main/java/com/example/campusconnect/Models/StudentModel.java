@@ -7,6 +7,7 @@ public class StudentModel {
     String studentEmail;
     String parentEmail;
     Boolean feesPaid;
+    String transactionId;
 
     public StudentModel() {
     }
@@ -66,5 +67,13 @@ public class StudentModel {
 
     public void setFeesPaid(Boolean feesPaid) {
         this.feesPaid = feesPaid;
+    }
+
+    public String getTransactionId() {
+        return transactionId;
+    }
+
+    public void setTransactionId(String transactionId) {
+        this.transactionId = transactionId;
     }
 }
