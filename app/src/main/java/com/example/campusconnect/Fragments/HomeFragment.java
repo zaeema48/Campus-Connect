@@ -24,6 +24,7 @@ import com.example.campusconnect.Admin.SearchStudent;
 import com.example.campusconnect.Admin.SearchTeacher;
 import com.example.campusconnect.Admin.SubjectList;
 import com.example.campusconnect.Admin.TeacherList;
+import com.example.campusconnect.Admin.UpdateBatchSchedule;
 import com.example.campusconnect.Admin.UpdateFees;
 import com.example.campusconnect.Admin.UpdateSemester;
 import com.example.campusconnect.Admin.UpdateStudent;
@@ -33,7 +34,7 @@ import com.example.campusconnect.Admin.UpdateTeacherSchedule;
 import com.example.campusconnect.R;
 
 public class HomeFragment extends Fragment {
-    CardView addBatch, batchList, searchBatch, updateSem, addStudent, removeStudent, updateStudent, searchStudent, updateStudentSchedule,
+    CardView addBatch, batchList, searchBatch, updateSem, addStudent, removeStudent, updateStudent, searchStudent, updateBatchSchedule,
     addTeacher, removeTeacher, searchTeacher, teacherList, updateTeacher, subjectList, updateTeacherSchedule, updateFees, examSchedule;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,7 +51,7 @@ public class HomeFragment extends Fragment {
         removeStudent = view.findViewById(R.id.removeStudent);
         updateStudent = view.findViewById(R.id.updateStudent);
         searchStudent = view.findViewById(R.id.searchStudent);
-        updateStudentSchedule = view.findViewById(R.id.updateStudentSchedule);
+        updateBatchSchedule = view.findViewById(R.id.updateBatchSchedule);
         addTeacher = view.findViewById(R.id.addTeacher);
         removeTeacher = view.findViewById(R.id.removeTeacher);
         searchTeacher = view.findViewById(R.id.searchTeacher);
@@ -125,10 +126,10 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        updateStudentSchedule.setOnClickListener(new View.OnClickListener() {
+        updateBatchSchedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (getContext(), UpdateStudentSchedule.class);
+                Intent intent = new Intent (getContext(), UpdateBatchSchedule.class);
                 startActivity(intent);
             }
         });

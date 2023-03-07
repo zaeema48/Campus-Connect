@@ -54,17 +54,13 @@ AutoCompleteTextView autoCompleteTextView;
                         @Override
                         public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-                            String slot_1=slot1.getText().toString();
-                            String slot_2=slot2.getText().toString();
-                            String slot_3=slot3.getText().toString();
-                            String slot_4=slot4.getText().toString();
-                            String slot_5=slot5.getText().toString();
 
-                            scheduleModel.setSlot1(slot_1);
-                            scheduleModel.setSlot2(slot_2);
-                            scheduleModel.setSlot3(slot_3);
-                            scheduleModel.setSlot4(slot_4);
-                            scheduleModel.setSlot5(slot_5);
+//                            scheduleModel.setDay();  ???
+                            scheduleModel.setSlot1(slot1.getText().toString());
+                            scheduleModel.setSlot2(slot2.getText().toString());
+                            scheduleModel.setSlot3(slot3.getText().toString());
+                            scheduleModel.setSlot4(slot4.getText().toString());
+                            scheduleModel.setSlot5(slot5.getText().toString());
                         }
 
                         @Override

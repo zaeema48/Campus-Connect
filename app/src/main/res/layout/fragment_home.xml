@@ -15,9 +15,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="735dp"
                 android:orientation="horizontal">
 
                 <RelativeLayout
@@ -30,8 +31,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardBackgroundColor="@color/white">
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -50,8 +51,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/addBatch"
                         android:layout_marginTop="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardBackgroundColor="@color/white">
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -70,8 +71,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/batchList"
                         android:layout_marginTop="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardBackgroundColor="@color/white">
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -90,8 +91,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/searchBatch"
                         android:layout_marginTop="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardBackgroundColor="@color/white">
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -110,8 +111,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/addStudent"
                         android:layout_marginTop="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardBackgroundColor="@color/white">
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -130,8 +131,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/removeStudent"
                         android:layout_marginTop="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardBackgroundColor="@color/white">
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -150,8 +151,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/updateStudent"
                         android:layout_marginTop="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardBackgroundColor="@color/white">
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -165,13 +166,13 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/updateStudentSchedule"
+                        android:id="@+id/updateBatchSchedule"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/searchStudent"
                         android:layout_marginTop="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardBackgroundColor="@color/white">
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -188,10 +189,10 @@
                         android:id="@+id/updateFee"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/updateStudentSchedule"
+                        android:layout_below="@id/updateBatchSchedule"
                         android:layout_marginTop="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardBackgroundColor="@color/white">
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -216,8 +217,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardBackgroundColor="@color/white">
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -236,8 +237,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/addTeacher"
                         android:layout_marginTop="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardBackgroundColor="@color/white">
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -256,8 +257,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/removeTeacher"
                         android:layout_marginTop="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardBackgroundColor="@color/white">
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -276,8 +277,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/searchTeacher"
                         android:layout_marginTop="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardBackgroundColor="@color/white">
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -296,8 +297,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/teacherList"
                         android:layout_marginTop="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardBackgroundColor="@color/white">
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -316,8 +317,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/updateTeacher"
                         android:layout_marginTop="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardBackgroundColor="@color/white">
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -336,8 +337,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/examSchedule"
                         android:layout_marginTop="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardBackgroundColor="@color/white">
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -351,15 +352,14 @@
                     </androidx.cardview.widget.CardView>
 
 
-
                     <androidx.cardview.widget.CardView
                         android:id="@+id/examSchedule"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/subjectList"
                         android:layout_marginTop="15dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardBackgroundColor="@color/white">
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -378,8 +378,8 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/updateTeacherSchedule"
                         android:layout_marginTop="20dp"
-                        app:cardCornerRadius="10dp"
-                        app:cardBackgroundColor="@color/white">
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp">
 
                         <TextView
                             android:layout_width="match_parent"

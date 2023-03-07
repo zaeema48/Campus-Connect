@@ -52,6 +52,7 @@ public class SearchTeacher extends AppCompatActivity {
         //TESTING DATA SET
         SubjectModel subject1=new SubjectModel(12,"Java");
         TeacherModel teacher1=new TeacherModel(123,"abcde","Zeeshan", "jhbdkjsd@hjd","85k",subject1);
+        teachers.add(teacher1);
 
         adapter=new SearchTeacherAdapter(SearchTeacher.this,teachers);
         recyclerView.setLayoutManager(new LinearLayoutManager(SearchTeacher.this));

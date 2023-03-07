@@ -19,7 +19,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="UPDATE BATCH SCHEDULE"
+            android:text="UPDATE \nBATCH SCHEDULE"
+            android:gravity="center_horizontal"
             android:textColor="@color/white"
             android:textSize="28dp"
             android:textStyle="bold"/>
@@ -81,12 +82,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/f2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_below="@id/f1"
-        android:id="@+id/f2">
+        android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="wrap_content"
@@ -94,21 +96,21 @@
             android:layout_marginLeft="40dp"
             android:layout_marginTop="40dp"
             android:layout_marginBottom="15dp"
+            android:background="#FCEAEAEA"
             android:text="SLOT 1"
-            android:textSize="20dp"
-            android:textStyle="bold"
             android:textColor="@color/black"
-            android:background="#FCEAEAEA"/>
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/slot1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/slot1"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="40dp"
             android:hint="ENTER SLOT 1"
             android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_marginTop="40dp"
-            android:layout_marginLeft="60dp"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
     <LinearLayout
@@ -239,18 +241,20 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_below="@id/f6">
+
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/updateBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/updateBtn"
+            android:layout_below="@id/f6"
             android:layout_marginLeft="170dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="15dp"
+            android:background="#E489CFF0"
             android:text="UPDATE"
-            android:textSize="20dp"
-            android:textStyle="bold"
             android:textColor="@color/black"
-            android:background="#E489CFF0"/>
+            android:textSize="20dp"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </RelativeLayout>
@@ -333,94 +337,3 @@
 
 
 <!--    </HorizontalScrollView>-->
-
-<!--    <HorizontalScrollView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@id/HS"-->
-<!--        android:id="@+id/HS2">-->
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="horizontal">-->
-
-<!--            <EditText-->
-<!--                android:id="@+id/enter"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="15dp"-->
-<!--                android:layout_marginTop="15dp"-->
-<!--                android:layout_marginEnd="15dp"-->
-<!--                android:layout_marginBottom="15dp"-->
-<!--                android:hint="ENTER"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textSize="20dp"-->
-<!--                android:textStyle="bold" />-->
-
-<!--            <EditText-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_margin="15dp"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textStyle="bold"-->
-<!--                android:textSize="20dp"-->
-<!--                android:hint="SLOT 1"-->
-<!--                android:id="@+id/slot1"/>-->
-
-<!--            <EditText-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_margin="15dp"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textStyle="bold"-->
-<!--                android:textSize="20dp"-->
-<!--                android:hint="SLOT 2"-->
-<!--                android:id="@+id/slot2"/>-->
-
-<!--            <EditText-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_margin="15dp"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textStyle="bold"-->
-<!--                android:textSize="20dp"-->
-<!--                android:hint="SLOT 3"-->
-<!--                android:id="@+id/slot3"/>-->
-
-<!--            <EditText-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_margin="15dp"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textStyle="bold"-->
-<!--                android:textSize="20dp"-->
-<!--                android:hint="SLOT 4"-->
-<!--                android:id="@+id/slot4"/>-->
-
-<!--            <EditText-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_margin="15dp"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textStyle="bold"-->
-<!--                android:textSize="20dp"-->
-<!--                android:hint="SLOT 5"-->
-<!--                android:id="@+id/slot5"/>-->
-<!--        </LinearLayout>-->
-<!--    </HorizontalScrollView>-->
-
-<!--    <androidx.appcompat.widget.AppCompatButton-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/save_btn"-->
-<!--        android:layout_below="@id/HS2"-->
-<!--        android:layout_marginLeft="150dp"-->
-<!--        android:layout_marginTop="50dp"-->
-<!--        android:text="SAVE"-->
-<!--        android:textSize="20dp"-->
-<!--        android:textStyle="bold"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:background="#FCEAEAEA"/>-->
-
-
