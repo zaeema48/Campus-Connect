@@ -45,11 +45,38 @@
         <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/activity_admin_page.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/activity_parent_login.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/activity_remove_student.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/activity_remove_teacher.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/activity_search_batch.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/activity_search_student.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/activity_search_teacher.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/activity_splash_screen.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/activity_student_login.xml" value="0.19010416666666666" />
+<<<<<<< HEAD
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/activity_subject_list.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/activity_teacher_list.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/activity_teacher_login.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/activity_update_fees.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/activity_update_semester.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/activity_update_student_schedule.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/activity_update_teacher.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/activity_update_teacher_schedule.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/fragment_home.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/fragment_notification.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/fragment_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/layout_teacher_list.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/usericon.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layouts/layout/activity_subject_list.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layouts/layout/activity_subject_list2.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layouts/layout/activity_update_batch_schedule.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layouts/layout/layout_batch_list.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layouts/layout/layout_subject_list.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layouts/layout/subject_list.xml" value="0.20416666666666666" />
+=======
         <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/fragment_home.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/fragment_notification.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/usericon.xml" value="0.20416666666666666" />
+>>>>>>> refs/remotes/origin/main
       </map>
     </option>
   </component>
