@@ -10,19 +10,20 @@ public class BatchModel {
     String feesAmount;
     String currentSemester;
 
+    List<StudentModel> students;
     List<ScheduleModel> schedules;
+    List<ExamScheduleModel> examSchedules;
 
     public BatchModel() {
     }
 
-    public BatchModel(String batchId, String courseName, String courseYear, String courseDuration, String feesAmount, String currentSemester, List<ScheduleModel> schedules) {
+    public BatchModel(String batchId, String courseName, String courseYear, String courseDuration, String feesAmount, String currentSemester) {
         this.batchId = batchId;
         this.courseName = courseName;
         this.courseYear = courseYear;
         this.courseDuration = courseDuration;
         this.feesAmount = feesAmount;
         this.currentSemester = currentSemester;
-        this.schedules = schedules;
     }
 
     public String getBatchId() {
@@ -79,5 +80,21 @@ public class BatchModel {
 
     public void setSchedules(List<ScheduleModel> schedules) {
         this.schedules = schedules;
+    }
+
+    public List<StudentModel> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<StudentModel> students) {
+        this.students = students;
+    }
+
+    public List<ExamScheduleModel> getExamSchedules() {
+        return examSchedules;
+    }
+
+    public void setExamSchedules(List<ExamScheduleModel> examSchedules) {
+        this.examSchedules = examSchedules;
     }
 }

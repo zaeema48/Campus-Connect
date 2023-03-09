@@ -22,7 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="50dp"
                 app:cardBackgroundColor="#E489CFF0"
                 app:cardCornerRadius="8dp">
 
@@ -47,8 +47,7 @@
                     android:layout_width="180dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="40dp"
-                    app:boxBackgroundColor="@color/white">
+                    android:layout_marginTop="40dp">
 
                     <AutoCompleteTextView
                         android:id="@+id/course"
@@ -56,6 +55,7 @@
                         android:layout_height="match_parent"
                         android:inputType="none"
                         android:text="Course Name"
+                        android:background="@drawable/curved_view_bg"
                         android:textColor="@color/black"
                         android:textSize="15dp" />
 
@@ -95,7 +95,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="30dp"
-                    app:boxBackgroundColor="@color/white"
                     app:boxCornerRadiusBottomEnd="5dp">
 
                     <AutoCompleteTextView
@@ -104,6 +103,7 @@
                         android:layout_height="match_parent"
                         android:inputType="none"
                         android:text="Duration"
+                        android:background="@drawable/curved_view_bg"
                         android:textColor="@color/black"
                         android:textColorHint="#75000000"
                         android:textSize="15dp" />
@@ -168,13 +168,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
 
-                        <TextView
+                        <androidx.appcompat.widget.AppCompatButton
                             android:layout_width="wrap_content"
-                            android:layout_height="50dp"
+                            android:layout_height="wrap_content"
                             android:layout_margin="10dp"
-                            android:text="DAY :"
+                            android:background="#FCEAEAEA"
+                            android:text="DAY"
                             android:textColor="@color/black"
-                            android:textSize="25dp"
+                            android:textSize="20dp"
                             android:textStyle="bold" />
 
                         <androidx.appcompat.widget.AppCompatButton
