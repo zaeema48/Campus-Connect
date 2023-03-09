@@ -22,10 +22,13 @@
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_student_login.xml" value="0.25" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_teacher_list.xml" value="0.264" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_teacher_login.xml" value="0.25" />
+        <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_update_fees.xml" value="0.20521590423257802" />
+        <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_update_semester.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_update_student_schedule.xml" value="0.25" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_update_teacher.xml" value="0.20512820512820512" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/fragment_first.xml" value="0.25" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/fragment_home.xml" value="0.20521590423257802" />
+        <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/fragment_notification.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/layout_teacher_list.xml" value="0.25" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layouts/admin/activities/layout/activity_add_batch.xml" value="0.2" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layouts/admin/activities/layout/activity_add_student.xml" value="0.24739583333333334" />
