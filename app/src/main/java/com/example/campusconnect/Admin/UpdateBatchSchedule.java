@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.campusconnect.Models.BatchModel;
 import com.example.campusconnect.Models.ScheduleModel;
@@ -70,6 +71,8 @@ AutoCompleteTextView autoCompleteTextView;
                     });
 
                 }
+                else
+                    Toast.makeText(UpdateBatchSchedule.this, "PLEASE FILL THE REQUIED DETAILS!!", Toast.LENGTH_SHORT).show();
             }
         });
     }

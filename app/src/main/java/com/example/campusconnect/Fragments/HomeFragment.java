@@ -27,8 +27,6 @@ import com.example.campusconnect.Admin.TeacherList;
 import com.example.campusconnect.Admin.UpdateBatchSchedule;
 import com.example.campusconnect.Admin.UpdateFees;
 import com.example.campusconnect.Admin.UpdateSemester;
-import com.example.campusconnect.Admin.UpdateStudent;
-import com.example.campusconnect.Admin.UpdateStudentSchedule;
 import com.example.campusconnect.Admin.UpdateTeacher;
 import com.example.campusconnect.Admin.UpdateTeacherSchedule;
 import com.example.campusconnect.R;
@@ -110,13 +108,13 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        updateStudent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent (getContext(), UpdateStudent.class);
-                startActivity(intent);
-            }
-        });
+//        updateStudent.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent (getContext(), UpdateStudent.class);
+//                startActivity(intent);
+//            }
+//        });
 
         searchStudent.setOnClickListener(new View.OnClickListener() {
             @Override

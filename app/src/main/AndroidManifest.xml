@@ -29,9 +29,6 @@
             android:name=".Admin.UpdateTeacherSchedule"
             android:exported="false" />
         <activity
-            android:name=".Admin.UpdateStudentSchedule"
-            android:exported="false" />
-        <activity
             android:name=".Admin.TeacherList"
             android:exported="false"
             android:label="@string/title_activity_teacher_list"
@@ -62,9 +59,6 @@
             android:exported="false" />
         <activity
             android:name=".Admin.SearchStudent"
-            android:exported="false" />
-        <activity
-            android:name=".Admin.UpdateStudent"
             android:exported="false" />
         <activity
             android:name=".Admin.RemoveStudent"

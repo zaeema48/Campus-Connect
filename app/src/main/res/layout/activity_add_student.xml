@@ -143,6 +143,8 @@
                 android:layout_marginTop="80dp"
                 android:background="#42B6EA"
                 android:text="Save and Exit"
+                android:textColor="@color/white"
+                android:textStyle="bold"
                 android:textSize="20dp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -154,6 +156,8 @@
                 android:layout_marginRight="40dp"
                 android:background="#42B6EA"
                 android:text="Save and \nAdd More"
+                android:textColor="@color/white"
+                android:textStyle="bold"
                 android:textSize="20dp" />
 
         </LinearLayout>
