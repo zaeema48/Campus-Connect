@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.campusconnect.Fragments.HomeFragment;
-import com.example.campusconnect.Fragments.NotificationFragment;
+import com.example.campusconnect.Fragments.NoticeFragment;
 import com.example.campusconnect.Fragments.ProfileFragment;
 
 public class PagerAdapter extends FragmentPagerAdapter {
@@ -24,7 +24,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
                 return new HomeFragment();
 
             case 1:
-                return new NotificationFragment();
+                return new NoticeFragment();
 
             case 2:
                 return new ProfileFragment();
