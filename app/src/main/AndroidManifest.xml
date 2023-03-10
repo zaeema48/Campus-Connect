@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.campusconnect">
+    package="com.example.campusconnect" >
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CampusConnect"
-        tools:targetApi="31">
+        tools:targetApi="31" >
+        <activity
+            android:name=".UpdateTeacherSchedule"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.ViewExamSchedule"
+            android:exported="false" />
         <activity
             android:name=".AddNotice"
             android:exported="false" />
@@ -26,7 +32,11 @@
             android:name=".subject_list"
             android:exported="false" />
         <activity
+<<<<<<< HEAD
             android:name=".Admin.UpdateTeacherSchedule"
+=======
+            android:name=".Admin.UpdateStudentSchedule"
+>>>>>>> 8f0562e286f620ddaf7314e9bf07901bae1ce265
             android:exported="false" />
         <activity
             android:name=".Admin.TeacherList"
@@ -95,7 +105,7 @@
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

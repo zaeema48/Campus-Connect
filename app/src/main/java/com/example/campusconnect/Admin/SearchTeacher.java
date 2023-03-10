@@ -43,7 +43,7 @@ public class SearchTeacher extends AppCompatActivity {
                     //REST API CALLING (retrofit work)
                 }
                 else{
-                    Toast.makeText(SearchTeacher.this, "No Student Name has been entered!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SearchTeacher.this, "No Name has been entered!!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
