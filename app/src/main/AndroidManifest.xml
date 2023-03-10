@@ -20,6 +20,12 @@
             android:name=".Admin.ViewExamSchedule"
             android:exported="false" />
         <activity
+            android:name=".AddNotice"
+            android:exported="false" />
+        <activity
+            android:name=".ViewNotice"
+            android:exported="false" />
+        <activity
             android:name=".Admin.UpdateBatchSchedule"
             android:exported="false" />
         <activity

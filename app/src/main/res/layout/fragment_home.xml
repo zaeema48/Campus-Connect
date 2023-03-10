@@ -9,7 +9,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,7 +41,7 @@
                             android:text="Add new Batch"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:textStyle="bold" />
                     </androidx.cardview.widget.CardView>
 
@@ -61,7 +61,7 @@
                             android:text="List of Batches"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:textStyle="bold" />
                     </androidx.cardview.widget.CardView>
 
@@ -81,7 +81,7 @@
                             android:text="Search a Batch"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:textStyle="bold" />
                     </androidx.cardview.widget.CardView>
 
@@ -101,7 +101,7 @@
                             android:text="Add Student"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:textStyle="bold" />
                     </androidx.cardview.widget.CardView>
 
@@ -121,7 +121,7 @@
                             android:text="Remove Student"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:textStyle="bold" />
                     </androidx.cardview.widget.CardView>
 
@@ -141,7 +141,7 @@
                             android:text="Update Student"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:textStyle="bold" />
                     </androidx.cardview.widget.CardView>
 
@@ -161,7 +161,7 @@
                             android:text="Search Student"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:textStyle="bold" />
                     </androidx.cardview.widget.CardView>
 
@@ -181,7 +181,7 @@
                             android:text="Update Batch \nSchedule"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:textStyle="bold" />
                     </androidx.cardview.widget.CardView>
 
@@ -201,7 +201,7 @@
                             android:text="Update Fees"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:textStyle="bold" />
                     </androidx.cardview.widget.CardView>
 
@@ -227,7 +227,7 @@
                             android:text="Add Teacher"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:textStyle="bold" />
                     </androidx.cardview.widget.CardView>
 
@@ -247,7 +247,7 @@
                             android:text="Remove Teacher"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:textStyle="bold" />
                     </androidx.cardview.widget.CardView>
 
@@ -267,7 +267,7 @@
                             android:text="Search Teacher"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:textStyle="bold" />
                     </androidx.cardview.widget.CardView>
 
@@ -287,7 +287,7 @@
                             android:text="List of Teacher"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:textStyle="bold" />
                     </androidx.cardview.widget.CardView>
 
@@ -307,7 +307,7 @@
                             android:text="Update Teacher"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:textStyle="bold" />
                     </androidx.cardview.widget.CardView>
 
@@ -327,7 +327,7 @@
                             android:text="List of Subject"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:textStyle="bold" />
                     </androidx.cardview.widget.CardView>
 
@@ -347,7 +347,7 @@
                             android:text="Update Teacher \nSchedule"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:textStyle="bold" />
                     </androidx.cardview.widget.CardView>
 
@@ -357,7 +357,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/subjectList"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="15sp"
                         app:cardBackgroundColor="@color/white"
                         app:cardCornerRadius="10dp">
 
@@ -368,7 +368,7 @@
                             android:text="Exam Schedule"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:textStyle="bold" />
                     </androidx.cardview.widget.CardView>
 
@@ -388,20 +388,14 @@
                             android:text="Update Semester"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
+                            android:textSize="15sp"
                             android:textStyle="bold" />
                     </androidx.cardview.widget.CardView>
 
                 </RelativeLayout>
-
-
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
-
-
-
 
 
 </FrameLayout>
