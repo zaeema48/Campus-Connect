@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/drawable/usericon.xml" value="0.211" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_add_batch.xml" value="0.25" />
+        <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_add_exam_schedule.xml" value="0.1" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_add_student.xml" value="0.25" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_add_teacher.xml" value="0.25" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layout/activity_admin_login.xml" value="0.25" />
@@ -39,6 +40,7 @@
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layouts/drawable/search_view_bg.xml" value="0.2545" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layouts/layout/activity_add_notice.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layouts/layout/activity_add_teacher.xml" value="0.25" />
+        <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layouts/layout/activity_exam_schedule.xml" value="0.2" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layouts/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layouts/layout/activity_student_login.xml" value="0.25" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layouts/layout/activity_subject_list.xml" value="0.4" />
@@ -51,6 +53,7 @@
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layouts/layout/layout_search_teacher.xml" value="0.25" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layouts/layout/layout_student_list.xml" value="0.20436083796494228" />
         <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layouts/layout/layout_subject_list.xml" value="0.20512820512820512" />
+        <entry key="..\:/Users/Zeeshan/AndroidProjects/Campus-Connect-/app/src/main/res/layouts/layout/layout_view_exam.xml" value="0.1" />
         <entry key="..\:/Users/Zeeshan/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/select_dialog_singlechoice.xml" value="0.25" />
         <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/activity_add_batch.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/zaeema/AndroidStudioProjects/CampusConnect/app/src/main/res/layout/activity_admin_login.xml" value="0.19010416666666666" />

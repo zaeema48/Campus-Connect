@@ -16,6 +16,7 @@ import com.example.campusconnect.Admin.AddBatch;
 import com.example.campusconnect.Admin.AddStudent;
 import com.example.campusconnect.Admin.AddTeacher;
 import com.example.campusconnect.Admin.BatchesList;
+import com.example.campusconnect.Admin.AddExamSchedule;
 import com.example.campusconnect.Admin.ExamSchedule;
 import com.example.campusconnect.Admin.RemoveStudent;
 import com.example.campusconnect.Admin.RemoveTeacher;
@@ -28,11 +29,12 @@ import com.example.campusconnect.Admin.UpdateBatchSchedule;
 import com.example.campusconnect.Admin.UpdateFees;
 import com.example.campusconnect.Admin.UpdateSemester;
 import com.example.campusconnect.Admin.UpdateTeacher;
+import com.example.campusconnect.Admin.UpdateTeacherSchedule;
 import com.example.campusconnect.R;
 
 public class HomeFragment extends Fragment {
-    CardView addBatch, batchList, searchBatch, updateSem, addStudent, removeStudent, updateStudent, searchStudent, updateBatchSchedule,
-    addTeacher, removeTeacher, searchTeacher, teacherList, updateTeacher, subjectList, updateTeacherSchedule, updateFees, examSchedule;
+    CardView addBatch, batchList, searchBatch, updateSem, addStudent, removeStudent, examSchedule, searchStudent, updateBatchSchedule,
+    addTeacher, removeTeacher, searchTeacher, teacherList, updateTeacher, subjectList, updateTeacherSchedule, updateFees, addExamSchedule;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -46,7 +48,7 @@ public class HomeFragment extends Fragment {
         updateSem = view.findViewById(R.id.updateSem);
         addStudent = view.findViewById(R.id.addStudent);
         removeStudent = view.findViewById(R.id.removeStudent);
-        updateStudent = view.findViewById(R.id.updateStudent);
+        examSchedule = view.findViewById(R.id.examSchedule);
         searchStudent = view.findViewById(R.id.searchStudent);
         updateBatchSchedule = view.findViewById(R.id.updateBatchSchedule);
         addTeacher = view.findViewById(R.id.addTeacher);
@@ -57,7 +59,7 @@ public class HomeFragment extends Fragment {
         subjectList = view.findViewById(R.id.subjectList);
         updateTeacherSchedule= view.findViewById(R.id.updateTeacherSchedule);
         updateFees = view.findViewById(R.id.updateFee);
-        examSchedule = view.findViewById(R.id.examSchedule);
+        addExamSchedule = view.findViewById(R.id.addExamSchedule);
 
         addBatch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,13 +109,13 @@ public class HomeFragment extends Fragment {
             }
         });
 
-//        updateStudent.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent (getContext(), UpdateStudent.class);
-//                startActivity(intent);
-//            }
-//        });
+        examSchedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent (getContext(), ExamSchedule.class);
+                startActivity(intent);
+            }
+        });
 
         searchStudent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -195,10 +197,10 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        examSchedule.setOnClickListener(new View.OnClickListener() {
+        addExamSchedule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent (getContext(), ExamSchedule.class);
+                Intent intent= new Intent(getContext(), AddExamSchedule.class);
                 startActivity(intent);
             }
         });
