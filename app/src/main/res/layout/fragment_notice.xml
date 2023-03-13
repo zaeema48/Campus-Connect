@@ -49,7 +49,7 @@
                 android:layout_marginRight="10dp"
                 app:defaultQueryHint="Search..."
                 app:iconifiedByDefault="false"
-                android:background="@color/purple_200" />
+                android:background="#42B6EA" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView

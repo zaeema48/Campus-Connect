@@ -4,14 +4,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.widget.Toast;
 
+import com.example.campusconnect.API.ApiUtilities;
 import com.example.campusconnect.Adapter.BatchListAdapter;
 import com.example.campusconnect.Models.BatchModel;
 import com.example.campusconnect.R;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class BatchesList extends AppCompatActivity {
 
@@ -23,28 +32,29 @@ public class BatchesList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_batches_list);
         recyclerView=findViewById(R.id.batchListRV);
-        ArrayList<BatchModel> batches= new ArrayList<>();
-        //TESTING DATA SET
-        BatchModel batch= new BatchModel();
-        batch.setBatchId("BTech2019");
-        batch.setCourseName("BTechCSE");
-        batch.setCourseYear("2019");
-        batch.setCourseDuration("4 year");
-        batch.setFeesAmount("85k");
-        batch.setCurrentSemester("8th Sem");
-        batches.add(batch);
-        BatchModel batch2= new BatchModel();
-        batch2.setBatchId("BTech2020");
-        batch2.setCourseName("BTechCSE");
-        batch2.setCourseYear("2020");
-        batch2.setCourseDuration("4 year");
-        batch2.setFeesAmount("90k");
-        batch2.setCurrentSemester("6th Sem");
-        batches.add(batch2);
+        List<BatchModel> batches= new ArrayList<>();
+
+        ProgressDialog progressDialog= new ProgressDialog(BatchesList.this);
+        progressDialog.setTitle("Fetching the Data...");
+        progressDialog.show();
 
         adapter=new BatchListAdapter(BatchesList.this,batches);
         recyclerView.setLayoutManager(new LinearLayoutManager(BatchesList.this));
         recyclerView.setAdapter(adapter);
+
+        ApiUtilities.getAdminApiInterface().getBatch().enqueue(new Callback<List<BatchModel>>() {
+            @Override
+            public void onResponse(Call<List<BatchModel>> call, Response<List<BatchModel>> response) {
+                progressDialog.dismiss();
+                batches.addAll(response.body());
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(Call<List<BatchModel>> call, Throwable t) {
+                Toast.makeText(BatchesList.this, "An Error has Occurred", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 }

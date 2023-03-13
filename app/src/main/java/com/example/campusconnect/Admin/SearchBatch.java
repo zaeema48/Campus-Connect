@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.campusconnect.API.ApiUtilities;
 import com.example.campusconnect.Adapter.StudentListAdapter;
 import com.example.campusconnect.Models.BatchModel;
 import com.example.campusconnect.Models.ExamScheduleModel;
@@ -18,38 +21,45 @@ import com.example.campusconnect.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class SearchBatch extends AppCompatActivity {
     TextView m1,  m2, m3, m4, m5, t1, t2, t3, t4, t5, w1, w2, w3, w4, w5, th1, th2, th3, th4, th5, f1, f2, f3, f4, f5;
     TextView batchId, cYear,cName,cDuration,cFees,currSem;
     androidx.appcompat.widget.SearchView searchBar;
     RecyclerView recyclerView;
     StudentListAdapter adapter;
+    BatchModel batch;
+    List<StudentModel> students;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_batch);
         fetchView();
-//        BatchModel batch = new BatchModel();
+        batch = new BatchModel();
+        ProgressDialog progressDialog= new ProgressDialog(SearchBatch.this);
+        progressDialog.setTitle("Searching the Data...");
         searchBar.setOnQueryTextListener(new androidx.appcompat.widget.SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                //REST API CALLING AND WORKING (retrofit)
-//                batch=
-                BatchModel batch=new BatchModel("BTechCSE2019","BTechCSE","2019","8th Semester", "90K","7th Semester");
-                StudentModel student1=new StudentModel();
-                student1.setStudentId(123);
-                student1.setStudentName("Zeeshan");
-                StudentModel student2= new StudentModel();
-                student2.setStudentId(234);
-                student2.setStudentName("Zaeema");
-                List<StudentModel> students=new ArrayList<>();
-                students.add(student1);
-                students.add(student2);
-                batch.setStudents(students);
+                progressDialog.show();
+                ApiUtilities.getAdminApiInterface().searchBatch(query).enqueue(new Callback<BatchModel>() {
+                    @Override
+                    public void onResponse(Call<BatchModel> call, Response<BatchModel> response) {
+                        batch=response.body();
+                        setView(batch);
+                        progressDialog.dismiss();
+                    }
 
+                    @Override
+                    public void onFailure(Call<BatchModel> call, Throwable t) {
+                        progressDialog.dismiss();
+                        Toast.makeText(SearchBatch.this, "NO BATCH FOUND!!", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
-
-                setView(batch);
                 return true;
             }
 
@@ -69,45 +79,41 @@ public class SearchBatch extends AppCompatActivity {
         cFees.setText(batch.getFeesAmount());
         currSem.setText(batch.getCurrentSemester());
 
-        List<StudentModel> students=new ArrayList<>();
-        students=batch.getStudents();
-        //SETTING ADAPTER IN RV
-        adapter=new StudentListAdapter(SearchBatch.this,students);
-        recyclerView.setLayoutManager(new LinearLayoutManager(SearchBatch.this));
-        recyclerView.setAdapter(adapter);
+        students.addAll(batch.getStudents());
+        adapter.notifyDataSetChanged();
 
-        //SETTING TABLE VIEW
-//        List<ScheduleModel> schedules=new ArrayList<>();
-//        schedules=batch.getSchedules();
-//        m1.setText(schedules.get(0).getSlot1());
-//        m2.setText(schedules.get(0).getSlot2());
-//        m3.setText(schedules.get(0).getSlot3());
-//        m4.setText(schedules.get(0).getSlot4());
-//        m5.setText(schedules.get(0).getSlot5());
-//
-//        t1.setText(schedules.get(1).getSlot1());
-//        t2.setText(schedules.get(1).getSlot2());
-//        t3.setText(schedules.get(1).getSlot3());
-//        t4.setText(schedules.get(1).getSlot4());
-//        t5.setText(schedules.get(1).getSlot5());
-//
-//        w1.setText(schedules.get(2).getSlot1());
-//        w2.setText(schedules.get(2).getSlot2());
-//        w3.setText(schedules.get(2).getSlot3());
-//        w4.setText(schedules.get(2).getSlot4());
-//        w5.setText(schedules.get(2).getSlot5());
-//
-//        th1.setText(schedules.get(3).getSlot1());
-//        th2.setText(schedules.get(3).getSlot2());
-//        th3.setText(schedules.get(3).getSlot3());
-//        th4.setText(schedules.get(3).getSlot4());
-//        th5.setText(schedules.get(3).getSlot5());
-//
-//        f1.setText(schedules.get(4).getSlot1());
-//        f2.setText(schedules.get(4).getSlot2());
-//        f3.setText(schedules.get(4).getSlot3());
-//        f4.setText(schedules.get(4).getSlot4());
-//        f5.setText(schedules.get(4).getSlot5());
+//        SETTING TABLE VIEW
+        List<ScheduleModel> schedules=new ArrayList<>();
+        schedules=batch.getSchedules();
+        m1.setText(schedules.get(0).getSlot1());
+        m2.setText(schedules.get(0).getSlot2());
+        m3.setText(schedules.get(0).getSlot3());
+        m4.setText(schedules.get(0).getSlot4());
+        m5.setText(schedules.get(0).getSlot5());
+
+        t1.setText(schedules.get(1).getSlot1());
+        t2.setText(schedules.get(1).getSlot2());
+        t3.setText(schedules.get(1).getSlot3());
+        t4.setText(schedules.get(1).getSlot4());
+        t5.setText(schedules.get(1).getSlot5());
+
+        w1.setText(schedules.get(2).getSlot1());
+        w2.setText(schedules.get(2).getSlot2());
+        w3.setText(schedules.get(2).getSlot3());
+        w4.setText(schedules.get(2).getSlot4());
+        w5.setText(schedules.get(2).getSlot5());
+
+        th1.setText(schedules.get(3).getSlot1());
+        th2.setText(schedules.get(3).getSlot2());
+        th3.setText(schedules.get(3).getSlot3());
+        th4.setText(schedules.get(3).getSlot4());
+        th5.setText(schedules.get(3).getSlot5());
+
+        f1.setText(schedules.get(4).getSlot1());
+        f2.setText(schedules.get(4).getSlot2());
+        f3.setText(schedules.get(4).getSlot3());
+        f4.setText(schedules.get(4).getSlot4());
+        f5.setText(schedules.get(4).getSlot5());
     }
 
     public void fetchView(){
@@ -144,5 +150,11 @@ public class SearchBatch extends AppCompatActivity {
         f3=findViewById(R.id.f3);
         f4=findViewById(R.id.f4);
         f5=findViewById(R.id.f5);
+
+        //SETTING ADAPTER IN RV
+        students=new ArrayList<>();
+        adapter=new StudentListAdapter(SearchBatch.this,students);
+        recyclerView.setLayoutManager(new LinearLayoutManager(SearchBatch.this));
+        recyclerView.setAdapter(adapter);
     }
 }

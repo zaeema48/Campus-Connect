@@ -19,6 +19,7 @@ public class UpdateTeacherSchedule extends AppCompatActivity {
     Button updateBtn;
     EditText teacher_id, slot1, slot2, slot3, slot4, slot5;
     AutoCompleteTextView autoCompleteTextView;
+    String day=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,13 +33,25 @@ public class UpdateTeacherSchedule extends AppCompatActivity {
         slot4=findViewById(R.id.slot4);
         slot5=findViewById(R.id.slot5);
 
-        String [] day= {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+        String [] days= {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_dropdown_item_1line, day);
+                android.R.layout.simple_dropdown_item_1line, days);
 
         autoCompleteTextView.setThreshold(1);
         autoCompleteTextView.setAdapter(adapter);
+
+        autoCompleteTextView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                day=adapterView.getItemAtPosition(i).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         TeacherScheduleModel teacherSchedule = new TeacherScheduleModel();
 
@@ -46,26 +59,13 @@ public class UpdateTeacherSchedule extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String teacherId=teacher_id.getText().toString(); //fetching the views
-                if(!teacherId.isEmpty()){
-
-                    autoCompleteTextView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                        @Override
-                        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-
-//                            scheduleModel.setDay();  ???
-                            teacherSchedule.setSlot1(slot1.getText().toString());
-                            teacherSchedule.setSlot2(slot2.getText().toString());
-                            teacherSchedule.setSlot3(slot3.getText().toString());
-                            teacherSchedule.setSlot4(slot4.getText().toString());
-                            teacherSchedule.setSlot5(slot5.getText().toString());
-                        }
-
-                        @Override
-                        public void onNothingSelected(AdapterView<?> adapterView) {
-
-                        }
-                    });
+                if(!teacherId.isEmpty() && !day.isEmpty()){
+                    teacherSchedule.setDay(day);
+                    teacherSchedule.setSlot1(slot1.getText().toString());
+                    teacherSchedule.setSlot2(slot2.getText().toString());
+                    teacherSchedule.setSlot3(slot3.getText().toString());
+                    teacherSchedule.setSlot4(slot4.getText().toString());
+                    teacherSchedule.setSlot5(slot5.getText().toString());
 
                 }
                 else

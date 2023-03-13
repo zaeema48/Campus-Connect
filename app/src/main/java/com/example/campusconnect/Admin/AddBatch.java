@@ -6,17 +6,24 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.campusconnect.API.ApiUtilities;
+import com.example.campusconnect.AdminPage;
 import com.example.campusconnect.Models.BatchModel;
 import com.example.campusconnect.Models.ScheduleModel;
 import com.example.campusconnect.R;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class AddBatch extends AppCompatActivity {
 
@@ -24,27 +31,50 @@ public class AddBatch extends AppCompatActivity {
     EditText year, feesAmount;
     EditText m1,  m2, m3, m4, m5, t1, t2, t3, t4, t5, w1, w2, w3, w4, w5, th1, th2, th3, th4, th5, f1, f2, f3, f4, f5;
     Button save;
-    String[] courseName = {"B.Tech CSE", "B.Tech ECE", "B.Tech AI","BCA", "B.Sc.", "MBBS", "LLB"};
-    String[] duration = {"3 yrs", "4 yrs",  "5 yrs"};
+    String courseName,duration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_batch);
-
         fetchView();
 
+        String[] courseNames = {"B.Tech CSE", "B.Tech ECE", "B.Tech AI","BCA", "B.Sc.", "MBBS", "LLB"};
+        String[] durations = {"3 yrs", "4 yrs",  "5 yrs"};
         AutoCompleteTextView acTextView = (AutoCompleteTextView) findViewById(R.id.course);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice, courseName);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice, courseNames);
 
         acTextView.setThreshold(1);
         acTextView.setAdapter(adapter);
 
         AutoCompleteTextView acTextView2 = (AutoCompleteTextView) findViewById(R.id.duration);
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice, duration);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice, durations);
         acTextView2.setThreshold(1);
         acTextView2.setAdapter(adapter2);
 
+        acTextView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                courseName=adapterView.getItemAtPosition(i).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        acTextView2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                duration=adapterView.getItemAtPosition(i).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         BatchModel batchModel = new BatchModel();
 
@@ -54,7 +84,7 @@ public class AddBatch extends AppCompatActivity {
             public void onClick(View view) {
                 String yr = year.getText().toString();
                 String fees = feesAmount.getText().toString();
-                if(!yr.isEmpty() && !fees.isEmpty()){
+                if(!yr.isEmpty() && !fees.isEmpty() && !courseName.isEmpty() && !duration.isEmpty()){
                     batchModel.setCourseName(acTextView.getText().toString());
                     batchModel.setCourseDuration(acTextView2.toString());
                     batchModel.setCourseYear(yr);
@@ -100,6 +130,20 @@ public class AddBatch extends AppCompatActivity {
 
 //              ADDING ALL THE SCHEDULES INTO THE BATCH MODEL
                     batchModel.setSchedules(schedules);
+
+//                    ApiUtilities.getAdminApiInterface().addBatch(batchModel).enqueue(new Callback<BatchModel>() {
+//                        @Override
+//                        public void onResponse(Call<BatchModel> call, Response<BatchModel> response) {
+//                            Toast.makeText(AddBatch.this, "SUCCESSFULLY SAVED", Toast.LENGTH_SHORT).show();
+//                            Intent intent= new Intent(AddBatch.this, AdminPage.class);
+//                            startActivity(intent);
+//                        }
+//
+//                        @Override
+//                        public void onFailure(Call<BatchModel> call, Throwable t) {
+//                            Toast.makeText(AddBatch.this, "AN ERROR WAS OCCURRED DURING SAVING!! ", Toast.LENGTH_SHORT).show();
+//                        }
+//                    });
 
                 }
                 else

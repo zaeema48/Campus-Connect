@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +14,7 @@ import com.example.campusconnect.Models.BatchModel;
 import com.example.campusconnect.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BatchListAdapter extends RecyclerView.Adapter<BatchListAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -29,9 +31,9 @@ public class BatchListAdapter extends RecyclerView.Adapter<BatchListAdapter.View
     }
 
     Context context;
-    ArrayList<BatchModel> batches;
+    List<BatchModel> batches=new ArrayList<>();
 
-    public BatchListAdapter(Context context, ArrayList<BatchModel> batches) {
+    public BatchListAdapter(Context context, List<BatchModel> batches) {
         this.context = context;
         this.batches = batches;
     }

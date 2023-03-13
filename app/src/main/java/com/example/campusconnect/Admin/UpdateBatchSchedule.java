@@ -21,6 +21,7 @@ public class UpdateBatchSchedule extends AppCompatActivity {
 Button updateBtn;
 EditText enter_batch_id, slot1, slot2, slot3, slot4, slot5;
 AutoCompleteTextView autoCompleteTextView;
+String day=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,13 +36,25 @@ AutoCompleteTextView autoCompleteTextView;
         slot4=findViewById(R.id.slot4);
         slot5=findViewById(R.id.slot5);
 
-        String [] day= {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+        String [] days= {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_dropdown_item_1line, day);
+                android.R.layout.simple_dropdown_item_1line, days);
 
         autoCompleteTextView.setThreshold(1);
         autoCompleteTextView.setAdapter(adapter);
+
+        autoCompleteTextView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                day=adapterView.getItemAtPosition(i).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         ScheduleModel scheduleModel = new ScheduleModel();
 
@@ -49,27 +62,13 @@ AutoCompleteTextView autoCompleteTextView;
             @Override
             public void onClick(View view) {
                 String batchId=enter_batch_id.getText().toString(); //fetching the views
-                if(!batchId.isEmpty()){
-
-                    autoCompleteTextView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                        @Override
-                        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-
-//                            scheduleModel.setDay();  ???
-                            scheduleModel.setSlot1(slot1.getText().toString());
-                            scheduleModel.setSlot2(slot2.getText().toString());
-                            scheduleModel.setSlot3(slot3.getText().toString());
-                            scheduleModel.setSlot4(slot4.getText().toString());
-                            scheduleModel.setSlot5(slot5.getText().toString());
-                        }
-
-                        @Override
-                        public void onNothingSelected(AdapterView<?> adapterView) {
-
-                        }
-                    });
-
+                if(!batchId.isEmpty() && !day.isEmpty()){
+                    scheduleModel.setDay(day);
+                    scheduleModel.setSlot1(slot1.getText().toString());
+                    scheduleModel.setSlot2(slot2.getText().toString());
+                    scheduleModel.setSlot3(slot3.getText().toString());
+                    scheduleModel.setSlot4(slot4.getText().toString());
+                    scheduleModel.setSlot5(slot5.getText().toString());
                 }
                 else
                     Toast.makeText(UpdateBatchSchedule.this, "PLEASE FILL THE REQUIED DETAILS!!", Toast.LENGTH_SHORT).show();
