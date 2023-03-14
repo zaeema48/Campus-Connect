@@ -102,6 +102,7 @@ public class AddStudent extends AppCompatActivity {
 
                         @Override
                         public void onFailure(Call<Void> call, Throwable t) {
+                            progressDialog.dismiss();
                             Toast.makeText(AddStudent.this, "An Error Occurred", Toast.LENGTH_SHORT).show();
                         }
                     });

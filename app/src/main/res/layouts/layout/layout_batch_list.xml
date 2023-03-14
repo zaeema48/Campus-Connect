@@ -16,12 +16,12 @@
 
             <TextView
                 android:id="@+id/batchId"
-                android:layout_width="110dp"
+                android:layout_width="145dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 android:text="BatchId"
                 android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:textSize="20sp"/>
 
 
             <TextView
@@ -31,7 +31,7 @@
                 android:layout_marginLeft="7dp"
                 android:text="Curse"
                 android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/batchYear"
@@ -40,7 +40,7 @@
                 android:layout_marginLeft="7dp"
                 android:text="Year"
                 android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/duration"
@@ -49,7 +49,7 @@
                 android:layout_marginLeft="7dp"
                 android:text="Duration"
                 android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
             <TextView
                 android:id="@+id/fees"
                 android:layout_width="110dp"
@@ -57,7 +57,7 @@
                 android:layout_marginLeft="7dp"
                 android:text="Fees"
                 android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/currSemester"
@@ -66,7 +66,7 @@
                 android:layout_marginLeft="7dp"
                 android:text="CurrSemester"
                 android:textColor="@color/black"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
         </TableRow>
     </TableLayout>
 

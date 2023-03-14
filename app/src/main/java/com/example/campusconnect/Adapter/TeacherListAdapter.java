@@ -13,6 +13,7 @@ import com.example.campusconnect.Models.TeacherModel;
 import com.example.campusconnect.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TeacherListAdapter extends RecyclerView.Adapter<TeacherListAdapter.ViewHolder> {
 
@@ -28,9 +29,9 @@ public class TeacherListAdapter extends RecyclerView.Adapter<TeacherListAdapter.
     }
 
     Context context;
-    ArrayList<TeacherModel> teachers= new ArrayList<>();
+    List<TeacherModel> teachers= new ArrayList<>();
 
-    public TeacherListAdapter(Context context, ArrayList<TeacherModel> teachers) {
+    public TeacherListAdapter(Context context, List<TeacherModel> teachers) {
         this.context = context;
         this.teachers = teachers;
     }

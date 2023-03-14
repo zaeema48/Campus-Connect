@@ -16,11 +16,10 @@
 
             <TextView
                 android:id="@+id/teacherId"
-                android:layout_width="90dp"
+                android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 android:text="teacherId"
-                android:layout_margin="15dp"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
@@ -31,7 +30,6 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="7dp"
                 android:text="Name"
-                android:layout_margin="15dp"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
@@ -41,7 +39,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="7dp"
                 android:text="salary"
-                android:layout_margin="15dp"
+
                 android:textColor="@color/black"
                 android:textSize="20dp" />
 
@@ -51,12 +49,10 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="7dp"
                 android:text="subject"
-                android:layout_margin="15dp"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
         </TableRow>
     </TableLayout>
-
 
 
 </RelativeLayout>

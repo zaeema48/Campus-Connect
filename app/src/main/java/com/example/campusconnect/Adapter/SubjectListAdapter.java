@@ -13,6 +13,7 @@ import com.example.campusconnect.Models.SubjectModel;
 import com.example.campusconnect.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SubjectListAdapter extends RecyclerView.Adapter<SubjectListAdapter.ViewHolder> {
 
@@ -26,9 +27,9 @@ public class SubjectListAdapter extends RecyclerView.Adapter<SubjectListAdapter.
     }
 
     Context context;
-    ArrayList<SubjectModel> subjectList;
+    List<SubjectModel> subjectList;
 
-    public SubjectListAdapter(Context context, ArrayList<SubjectModel> subjectList) {
+    public SubjectListAdapter(Context context, List<SubjectModel> subjectList) {
         this.context = context;
         this.subjectList = subjectList;
     }

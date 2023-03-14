@@ -5,16 +5,23 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.campusconnect.API.ApiUtilities;
 import com.example.campusconnect.Adapter.SearchStudentAdapter;
 import com.example.campusconnect.Models.StudentModel;
 import com.example.campusconnect.R;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SearchStudent extends AppCompatActivity {
 
@@ -31,6 +38,13 @@ public class SearchStudent extends AppCompatActivity {
         recyclerView= findViewById(R.id.searchStudentRV);
         name=findViewById(R.id.student_name);
         submitBtn=findViewById(R.id.submitBtn);
+        ProgressDialog progressDialog = new ProgressDialog(SearchStudent.this);
+        progressDialog.setTitle("Searching Student..");
+
+        List<StudentModel> students= new ArrayList<>();
+        adapter=new SearchStudentAdapter(SearchStudent.this,students);
+        recyclerView.setLayoutManager(new LinearLayoutManager(SearchStudent.this));
+        recyclerView.setAdapter(adapter);
 
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
@@ -38,23 +52,32 @@ public class SearchStudent extends AppCompatActivity {
             public void onClick(View view) {
                 studentName=name.getText().toString();
                 if(!studentName.isEmpty()){
-                    //REST API CALLING (retrofit work)
+                    progressDialog.show();
+                    ApiUtilities.getAdminApiInterface().searchStudent(studentName).enqueue(new Callback<List<StudentModel>>() {
+                        @Override
+                        public void onResponse(Call<List<StudentModel>> call, Response<List<StudentModel>> response) {
+                            students.clear();
+                            if(!response.body().isEmpty())
+                                students.addAll(response.body());
+                            else
+                                Toast.makeText(SearchStudent.this, "No Student Was Found!!", Toast.LENGTH_SHORT).show();
+                            adapter.notifyDataSetChanged();
+                            progressDialog.dismiss();
+                        }
+
+                        @Override
+                        public void onFailure(Call<List<StudentModel>> call, Throwable t) {
+                            progressDialog.dismiss();
+                            Toast.makeText(SearchStudent.this, "An Error Has Occurred!! ", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
                 }
                 else{
-                    Toast.makeText(SearchStudent.this, "No Student Name has been entered!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SearchStudent.this, "Enter The Student Name!!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        ArrayList<StudentModel> students= new ArrayList<>();
-        //TESTING DATA SET
-        StudentModel student1= new StudentModel(12,"abc123","Zaeema", "xyz123456@jjd", "acb123456@iik", true);
-        StudentModel student2= new StudentModel(16,"abc123","Zeeshan", "xyz123456@jjd", "acb123456@iik", true);
-        students.add(student1);
-        students.add(student2);
-
-        adapter=new SearchStudentAdapter(SearchStudent.this,students);
-        recyclerView.setLayoutManager(new LinearLayoutManager(SearchStudent.this));
-        recyclerView.setAdapter(adapter);
     }
 }

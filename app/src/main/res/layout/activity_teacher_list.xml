@@ -46,7 +46,7 @@
                     android:layout_height="match_parent">
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:layout_width="wrap_content"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:background="#FCEAEAEA"
                         android:text="Teacher ID"
@@ -55,7 +55,7 @@
                         android:textStyle="bold" />
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:layout_width="wrap_content"
+                        android:layout_width="90dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="7dp"
                         android:background="#FCEAEAEA"
@@ -65,7 +65,7 @@
                         android:textStyle="bold" />
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:layout_width="wrap_content"
+                        android:layout_width="90dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="7dp"
                         android:background="#FCEAEAEA"
@@ -75,7 +75,7 @@
                         android:textStyle="bold" />
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:layout_width="wrap_content"
+                        android:layout_width="90dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="7dp"
                         android:background="#FCEAEAEA"

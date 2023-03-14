@@ -79,6 +79,7 @@ public class SearchBatch extends AppCompatActivity {
         cFees.setText(batch.getFeesAmount());
         currSem.setText(batch.getCurrentSemester());
 
+        students.clear();
         students.addAll(batch.getStudents());
         adapter.notifyDataSetChanged();
 

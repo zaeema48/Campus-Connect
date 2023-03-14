@@ -132,6 +132,7 @@ public class AddBatch extends AppCompatActivity {
 
                         @Override
                         public void onFailure(Call<Void> call, Throwable t) {
+                            progressDialog.dismiss();
                             Toast.makeText(AddBatch.this, "AN ERROR HAS OCCURRED DURING SAVING!! ", Toast.LENGTH_SHORT).show();
                         }
                     });

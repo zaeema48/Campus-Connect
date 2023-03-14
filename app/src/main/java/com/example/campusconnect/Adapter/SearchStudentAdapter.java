@@ -13,6 +13,7 @@ import com.example.campusconnect.Models.StudentModel;
 import com.example.campusconnect.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SearchStudentAdapter extends RecyclerView.Adapter<SearchStudentAdapter.ViewHolder> {
 
@@ -31,9 +32,9 @@ public class SearchStudentAdapter extends RecyclerView.Adapter<SearchStudentAdap
     }
 
     Context context;
-    ArrayList<StudentModel> students;
+    List<StudentModel> students=new ArrayList<>();
 
-    public SearchStudentAdapter(Context context, ArrayList<StudentModel> students) {
+    public SearchStudentAdapter(Context context, List<StudentModel> students) {
         this.context = context;
         this.students = students;
     }
