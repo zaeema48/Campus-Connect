@@ -1,6 +1,7 @@
 package com.example.campusconnect.API;
 
 import com.example.campusconnect.Models.BatchModel;
+import com.example.campusconnect.Models.StudentModel;
 
 import java.util.List;
 
@@ -18,11 +19,18 @@ public interface AdminApiInterface {
     Call<List<BatchModel>> getBatch();
 
     @POST("add_batch")
-    Call<BatchModel> addBatch(
+    Call<Void> addBatch(
             @Body BatchModel batch
     );
+
     @GET("search_batch")
     Call<BatchModel> searchBatch(
         @Query("batchId") String batchId
+    );
+
+    @POST("add_student")
+    Call<Void> addStudent(
+            @Query("batchId") String batchId,
+            @Body List<StudentModel> students
     );
 }

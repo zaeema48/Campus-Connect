@@ -79,7 +79,8 @@
                         android:hint="Batch Year"
                         android:textColor="@color/black"
                         android:textColorHint="#75000000"
-                        android:textSize="15dp" />
+                        android:textSize="15dp"
+                        android:inputType="number"/>
 
                 </androidx.cardview.widget.CardView>
             </LinearLayout>

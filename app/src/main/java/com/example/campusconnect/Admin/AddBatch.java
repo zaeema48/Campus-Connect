@@ -3,6 +3,7 @@ package com.example.campusconnect.Admin;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -39,11 +40,10 @@ public class AddBatch extends AppCompatActivity {
         setContentView(R.layout.activity_add_batch);
         fetchView();
 
-        String[] courseNames = {"B.Tech CSE", "B.Tech ECE", "B.Tech AI","BCA", "B.Sc.", "MBBS", "LLB"};
+        String[] courseNames = {"B.TechCSE", "B.TechECE", "B.TechAI","BCA", "B.Sc.", "MBBS", "LLB"};
         String[] durations = {"3 yrs", "4 yrs",  "5 yrs"};
         AutoCompleteTextView acTextView = (AutoCompleteTextView) findViewById(R.id.course);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice, courseNames);
-
         acTextView.setThreshold(1);
         acTextView.setAdapter(adapter);
 
@@ -52,29 +52,8 @@ public class AddBatch extends AppCompatActivity {
         acTextView2.setThreshold(1);
         acTextView2.setAdapter(adapter2);
 
-        acTextView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                courseName=adapterView.getItemAtPosition(i).toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-        acTextView2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                duration=adapterView.getItemAtPosition(i).toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
+        ProgressDialog progressDialog=new ProgressDialog(AddBatch.this);
+        progressDialog.setTitle("Saving New Batch..");
 
         BatchModel batchModel = new BatchModel();
 
@@ -84,66 +63,78 @@ public class AddBatch extends AppCompatActivity {
             public void onClick(View view) {
                 String yr = year.getText().toString();
                 String fees = feesAmount.getText().toString();
+                courseName=acTextView.getText().toString();
+                duration=acTextView2.getText().toString();
                 if(!yr.isEmpty() && !fees.isEmpty() && !courseName.isEmpty() && !duration.isEmpty()){
-                    batchModel.setCourseName(acTextView.getText().toString());
-                    batchModel.setCourseDuration(acTextView2.toString());
+                    progressDialog.show();
+                    batchModel.setCourseName(courseName);
+                    batchModel.setCourseDuration(duration);
                     batchModel.setCourseYear(yr);
                     batchModel.setFeesAmount(fees);
 
 //                    ADDING SCHEDULES
                     ArrayList<ScheduleModel> schedules = new ArrayList<>();
+                    ScheduleModel schedule1= new ScheduleModel();
+                    schedule1.setDay("Monday");
+                    schedule1.setSlot1(m1.getText().toString());
+                    schedule1.setSlot2(m2.getText().toString());
+                    schedule1.setSlot3(m3.getText().toString());
+                    schedule1.setSlot4(m4.getText().toString());
+                    schedule1.setSlot5(m5.getText().toString());
+                    schedules.add(schedule1);
 
-                    schedules.get(0).setDay("Monday");
-                    schedules.get(0).setSlot1(m1.getText().toString());
-                    schedules.get(0).setSlot2(m2.getText().toString());
-                    schedules.get(0).setSlot3(m3.getText().toString());
-                    schedules.get(0).setSlot4(m4.getText().toString());
-                    schedules.get(0).setSlot5(m5.getText().toString());
+                    ScheduleModel schedule2= new ScheduleModel();
+                    schedule2.setDay("Tuesday");
+                    schedule2.setSlot1(t1.getText().toString());
+                    schedule2.setSlot2(t2.getText().toString());
+                    schedule2.setSlot3(t3.getText().toString());
+                    schedule2.setSlot4(t4.getText().toString());
+                    schedule2.setSlot5(t5.getText().toString());
+                    schedules.add(schedule2);
 
-                    schedules.get(1).setDay("Tuesday");
-                    schedules.get(1).setSlot1(t1.getText().toString());
-                    schedules.get(1).setSlot2(t2.getText().toString());
-                    schedules.get(1).setSlot3(t3.getText().toString());
-                    schedules.get(1).setSlot4(t4.getText().toString());
-                    schedules.get(1).setSlot5(t5.getText().toString());
+                    ScheduleModel schedule3= new ScheduleModel();
+                    schedule3.setDay("Wednesday");
+                    schedule3.setSlot1(w1.getText().toString());
+                    schedule3.setSlot2(w2.getText().toString());
+                    schedule3.setSlot3(w3.getText().toString());
+                    schedule3.setSlot4(w4.getText().toString());
+                    schedule3.setSlot5(w5.getText().toString());
+                    schedules.add(schedule3);
 
-                    schedules.get(2).setDay("Wednesday");
-                    schedules.get(2).setSlot1(w1.getText().toString());
-                    schedules.get(2).setSlot2(w2.getText().toString());
-                    schedules.get(2).setSlot3(w3.getText().toString());
-                    schedules.get(2).setSlot4(w4.getText().toString());
-                    schedules.get(2).setSlot5(w5.getText().toString());
+                    ScheduleModel schedule4= new ScheduleModel();
+                    schedule4.setDay("Thursday");
+                    schedule4.setSlot1(th1.getText().toString());
+                    schedule4.setSlot2(th2.getText().toString());
+                    schedule4.setSlot3(th3.getText().toString());
+                    schedule4.setSlot4(th4.getText().toString());
+                    schedule4.setSlot5(th5.getText().toString());
+                    schedules.add(schedule4);
 
-                    schedules.get(3).setDay("Thursday");
-                    schedules.get(3).setSlot1(th1.getText().toString());
-                    schedules.get(3).setSlot2(th2.getText().toString());
-                    schedules.get(3).setSlot3(th3.getText().toString());
-                    schedules.get(3).setSlot4(th4.getText().toString());
-                    schedules.get(3).setSlot5(th5.getText().toString());
-
-                    schedules.get(4).setDay("Friday");
-                    schedules.get(4).setSlot1(f1.getText().toString());
-                    schedules.get(4).setSlot2(f2.getText().toString());
-                    schedules.get(4).setSlot3(f3.getText().toString());
-                    schedules.get(4).setSlot4(f4.getText().toString());
-                    schedules.get(4).setSlot5(f5.getText().toString());
-
+                    ScheduleModel schedule5= new ScheduleModel();
+                    schedule5.setDay("Friday");
+                    schedule5.setSlot1(f1.getText().toString());
+                    schedule5.setSlot2(f2.getText().toString());
+                    schedule5.setSlot3(f3.getText().toString());
+                    schedule5.setSlot4(f4.getText().toString());
+                    schedule5.setSlot5(f5.getText().toString());
+                    schedules.add(schedule5);
 //              ADDING ALL THE SCHEDULES INTO THE BATCH MODEL
                     batchModel.setSchedules(schedules);
 
-//                    ApiUtilities.getAdminApiInterface().addBatch(batchModel).enqueue(new Callback<BatchModel>() {
-//                        @Override
-//                        public void onResponse(Call<BatchModel> call, Response<BatchModel> response) {
-//                            Toast.makeText(AddBatch.this, "SUCCESSFULLY SAVED", Toast.LENGTH_SHORT).show();
-//                            Intent intent= new Intent(AddBatch.this, AdminPage.class);
-//                            startActivity(intent);
-//                        }
-//
-//                        @Override
-//                        public void onFailure(Call<BatchModel> call, Throwable t) {
-//                            Toast.makeText(AddBatch.this, "AN ERROR WAS OCCURRED DURING SAVING!! ", Toast.LENGTH_SHORT).show();
-//                        }
-//                    });
+                    ApiUtilities.getAdminApiInterface().addBatch(batchModel).enqueue(new Callback<Void>() {
+                        @Override
+                        public void onResponse(Call<Void> call, Response<Void> response) {
+                            progressDialog.dismiss();
+                            Toast.makeText(AddBatch.this, "SUCCESSFULLY SAVED", Toast.LENGTH_SHORT).show();
+                            Intent intent= new Intent(AddBatch.this, AdminPage.class);
+                            startActivity(intent);
+                        }
+
+                        @Override
+                        public void onFailure(Call<Void> call, Throwable t) {
+                            Toast.makeText(AddBatch.this, "AN ERROR HAS OCCURRED DURING SAVING!! ", Toast.LENGTH_SHORT).show();
+                        }
+                    });
 
                 }
                 else
