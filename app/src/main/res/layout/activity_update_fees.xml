@@ -40,7 +40,8 @@
         android:padding="10dp"
         android:textColor="@color/black"
         android:textColorHint="#D0191919"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:inputType="number"/>
 
     <EditText
         android:id="@+id/transactionId"
@@ -53,7 +54,8 @@
         android:padding="10dp"
         android:textColorHint="#D0191919"
         android:textSize="20sp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:inputType="number"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/submit"

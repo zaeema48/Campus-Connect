@@ -15,6 +15,7 @@ import com.example.campusconnect.Models.NoticeModel;
 import com.example.campusconnect.R;
 import com.example.campusconnect.ViewNotice;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder> {
@@ -30,7 +31,7 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder
     }
 
     Context context;
-    List<NoticeModel> notices;
+    List<NoticeModel> notices= new ArrayList<>();
 
     public NoticeAdapter(Context context, List<NoticeModel> notices) {
         this.context = context;

@@ -5,23 +5,30 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.campusconnect.API.ApiUtilities;
 import com.example.campusconnect.Adapter.SearchExamScheduleAdapter;
 import com.example.campusconnect.Models.ExamScheduleModel;
 import com.example.campusconnect.R;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ExamSchedule extends AppCompatActivity {
     RecyclerView searchExam;
     SearchExamScheduleAdapter adapter;
     AppCompatButton searchBtn;
     EditText searchText;
-    String search_exam;
+    String batchId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,31 +38,41 @@ public class ExamSchedule extends AppCompatActivity {
         searchExam=findViewById(R.id.searchExamRV);
         searchBtn=findViewById(R.id.searchExam);
         searchText=findViewById(R.id.searchText);
+        ProgressDialog progressDialog= new ProgressDialog(ExamSchedule.this);
+        progressDialog.setTitle("Fetching Exam Schedules..");
+
+        List<ExamScheduleModel> examSchedule= new ArrayList<>();
+        adapter=new SearchExamScheduleAdapter(ExamSchedule.this,examSchedule);
+        searchExam.setLayoutManager(new LinearLayoutManager(ExamSchedule.this));
+        searchExam.setAdapter(adapter);
 
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                search_exam=searchText.getText().toString();
-                if(!search_exam.isEmpty()){
-                    //REST API CALLING (retrofit work)
+                batchId=searchText.getText().toString();
+                if(!batchId.isEmpty()){
+                    progressDialog.show();
+                    ApiUtilities.getAdminApiInterface().getExamSchedule(batchId).enqueue(new Callback<List<ExamScheduleModel>>() {
+                        @Override
+                        public void onResponse(Call<List<ExamScheduleModel>> call, Response<List<ExamScheduleModel>> response) {
+                            examSchedule.clear();
+                            examSchedule.addAll(response.body());
+                            adapter.notifyDataSetChanged();
+                            progressDialog.dismiss();
+                        }
+
+                        @Override
+                        public void onFailure(Call<List<ExamScheduleModel>> call, Throwable t) {
+                            progressDialog.dismiss();
+                            Toast.makeText(ExamSchedule.this, "An Error Has Occurred!!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
                 else{
-                    Toast.makeText(ExamSchedule.this, "Enter Batch id !!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ExamSchedule.this, "Enter Batch ID !!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        ArrayList<ExamScheduleModel> examSchedule= new ArrayList<>();
-        //TESTING DATA SET
-        ExamScheduleModel examScheduleModel=new ExamScheduleModel(1, "English", "12/03/23", "10:00AM", "201");
-        ExamScheduleModel examScheduleModel2=new ExamScheduleModel(2, "Hindi", "15/03/23", "10:00AM", "204");
-        ExamScheduleModel examScheduleModel3=new ExamScheduleModel(3, "Maths", "16/03/23", "10:00AM", "200");
-        examSchedule.add(examScheduleModel);
-        examSchedule.add(examScheduleModel2);
-        examSchedule.add(examScheduleModel3);
-
-        adapter=new SearchExamScheduleAdapter(ExamSchedule.this,examSchedule);
-        searchExam.setLayoutManager(new LinearLayoutManager(ExamSchedule.this));
-        searchExam.setAdapter(adapter);
     }
 }
