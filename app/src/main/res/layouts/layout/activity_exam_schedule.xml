@@ -35,7 +35,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
-            android:layout_width="250dp"
+            android:layout_width="240dp"
             android:layout_height="50dp"
             android:layout_below="@id/tag"
             android:layout_marginTop="15dp"
@@ -48,7 +48,7 @@
                 android:id="@+id/searchText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="Enter Exam Schedule"
+                android:hint="Enter Batch ID"
                 android:textColor="@color/black"
                 android:textColorHint="#75000000"
                 android:textSize="20dp" />
@@ -77,15 +77,16 @@
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_marginLeft="10dp"
                     android:background="#FCEAEAEA"
                     android:text="SUBJECT"
                     android:textColor="@color/black"
@@ -93,9 +94,9 @@
                     android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_marginLeft="10dp"
                     android:background="#FCEAEAEA"
                     android:text="DATE"
                     android:textColor="@color/black"
@@ -103,9 +104,9 @@
                     android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_marginLeft="10dp"
                     android:background="#FCEAEAEA"
                     android:text="TIME"
                     android:textColor="@color/black"
@@ -113,9 +114,9 @@
                     android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
+                    android:layout_marginLeft="10dp"
                     android:background="#FCEAEAEA"
                     android:text="ROOM"
                     android:textColor="@color/black"

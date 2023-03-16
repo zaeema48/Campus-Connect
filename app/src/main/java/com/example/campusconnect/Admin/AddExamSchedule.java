@@ -3,15 +3,23 @@ package com.example.campusconnect.Admin;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.campusconnect.API.ApiUtilities;
+import com.example.campusconnect.AdminPage;
 import com.example.campusconnect.Models.ExamScheduleModel;
 import com.example.campusconnect.R;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class AddExamSchedule extends AppCompatActivity {
     EditText batchId;
@@ -24,41 +32,67 @@ public class AddExamSchedule extends AppCompatActivity {
         setContentView(R.layout.activity_add_exam_schedule);
 
         fetchView();
+        ProgressDialog progressDialog = new ProgressDialog(AddExamSchedule.this);
+        progressDialog.setTitle("Adding Exam Schedule...");
 
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String batch_id = batchId.getText().toString();
                 if(!batch_id.isEmpty()){
-
+                    progressDialog.show();
                     ArrayList<ExamScheduleModel> examSchedule= new ArrayList<>();
+                    ExamScheduleModel schedule1= new ExamScheduleModel();
+                    schedule1.setDate(d1.getText().toString());
+                    schedule1.setSubject(s1.getText().toString());
+                    schedule1.setTime(t1.getText().toString());
+                    schedule1.setRoomAllocated(r1.getText().toString());
+                    examSchedule.add(schedule1);
 
-                    examSchedule.get(0).setSubject(s1.getText().toString());
-                    examSchedule.get(0).setDate(d1.getText().toString());
-                    examSchedule.get(0).setTime(t1.getText().toString());
-                    examSchedule.get(0).setRoomAllocated(r1.getText().toString());
+                    ExamScheduleModel schedule2= new ExamScheduleModel();
+                    schedule2.setDate(d2.getText().toString());
+                    schedule2.setSubject(s2.getText().toString());
+                    schedule2.setTime(t2.getText().toString());
+                    schedule2.setRoomAllocated(r2.getText().toString());
+                    examSchedule.add(schedule2);
 
-                    examSchedule.get(1).setSubject(s2.getText().toString());
-                    examSchedule.get(1).setDate(d2.getText().toString());
-                    examSchedule.get(1).setTime(t2.getText().toString());
-                    examSchedule.get(1).setRoomAllocated(r2.getText().toString());
+                    ExamScheduleModel schedule3= new ExamScheduleModel();
+                    schedule3.setDate(d3.getText().toString());
+                    schedule3.setSubject(s3.getText().toString());
+                    schedule3.setTime(t3.getText().toString());
+                    schedule3.setRoomAllocated(r3.getText().toString());
+                    examSchedule.add(schedule3);
 
-                    examSchedule.get(2).setSubject(s3.getText().toString());
-                    examSchedule.get(2).setDate(d3.getText().toString());
-                    examSchedule.get(2).setTime(t3.getText().toString());
-                    examSchedule.get(2).setRoomAllocated(r3.getText().toString());
+                    ExamScheduleModel schedule4= new ExamScheduleModel();
+                    schedule4.setDate(d4.getText().toString());
+                    schedule4.setSubject(s4.getText().toString());
+                    schedule4.setTime(t4.getText().toString());
+                    schedule4.setRoomAllocated(r4.getText().toString());
+                    examSchedule.add(schedule4);
 
-                    examSchedule.get(3).setSubject(s4.getText().toString());
-                    examSchedule.get(3).setDate(d4.getText().toString());
-                    examSchedule.get(3).setTime(t4.getText().toString());
-                    examSchedule.get(3).setRoomAllocated(r4.getText().toString());
-
-                    examSchedule.get(4).setSubject(s5.getText().toString());
-                    examSchedule.get(4).setDate(d5.getText().toString());
-                    examSchedule.get(4).setTime(t5.getText().toString());
-                    examSchedule.get(4).setRoomAllocated(r5.getText().toString());
+                    ExamScheduleModel schedule5= new ExamScheduleModel();
+                    schedule5.setDate(d5.getText().toString());
+                    schedule5.setSubject(s5.getText().toString());
+                    schedule5.setTime(t5.getText().toString());
+                    schedule5.setRoomAllocated(r5.getText().toString());
+                    examSchedule.add(schedule5);
 
                     //REST API WORK FOR SENDING THE ARRAYLIST
+                    ApiUtilities.getAdminApiInterface().addExamSchedule(batch_id,examSchedule).enqueue(new Callback<Void>() {
+                        @Override
+                        public void onResponse(Call<Void> call, Response<Void> response) {
+                            progressDialog.dismiss();
+                            Toast.makeText(AddExamSchedule.this, "Exam Schedule Added SuccessFully.", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(AddExamSchedule.this, AdminPage.class);
+                            startActivity(intent);
+                        }
+
+                        @Override
+                        public void onFailure(Call<Void> call, Throwable t) {
+                            progressDialog.dismiss();
+                            Toast.makeText(AddExamSchedule.this, "An Error Has Occurred!!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
 
                 else

@@ -1,9 +1,13 @@
 package com.example.campusconnect.API;
 
 import com.example.campusconnect.Models.BatchModel;
+import com.example.campusconnect.Models.ExamScheduleModel;
+import com.example.campusconnect.Models.NoticeModel;
+import com.example.campusconnect.Models.ScheduleModel;
 import com.example.campusconnect.Models.StudentModel;
 import com.example.campusconnect.Models.SubjectModel;
 import com.example.campusconnect.Models.TeacherModel;
+import com.example.campusconnect.Models.TeacherScheduleModel;
 
 import java.util.List;
 
@@ -55,6 +59,29 @@ public interface AdminApiInterface {
             @Query("name") String name
     );
 
+    @POST("add_exam_schedule")
+    Call<Void>addExamSchedule(
+            @Query("batchId") String batchId,
+            @Body List<ExamScheduleModel> examSchedule
+    );
+
+    @GET("fetch_exam_schedule")
+    Call<List<ExamScheduleModel>> getExamSchedule(
+            @Query("batchId") String batchId
+    );
+
+    @PUT("/update_batch_schedule")
+    Call<Void> updateBatchSchedule(
+            @Query("batchId") String batchId,
+            @Body ScheduleModel schedule
+    );
+
+    @PUT("update_fees_status")
+    Call<Void> UpdateFeeStatus(
+            @Query("studentId") int studentId,
+            @Query("transactionId") String transactionId
+    );
+
     @POST("add_teacher")
     Call<Void> addTeacher(
             @Body TeacherModel teacher
@@ -81,4 +108,29 @@ public interface AdminApiInterface {
 
     @GET("fetch_subject_list")
     Call<List<SubjectModel>> subjectList();
+
+    @PUT("update_teacher_schedule")
+    Call<Void> updateTeacherSchedule(
+            @Query("teacherId") int teacherId,
+            @Body TeacherScheduleModel teacherSchedule
+    );
+
+    @PUT("update_batch_semester")
+    Call<Void> updateBatchSemester(
+            @Query("batchId") String batchId,
+            @Query("currSem") String currSem
+    );
+
+    @POST("add_notification")
+    Call<Void> addNotice(
+            @Body NoticeModel notification
+    );
+
+    @GET("all_notifications")
+    Call<List<NoticeModel>> allNotices();
+
+    @GET("search_notification")
+    Call<List<NoticeModel>> searchNotice(
+            @Query("title") String title
+    );
 }

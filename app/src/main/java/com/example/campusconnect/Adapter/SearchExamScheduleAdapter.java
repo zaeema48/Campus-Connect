@@ -13,6 +13,7 @@ import com.example.campusconnect.Models.ExamScheduleModel;
 import com.example.campusconnect.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class SearchExamScheduleAdapter extends RecyclerView.Adapter<SearchExamScheduleAdapter.ViewHolder> {
 
@@ -29,9 +30,9 @@ public class SearchExamScheduleAdapter extends RecyclerView.Adapter<SearchExamSc
     }
 
     Context context;
-    ArrayList<ExamScheduleModel> examSchedule;
+    List<ExamScheduleModel> examSchedule= new ArrayList<>();
 
-    public SearchExamScheduleAdapter(Context context, ArrayList<ExamScheduleModel> examSchedule) {
+    public SearchExamScheduleAdapter(Context context, List<ExamScheduleModel> examSchedule) {
         this.context = context;
         this.examSchedule = examSchedule;
     }
@@ -45,10 +46,10 @@ public class SearchExamScheduleAdapter extends RecyclerView.Adapter<SearchExamSc
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-       holder.subject.setText("Subject \n" + examSchedule.get(position).getSubject());
-       holder.date.setText("Date \n" + examSchedule.get(position).getDate());
-       holder.time.setText("Time \n" + examSchedule.get(position).getTime());
-       holder.room.setText("Room no \n" + examSchedule.get(position).getRoomAllocated());
+       holder.subject.setText(examSchedule.get(position).getSubject());
+       holder.date.setText( examSchedule.get(position).getDate());
+       holder.time.setText(examSchedule.get(position).getTime());
+       holder.room.setText(examSchedule.get(position).getRoomAllocated());
     }
 
     @Override
