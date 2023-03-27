@@ -16,6 +16,7 @@
         android:theme="@style/Theme.CampusConnect"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+<<<<<<< HEAD
         <activity
             android:name=".TeacherProfileFragment"
             android:exported="false" />
@@ -28,6 +29,8 @@
         <activity
             android:name=".TeacherPage"
             android:exported="false" />
+=======
+>>>>>>> c23214bd5bc8c3186343f6e2b79fd727c864237e
         <activity
             android:name=".Admin.ExamSchedule"
             android:exported="false" />

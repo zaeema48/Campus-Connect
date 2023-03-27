@@ -2,9 +2,7 @@ package com.example.campusconnect;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
-
 import android.os.Bundle;
-
 import com.example.campusconnect.Adapter.PagerAdapter;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
@@ -15,6 +13,9 @@ public class TeacherPage extends AppCompatActivity {
     TabItem homeFragment, noticeFragment, profileFragment;
     ViewPager viewPager;
     PagerAdapter teacherPagerAdapter;
+
+
+public class TeacherPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,6 @@ public class TeacherPage extends AppCompatActivity {
 
         teacherPagerAdapter = new PagerAdapter(getSupportFragmentManager(), 3);
         viewPager.setAdapter(teacherPagerAdapter);
-
 
     }
 }

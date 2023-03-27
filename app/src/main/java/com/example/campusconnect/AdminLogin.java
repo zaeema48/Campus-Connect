@@ -44,31 +44,31 @@ CardView button;
                    progressDialog.show();
                    Intent intent = new Intent(AdminLogin.this, AdminPage.class);
                    startActivity(intent);
+                   ApiUtilities.getAdminApiInterface().adminLogin(admin_id,admin_password).enqueue(new Callback<AdminModel>() {
+                       @Override
+                       public void onResponse(Call<AdminModel> call, Response<AdminModel> response) {
+                           progressDialog.dismiss();
+                           if(response.body()!=null) {
+                               AdminModel admin = response.body();
+                               Intent intent= new Intent(AdminLogin.this,AdminPage.class);
+                               intent.putExtra("adminId",admin.getAdminId());
+                               startActivity(intent);
+                           }
+                           else
+                               Toast.makeText(AdminLogin.this, "User Id Or Password is Incorrect!!", Toast.LENGTH_SHORT).show();
+                       }
 
-//                   ApiUtilities.getAdminApiInterface().adminLogin(admin_id,admin_password).enqueue(new Callback<String>() {
-//                       @Override
-//                       public void onResponse(Call<String> call, Response<String> response) {
-//                           progressDialog.dismiss();
-//                           if(response.body().equals("Login SuccessFull.")) {
-//                               Intent intent = new Intent(AdminLogin.this, AdminPage.class);
-//                               startActivity(intent);
-//                           }
-//                           else
-//                               Toast.makeText(AdminLogin.this, "UserId or Password is incorrect!!", Toast.LENGTH_SHORT).show();
-//                       }
-//
-//                       @Override
-//                       public void onFailure(Call<String> call, Throwable t) {
-//                           progressDialog.dismiss();
-//                           Toast.makeText(AdminLogin.this, "An Error Has Occurred!!"+t, Toast.LENGTH_SHORT).show();
-//
-//                       }
-//                   });
+                       @Override
+                       public void onFailure(Call<AdminModel> call, Throwable t) {
+                           progressDialog.dismiss();
+                           Toast.makeText(AdminLogin.this, "An Error Has Occurred!!", Toast.LENGTH_SHORT).show();
+                       }
+                   });
 
                }
 
                else{
-                   Toast.makeText(AdminLogin.this, "Enter the correct credentials", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(AdminLogin.this, "Enter the correct credentials!!", Toast.LENGTH_SHORT).show();
                }
             }
 

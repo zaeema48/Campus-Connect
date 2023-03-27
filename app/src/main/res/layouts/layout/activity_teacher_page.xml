@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+=======
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+>>>>>>> c23214bd5bc8c3186343f6e2b79fd727c864237e
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".TeacherPage"
     android:background="@drawable/background">
 
@@ -68,3 +73,8 @@
     </com.google.android.material.tabs.TabLayout>
 
 </RelativeLayout>
+=======
+    tools:context=".TeacherPage">
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+>>>>>>> c23214bd5bc8c3186343f6e2b79fd727c864237e

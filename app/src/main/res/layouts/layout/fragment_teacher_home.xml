@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".Fragments.TeacherHomeFrag">
 
     <!-- TODO: Update blank fragment layout -->
@@ -10,5 +11,116 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/hello_blank_fragment" />
+=======
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.TeacherHomeFragment"
+    android:background="@drawable/background">
+
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:columnCount="2"
+        app:rowCount="3">
+        <TextView
+            android:id="@+id/viewSchedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:layout_gravity="fill"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:padding="8dp"
+            android:text="View Schedule"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:background="@drawable/curved_view_bg"/>
+
+        <TextView
+            android:id="@+id/viewStudentAttendance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:padding="8dp"
+            android:text="View Student \nAttendance"
+            app:layout_gravity="fill"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:background="@drawable/curved_view_bg"/>
+
+        <TextView
+            android:id="@+id/viewBatchAttendance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_gravity="fill"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_margin="20dp"
+            android:padding="8dp"
+            android:text="View Batch \nAttendance"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:background="@drawable/curved_view_bg"/>
+
+        <TextView
+            android:id="@+id/markAttendance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_gravity="fill"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_margin="20dp"
+            android:padding="8dp"
+            android:text="Mark Attendance"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:background="@drawable/curved_view_bg"/>
+
+
+        <TextView
+            android:id="@+id/uploadMarks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_gravity="fill"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_margin="20dp"
+            android:padding="8dp"
+            android:text="Upload Marks"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:background="@drawable/curved_view_bg"/>
+
+        <TextView
+            android:id="@+id/availableSlots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_gravity="fill"
+            app:layout_columnWeight="1"
+            app:layout_rowWeight="1"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_margin="20dp"
+            android:padding="8dp"
+            android:text="Search Availabe \nSlots"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:background="@drawable/curved_view_bg"/>
+
+    </androidx.gridlayout.widget.GridLayout>
+
+
+>>>>>>> c23214bd5bc8c3186343f6e2b79fd727c864237e
 
 </FrameLayout>

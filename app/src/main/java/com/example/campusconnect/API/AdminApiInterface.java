@@ -1,5 +1,6 @@
 package com.example.campusconnect.API;
 
+import com.example.campusconnect.Models.AdminModel;
 import com.example.campusconnect.Models.BatchModel;
 import com.example.campusconnect.Models.ExamScheduleModel;
 import com.example.campusconnect.Models.NoticeModel;
@@ -22,10 +23,10 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface AdminApiInterface {
-    String Base_URL="http://campusaws-env.eba-2mb7eggz.ap-northeast-1.elasticbeanstalk.com/";
+    String Base_URL="http://Campusaws-env.eba-xya6pvty.ap-south-1.elasticbeanstalk.com/";
 
     @GET("admin_login")
-    Call<String> adminLogin(
+    Call<AdminModel>  adminLogin(
             @Query("adminId") String adminId,
             @Query("password") String password
     );
