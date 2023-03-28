@@ -1,66 +1,83 @@
 package com.example.campusconnect.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.campusconnect.R;
+import com.example.campusconnect.Teacher.MarkAttendance;
+import com.example.campusconnect.Teacher.SearchAvailableSlots;
+import com.example.campusconnect.Teacher.UploadMarks;
+import com.example.campusconnect.Teacher.ViewBatchAttendance;
+import com.example.campusconnect.Teacher.ViewSchedule;
+import com.example.campusconnect.Teacher.ViewStudentAttendance;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link TeacherHomeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class TeacherHomeFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public TeacherHomeFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment TeacherHomeFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static TeacherHomeFragment newInstance(String param1, String param2) {
-        TeacherHomeFragment fragment = new TeacherHomeFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+TextView schedule, student_attendance, batch_attendance, mark_attendance, upload_marks, available_slots;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_teacher_home, container, false);
+        View view= inflater.inflate(R.layout.fragment_teacher_home, container, false);
+            schedule=view.findViewById(R.id.viewSchedule);
+            student_attendance=view.findViewById(R.id.viewStudentAttendance);
+            batch_attendance=view.findViewById(R.id.viewBatchAttendance);
+            mark_attendance=view.findViewById(R.id.viewStudentAttendance);
+            upload_marks=view.findViewById(R.id.uploadMarks);
+            available_slots=view.findViewById(R.id.availableSlots);
+
+            schedule.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getContext(), ViewSchedule.class);
+                    startActivity(intent);
+                }
+            });
+
+            student_attendance.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getContext(), ViewStudentAttendance.class);
+                    startActivity(intent);
+                }
+            });
+
+            batch_attendance.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getContext(), ViewBatchAttendance.class);
+                    startActivity(intent);
+                }
+            });
+
+            mark_attendance.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getContext(), MarkAttendance.class);
+                    startActivity(intent);
+                }
+            });
+
+            upload_marks.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getContext(), UploadMarks.class);
+                    startActivity(intent);
+                }
+            });
+
+            available_slots.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getContext(), SearchAvailableSlots.class);
+                    startActivity(intent);
+                }
+            });
+        return view;
     }
 }

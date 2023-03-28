@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.campusconnect.Fragments.NoticeFragment;
 import com.example.campusconnect.Fragments.ProfileFragment;
-import com.example.campusconnect.Fragments.TeacherHomeFrag;
+import com.example.campusconnect.Fragments.TeacherHomeFragment;
 
 public class TeacherPagerAdapter extends FragmentPagerAdapter {
     int count;
@@ -21,7 +21,7 @@ public class TeacherPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
        switch(position){
            case 0:
-               return new TeacherHomeFrag();
+               return new TeacherHomeFragment();
 
            case 1:
                return new NoticeFragment();
