@@ -1,6 +1,9 @@
 package com.example.campusconnect.API;
 
+import com.example.campusconnect.Models.AvailableSlot;
 import com.example.campusconnect.Models.TeacherModel;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -13,6 +16,13 @@ public interface TeacherApiInterface {
     Call<TeacherModel> teacherLogin(
             @Query("teacherId") int teacherId,
             @Query("password") String password
+    );
+
+    @GET("empty_slot")
+    Call<List<AvailableSlot>> availableSlot(
+        @Query("teacherId") int teacherId,
+        @Query("batchId") String batchId,
+        @Query("day") String day
     );
 
 }

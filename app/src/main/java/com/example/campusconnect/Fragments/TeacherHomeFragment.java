@@ -27,7 +27,7 @@ TextView schedule, student_attendance, batch_attendance, mark_attendance, upload
             schedule=view.findViewById(R.id.viewSchedule);
             student_attendance=view.findViewById(R.id.viewStudentAttendance);
             batch_attendance=view.findViewById(R.id.viewBatchAttendance);
-            mark_attendance=view.findViewById(R.id.viewStudentAttendance);
+            mark_attendance=view.findViewById(R.id.markAttendance);
             upload_marks=view.findViewById(R.id.uploadMarks);
             available_slots=view.findViewById(R.id.availableSlots);
 
