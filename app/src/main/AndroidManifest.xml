@@ -17,22 +17,22 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".SearchAvailableSlots"
+            android:name=".Teacher.SearchAvailableSlots"
             android:exported="false" />
         <activity
-            android:name=".UploadMarks"
+            android:name=".Teacher.UploadMarks"
             android:exported="false" />
         <activity
-            android:name=".MarkAttendance"
+            android:name=".Teacher.MarkAttendance"
             android:exported="false" />
         <activity
-            android:name=".ViewBatchAttendance"
+            android:name=".Teacher.ViewBatchAttendance"
             android:exported="false" />
         <activity
-            android:name=".ViewStudentAttendance"
+            android:name=".Teacher.ViewStudentAttendance"
             android:exported="false" />
         <activity
-            android:name=".ViewSchedule"
+            android:name=".Teacher.ViewSchedule"
             android:exported="false" />
         <activity
             android:name=".TeacherPage"
