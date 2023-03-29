@@ -51,6 +51,7 @@ public class TeacherLogin extends AppCompatActivity {
                                 Intent intent= new Intent(TeacherLogin.this,TeacherPage.class);
                                 intent.putExtra("teacherId",teacher.getTeacherId());
                                 intent.putExtra("teacherName",teacher.getTeacherName());
+                                intent.putExtra("teacherPaswd",teacher.getTeacherPassword());
                                 startActivity(intent);
                             }
                             else

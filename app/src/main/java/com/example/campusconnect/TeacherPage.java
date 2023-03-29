@@ -5,6 +5,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import com.example.campusconnect.Adapter.PagerAdapter;
 import com.example.campusconnect.Adapter.TeacherPagerAdapter;
+import com.example.campusconnect.Models.TeacherModel;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
@@ -14,6 +15,8 @@ public class TeacherPage extends AppCompatActivity {
     TabItem homeFragment, noticeFragment, profileFragment;
     ViewPager viewPager;
     TeacherPagerAdapter teacherPagerAdapter;
+
+    public static TeacherModel publicTeacher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,14 @@ public class TeacherPage extends AppCompatActivity {
         noticeFragment = findViewById(R.id.notice);
         profileFragment = findViewById(R.id.profile);
         viewPager = findViewById(R.id.fragment_container);
+
+        publicTeacher=new TeacherModel();
+        int id=getIntent().getIntExtra("teacherId",0);
+        String name=getIntent().getStringExtra("teacherName");
+        String password=getIntent().getStringExtra("teacherPaswd");
+        publicTeacher.setTeacherId(id);
+        publicTeacher.setTeacherName(name);
+        publicTeacher.setTeacherPassword(password);
 
         teacherPagerAdapter = new TeacherPagerAdapter(getSupportFragmentManager(), 3);
         viewPager.setAdapter(teacherPagerAdapter);

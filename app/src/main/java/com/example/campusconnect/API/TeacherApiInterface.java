@@ -1,6 +1,10 @@
 package com.example.campusconnect.API;
 
+import com.example.campusconnect.Models.ScheduleModel;
 import com.example.campusconnect.Models.TeacherModel;
+import com.example.campusconnect.Models.TeacherScheduleModel;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -13,6 +17,11 @@ public interface TeacherApiInterface {
     Call<TeacherModel> teacherLogin(
             @Query("teacherId") int teacherId,
             @Query("password") String password
+    );
+
+    @GET("teacher_schedule")
+    Call<List<TeacherScheduleModel>> scheduleModel(
+            @Query("teacherId") int teacherId
     );
 
 }
