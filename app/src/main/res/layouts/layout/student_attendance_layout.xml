@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/sId"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="S.ID"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/present"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Present"
+            android:layout_margin="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/black"/>
+    </TableRow>
+
+</RelativeLayout>

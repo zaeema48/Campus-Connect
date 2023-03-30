@@ -1,5 +1,6 @@
 package com.example.campusconnect.API;
 
+import com.example.campusconnect.Models.AttendanceModel;
 import com.example.campusconnect.Models.AvailableSlot;
 import com.example.campusconnect.Models.TeacherModel;
 import com.example.campusconnect.Models.TeacherScheduleModel;
@@ -31,6 +32,12 @@ public interface TeacherApiInterface {
         @Query("batchId") String batchId,
         @Query("day") String day
 
+    );
+
+    @GET("detailed_attendance")
+    Call<List<AttendanceModel>> studentAttendance(
+            @Query("studentId") int studentId,
+            @Query("subjectId") int subjectId
     );
 
 }
