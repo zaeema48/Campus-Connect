@@ -14,6 +14,7 @@ public class AttendanceModel {
         this.present = present;
     }
 
+
     public String getAttendanceId() {
         return attendanceId;
     }
@@ -37,4 +38,6 @@ public class AttendanceModel {
     public void setPresent(String present) {
         this.present = present;
     }
+
+
 }

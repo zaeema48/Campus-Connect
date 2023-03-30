@@ -1,5 +1,7 @@
 package com.example.campusconnect.Teacher;
 
+import static com.example.campusconnect.TeacherPage.publicTeacher;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -41,7 +43,7 @@ RecyclerView recyclerView;
         ProgressDialog progressDialog=new ProgressDialog(SearchAvailableSlots.this);
         progressDialog.setTitle("Fetching Available Slots...");
 
-        int teacherId=3000;
+        int teacherId=publicTeacher.getTeacherId();
 
         List<AvailableSlot> slots= new ArrayList<>();
         AvailableSlotAdapter adapter= new AvailableSlotAdapter(slots,SearchAvailableSlots.this);
