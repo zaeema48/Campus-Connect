@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/sid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/curved_view_bg"
+            android:padding="10dp"
+            android:text="S Id"
+            android:textSize="20sp"
+            android:layout_marginRight="8dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/sname"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/curved_view_bg"
+            android:padding="10dp"
+            android:text="Student name"
+            android:textSize="20sp"
+            android:layout_marginRight="8dp"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/marks"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/curved_view_bg"
+            android:padding="10dp"
+            android:gravity="center"
+            android:hint="Marks"
+            android:text=""
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:inputType="number"/>
+    </TableRow>
+
+</RelativeLayout>

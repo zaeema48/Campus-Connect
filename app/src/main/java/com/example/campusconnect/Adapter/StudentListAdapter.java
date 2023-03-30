@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.campusconnect.Models.StudentModel;
+import com.example.campusconnect.Models.StudentProgressModel;
 import com.example.campusconnect.R;
 
 import java.util.ArrayList;
