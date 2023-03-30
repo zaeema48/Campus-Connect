@@ -1,14 +1,20 @@
 package com.example.campusconnect.API;
 
 import com.example.campusconnect.Models.AvailableSlot;
+import com.example.campusconnect.Models.MarkAttendanceModel;
+import com.example.campusconnect.Models.StudentModel;
+import com.example.campusconnect.Models.StudentProgressModel;
 import com.example.campusconnect.Models.TeacherModel;
 import com.example.campusconnect.Models.TeacherScheduleModel;
+import com.example.campusconnect.Teacher.UploadMarks;
 
 import java.util.List;
 
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface TeacherApiInterface {
@@ -31,6 +37,16 @@ public interface TeacherApiInterface {
         @Query("batchId") String batchId,
         @Query("day") String day
 
+    );
+
+    @GET("batch_students")
+    Call<List<StudentModel>> studentBatch(
+            @Query("batchId") String batchId
+    );
+
+    @POST("upload_marks")
+    Call<Void>uploadMarks(
+            @Body List<StudentProgressModel> studentsProgress
     );
 
 }
