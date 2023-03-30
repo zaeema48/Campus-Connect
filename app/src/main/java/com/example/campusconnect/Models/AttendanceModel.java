@@ -2,10 +2,19 @@ package com.example.campusconnect.Models;
 
 public class AttendanceModel {
     String attendanceId;
-
     String date;
-
     String present;
+
+    public AttendanceModel() {
+    }
+
+    public AttendanceModel(String attendanceId, String date, String present) {
+        this.attendanceId = attendanceId;
+        this.date = date;
+        this.present = present;
+    }
+
+
     public String getAttendanceId() {
         return attendanceId;
     }
@@ -30,13 +39,5 @@ public class AttendanceModel {
         this.present = present;
     }
 
-    public AttendanceModel() {
-    }
-
-    public AttendanceModel(String attendanceId, String date, String present) {
-        this.attendanceId = attendanceId;
-        this.date = date;
-        this.present = present;
-    }
 
 }

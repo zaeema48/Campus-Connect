@@ -37,6 +37,7 @@ public class TeacherPage extends AppCompatActivity {
         publicTeacher.setTeacherId(id);
         publicTeacher.setTeacherName(name);
         publicTeacher.setTeacherPassword(password);
+
         SubjectModel subject= new SubjectModel();
         int subjectId=getIntent().getIntExtra("subjectId", 0);
         String subjectName=getIntent().getStringExtra("subjectName");
