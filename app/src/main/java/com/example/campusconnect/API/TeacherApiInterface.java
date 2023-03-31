@@ -15,6 +15,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.PUT;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
@@ -45,6 +46,7 @@ public interface TeacherApiInterface {
     Call<List<AttendanceModel>> studentAttendance(
             @Query("studentId") int studentId,
             @Query("subjectId") int subjectId
+    );
 
     @GET("batch_students")
     Call<List<StudentModel>> studentBatch(
@@ -54,6 +56,13 @@ public interface TeacherApiInterface {
     @POST("upload_marks")
     Call<Void>uploadMarks(
             @Body List<StudentProgressModel> studentsProgress
+    );
+
+    @PUT("change_teacher_password")
+    Call<Void> changeTeacherPassword(
+            @Query("teacherId") int teacherId,
+            @Query("oldPassword") String oldPassword,
+            @Query("newPassword") String newPassword
     );
 
 }

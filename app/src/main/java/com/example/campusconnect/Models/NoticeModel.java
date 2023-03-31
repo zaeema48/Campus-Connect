@@ -2,12 +2,13 @@ package com.example.campusconnect.Models;
 
 public class NoticeModel {
     int notificationId;
-    String notificationTitle, notificationMessage;
+    String notificationTitle, notificationMessage, author;
 
-    public NoticeModel(int notificationId, String notificationTitle, String notificationMessage) {
+    public NoticeModel(int notificationId, String notificationTitle, String notificationMessage, String author) {
         this.notificationId = notificationId;
         this.notificationTitle = notificationTitle;
         this.notificationMessage = notificationMessage;
+        this.author=author;
     }
 
     public NoticeModel() {
@@ -23,6 +24,14 @@ public class NoticeModel {
 
     public String getNotificationTitle() {
         return notificationTitle;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public void setNotificationTitle(String notificationTitle) {

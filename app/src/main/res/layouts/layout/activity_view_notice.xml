@@ -27,4 +27,19 @@
         android:text="main body of the notice"
         android:textColor="@color/black"
         android:textSize="22sp"/>
+    <TextView
+        android:id="@+id/author"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/notice"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/curved_view_bg"
+        android:gravity="center_horizontal"
+        android:text="AUTHOR"
+        android:padding="5dp"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold" />
 </RelativeLayout>

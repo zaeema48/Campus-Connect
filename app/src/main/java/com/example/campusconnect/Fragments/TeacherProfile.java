@@ -1,8 +1,11 @@
 package com.example.campusconnect.Fragments;
 
+import static com.example.campusconnect.TeacherPage.publicTeacher;
+
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -10,23 +13,28 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.campusconnect.Admin.AdminPasswordChange;
 import com.example.campusconnect.MainActivity;
 import com.example.campusconnect.R;
 import com.example.campusconnect.Teacher.ChangePassword;
 
-public class ProfileFragment extends Fragment {
+public class TeacherProfile extends Fragment {
 
-    androidx.appcompat.widget.AppCompatButton logout, changePswBtn;
+    AppCompatButton logoutBtn, changePswBtn;
+    TextView name;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_profile, container, false);
-        logout=view.findViewById(R.id.logout);
-        changePswBtn=view.findViewById(R.id.changePasw);
+        View view=inflater.inflate(R.layout.fragment_teacher_profile, container, false);
 
-        logout.setOnClickListener(new View.OnClickListener() {
+        logoutBtn=view.findViewById(R.id.logout);
+        changePswBtn=view.findViewById(R.id.changePasw);
+        name=view.findViewById(R.id.name);
+
+        name.setText(publicTeacher.getTeacherName());
+
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(getContext(), MainActivity.class);
@@ -37,10 +45,12 @@ public class ProfileFragment extends Fragment {
         changePswBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(getContext(), AdminPasswordChange.class);
-                startActivity(intent);
+                   Intent intent= new Intent(getContext(), ChangePassword.class);
+                   startActivity(intent);
+
             }
         });
+
 
         return view;
     }

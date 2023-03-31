@@ -82,14 +82,11 @@
                 android:text="Present"
                 android:textSize="24sp"/>
         </TableRow>
-        <TableRow
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/viewStudentRV"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/viewStudentRV"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        </TableRow>
+            android:layout_height="wrap_content"/>
+
     </TableLayout>
 
 </RelativeLayout>
