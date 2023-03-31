@@ -38,9 +38,12 @@ public class TeacherPage extends AppCompatActivity {
         publicTeacher.setTeacherId(id);
         publicTeacher.setTeacherName(name);
         publicTeacher.setTeacherPassword(password);
-        SubjectModel subject = new SubjectModel();
-        int subjectId=getIntent().getIntExtra("subjectId",0);
+
+        SubjectModel subject= new SubjectModel();
+        int subjectId=getIntent().getIntExtra("subjectId", 0);
+        String subjectName=getIntent().getStringExtra("subjectName");
         subject.setSubjectId(subjectId);
+        subject.setSubjectName(subjectName);
         publicTeacher.setSubject(subject);
 
         teacherPagerAdapter = new TeacherPagerAdapter(getSupportFragmentManager(), 3);
@@ -66,5 +69,7 @@ public class TeacherPage extends AppCompatActivity {
         });
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+
     }
 }
