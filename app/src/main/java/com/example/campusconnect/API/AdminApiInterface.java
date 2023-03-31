@@ -31,6 +31,13 @@ public interface AdminApiInterface {
             @Query("password") String password
     );
 
+    @PUT("admin_password")
+    Call<Void> changePassword(
+            @Query("adminId") String adminId,
+            @Query("oldPassword") String oldPassword,
+            @Query("newPassword") String newPassword
+    );
+
     @GET("get_batches")
     Call<List<BatchModel>> getBatch();
 

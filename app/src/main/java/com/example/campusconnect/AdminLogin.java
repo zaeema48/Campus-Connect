@@ -52,6 +52,7 @@ CardView button;
                                AdminModel admin = response.body();
                                Intent intent= new Intent(AdminLogin.this,AdminPage.class);
                                intent.putExtra("adminId",admin.getAdminId());
+                               intent.putExtra("adminPasw", admin.getPassword());
                                startActivity(intent);
                            }
                            else

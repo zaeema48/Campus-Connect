@@ -3,6 +3,7 @@ package com.example.campusconnect;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,7 +19,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AddNotice extends AppCompatActivity {
-    EditText title, noticeBody;
+    EditText title, noticeBody, author;
     CardView save;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class AddNotice extends AppCompatActivity {
         setContentView(R.layout.activity_add_notice);
         title=findViewById(R.id.title);
         noticeBody=findViewById(R.id.notice);
+        author=findViewById(R.id.author);
         save=findViewById(R.id.save);
 
         ProgressDialog progressDialog= new ProgressDialog(AddNotice.this);
@@ -34,11 +36,12 @@ public class AddNotice extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!title.getText().toString().isEmpty() && !noticeBody.getText().toString().isEmpty()){
+                if(!title.getText().toString().isEmpty() && !noticeBody.getText().toString().isEmpty()  && !author.getText().toString().isEmpty()){
                     progressDialog.show();
                     NoticeModel notice= new NoticeModel();
                     notice.setNotificationTitle(title.getText().toString());
                     notice.setNotificationMessage(noticeBody.getText().toString());
+                    notice.setAuthor(author.getText().toString());
 
                     ApiUtilities.getAdminApiInterface().addNotice(notice).enqueue(new Callback<Void>() {
                         @Override

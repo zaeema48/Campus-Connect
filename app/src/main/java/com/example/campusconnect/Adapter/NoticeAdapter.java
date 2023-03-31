@@ -54,6 +54,7 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder
                 Intent intent=new Intent(context, ViewNotice.class);
                 intent.putExtra("title",notices.get(position).getNotificationTitle());
                 intent.putExtra("message",notices.get(position).getNotificationMessage());
+                intent.putExtra("author",notices.get(position).getAuthor());
                 context.startActivity(intent);
             }
         });
