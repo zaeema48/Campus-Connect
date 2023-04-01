@@ -30,6 +30,7 @@ public class TeacherPage extends AppCompatActivity {
         profileFragment = findViewById(R.id.profile);
         viewPager = findViewById(R.id.fragment_container);
 
+        //setting teacher object
         publicTeacher=new TeacherModel();
         int id=getIntent().getIntExtra("teacherId",0);
         String name=getIntent().getStringExtra("teacherName");
@@ -37,6 +38,7 @@ public class TeacherPage extends AppCompatActivity {
         publicTeacher.setTeacherId(id);
         publicTeacher.setTeacherName(name);
         publicTeacher.setTeacherPassword(password);
+
         SubjectModel subject= new SubjectModel();
         int subjectId=getIntent().getIntExtra("subjectId", 0);
         String subjectName=getIntent().getStringExtra("subjectName");

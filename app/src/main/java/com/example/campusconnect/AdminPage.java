@@ -6,6 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 
 import com.example.campusconnect.Adapter.PagerAdapter;
+import com.example.campusconnect.Models.AdminModel;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
@@ -15,6 +16,8 @@ public class AdminPage extends AppCompatActivity {
     TabItem homeFragment, notificationFragment, profileFragment;
     ViewPager viewPager;
     PagerAdapter pagerAdapter;
+
+    public static AdminModel publicAdmin;
 
 
     @Override
@@ -27,6 +30,11 @@ public class AdminPage extends AppCompatActivity {
         notificationFragment = findViewById(R.id.notification);
         profileFragment = findViewById(R.id.profile);
         viewPager = findViewById(R.id.fragment_container);
+
+        //setting admin object
+        publicAdmin= new AdminModel();
+        publicAdmin.setAdminId(getIntent().getStringExtra("adminId"));
+        publicAdmin.setPassword(getIntent().getStringExtra("adminPasw"));
 
         pagerAdapter = new PagerAdapter(getSupportFragmentManager(), 3);
         viewPager.setAdapter(pagerAdapter);
