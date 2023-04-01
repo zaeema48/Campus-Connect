@@ -1,12 +1,10 @@
 package com.example.campusconnect.API;
 
 import com.example.campusconnect.Models.AvailableSlot;
-import com.example.campusconnect.Models.MarkAttendanceModel;
 import com.example.campusconnect.Models.StudentModel;
 import com.example.campusconnect.Models.StudentProgressModel;
 import com.example.campusconnect.Models.TeacherModel;
 import com.example.campusconnect.Models.TeacherScheduleModel;
-import com.example.campusconnect.Teacher.UploadMarks;
 
 import java.util.List;
 
@@ -40,13 +38,19 @@ public interface TeacherApiInterface {
     );
 
     @GET("batch_students")
-    Call<List<StudentModel>> studentBatch(
+    Call<List<StudentModel>> BatchStudents(
             @Query("batchId") String batchId
     );
 
     @POST("upload_marks")
     Call<Void>uploadMarks(
             @Body List<StudentProgressModel> studentsProgress
+    );
+
+    @GET("view_batch_attendance")
+    Call<List<StudentProgressModel>> viewBatchAttendance(
+            @Query ("batchId") String batchId,
+            @Query ("subjectId")int subjectId
     );
 
 }

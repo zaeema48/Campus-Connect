@@ -11,6 +11,8 @@ import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -27,10 +29,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class SearchAvailableSlots extends AppCompatActivity {
-EditText batchId, day;
+EditText batchId;
+AutoCompleteTextView day;
 AppCompatButton button;
 RecyclerView recyclerView;
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +44,10 @@ RecyclerView recyclerView;
 
         ProgressDialog progressDialog=new ProgressDialog(SearchAvailableSlots.this);
         progressDialog.setTitle("Fetching Available Slots...");
+        String [] days= {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+        ArrayAdapter<String> dropdownAdapter =new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, days);
+        day.setThreshold(1);
+        day.setAdapter(dropdownAdapter);
 
         int teacherId=publicTeacher.getTeacherId();
 
