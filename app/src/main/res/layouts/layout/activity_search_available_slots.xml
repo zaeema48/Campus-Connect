@@ -27,39 +27,43 @@
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/a"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tag"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="30dp">
+
 
         <EditText
             android:id="@+id/batchId"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:layout_below="@id/tag"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/curved_view_bg"
+            android:padding="5dp"
             android:hint="ENTER BATCH ID"
-            android:textSize="14dp"
+            android:textSize="22sp"
             android:textStyle="italic"/>
-    </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/b"
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:id="@+id/autoText"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/a"
-        android:layout_marginTop="12dp"
-        android:layout_marginLeft="30dp">
+        android:layout_below="@id/batchId"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        app:boxBackgroundColor="@color/white">
 
-        <EditText
-            android:id="@+id/enterDay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="ENTER DAY"
-            android:textSize="14dp"
-            android:textStyle="italic"/>
-    </androidx.cardview.widget.CardView>
+    <AutoCompleteTextView
+        android:id="@+id/enterDay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inputType="none"
+        android:text="Select Day"
+        android:padding="5dp"
+        android:background="@drawable/curved_view_bg"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="italic"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/searchButton"
@@ -74,8 +78,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="350dp"
         android:layout_height="400dp"
-        android:background="#E4AFDFF6"
-        android:layout_below="@id/b"
+        app:cardBackgroundColor="#E4AFDFF6"
+        android:layout_below="@id/autoText"
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
         app:cardCornerRadius="15dp">

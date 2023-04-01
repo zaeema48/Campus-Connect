@@ -56,7 +56,7 @@ UploadMarksAdapter adapter;
                 batchId=batch_id.getText().toString();
                 if(!batchId.isEmpty()){
                     progressDialog.show();
-                    TeacherApi.getTeacherApiInterface().studentBatch(batchId).enqueue(new Callback<List<StudentModel>>() {
+                    TeacherApi.getTeacherApiInterface().BatchStudents(batchId).enqueue(new Callback<List<StudentModel>>() {
                         @Override
                         public void onResponse(Call<List<StudentModel>> call, Response<List<StudentModel>> response) {
                             studentList.clear();
