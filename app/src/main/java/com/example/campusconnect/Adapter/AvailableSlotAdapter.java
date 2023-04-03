@@ -1,31 +1,40 @@
 package com.example.campusconnect.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.campusconnect.API.TeacherApi;
+import com.example.campusconnect.API.TeacherApiInterface;
 import com.example.campusconnect.Models.AvailableSlot;
 import com.example.campusconnect.R;
+import com.example.campusconnect.TeacherPage;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class AvailableSlotAdapter extends RecyclerView.Adapter<AvailableSlotAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView slot;
-        AppCompatButton btn;
+        AppCompatButton takeSlot;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             slot=itemView.findViewById(R.id.text);
-            btn=itemView.findViewById(R.id.take);
+            takeSlot=itemView.findViewById(R.id.take);
         }
     }
     List<AvailableSlot> slots = new ArrayList<>();
@@ -45,10 +54,22 @@ public class AvailableSlotAdapter extends RecyclerView.Adapter<AvailableSlotAdap
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.slot.setText(slots.get(position).getSlot());
-        holder.btn.setOnClickListener(new View.OnClickListener() {
+        holder.takeSlot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                TeacherApi.getTeacherApiInterface().bookExtraClass(slots.get(position)).enqueue(new Callback<Void>() {
+                    @Override
+                    public void onResponse(Call<Void> call, Response<Void> response) {
+                        Toast.makeText(context, "Class booked successfully", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(context, TeacherPage.class);
+                        context.startActivity(intent);
+                    }
 
+                    @Override
+                    public void onFailure(Call<Void> call, Throwable t) {
+                        Toast.makeText(context, "An error has occurred!!", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
     }
