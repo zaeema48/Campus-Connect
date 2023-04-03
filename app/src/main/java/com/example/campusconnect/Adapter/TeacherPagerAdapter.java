@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.example.campusconnect.Fragments.NoticeFragment;
 import com.example.campusconnect.Fragments.ProfileFragment;
 import com.example.campusconnect.Fragments.TeacherHomeFragment;
+import com.example.campusconnect.Fragments.TeacherProfile;
 
 public class TeacherPagerAdapter extends FragmentPagerAdapter {
     int count;
@@ -27,7 +28,7 @@ public class TeacherPagerAdapter extends FragmentPagerAdapter {
                return new NoticeFragment();
 
            case 2:
-               return new ProfileFragment();
+               return new TeacherProfile();
 
            default:
                return null;

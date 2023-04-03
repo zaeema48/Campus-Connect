@@ -7,7 +7,6 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +14,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.campusconnect.API.TeacherApi;
-import com.example.campusconnect.Adapter.ViewBatchAttendanceAdpter;
+import com.example.campusconnect.Adapter.ViewBatchAttendanceAdapter;
 import com.example.campusconnect.Models.StudentModel;
 import com.example.campusconnect.Models.StudentProgressModel;
 import com.example.campusconnect.R;
@@ -45,7 +44,7 @@ AppCompatButton btn;
 
         List<StudentModel> students= new ArrayList<>();
         List<StudentProgressModel> studentProgressList= new ArrayList<>();
-        ViewBatchAttendanceAdpter adapter= new ViewBatchAttendanceAdpter(ViewBatchAttendance.this, students, studentProgressList);
+        ViewBatchAttendanceAdapter adapter= new ViewBatchAttendanceAdapter(ViewBatchAttendance.this, students, studentProgressList);
         recyclerView.setLayoutManager(new LinearLayoutManager(ViewBatchAttendance.this));
         recyclerView.setAdapter(adapter);
 

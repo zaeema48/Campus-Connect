@@ -46,7 +46,7 @@ public class StudentAttendanceAdapter extends RecyclerView.Adapter<StudentAttend
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.studentId.setText(sID);
+        holder.studentId.setText(""+sID);
         holder.date.setText(attendances.get(position).getDate());
         holder.present.setText(attendances.get(position).getPresent());
     }

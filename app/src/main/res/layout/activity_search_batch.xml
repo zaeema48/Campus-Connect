@@ -27,7 +27,7 @@
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.appcompat.widget.SearchView
+    <SearchView
         android:id="@+id/search_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,6 +40,8 @@
         app:defaultQueryHint="Enter the Batch ID"
         app:iconifiedByDefault="false" />
 
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,103 +52,103 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-        <androidx.gridlayout.widget.GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:columnCount="2">
-            <TextView
-                android:id="@+id/batchId"
-                android:layout_width="160dp"
+            <androidx.gridlayout.widget.GridLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:gravity="center_horizontal"
-                android:background="@drawable/curved_view_bg"
-                android:text="Batch ID"
-                android:textColor="@color/black"
-                android:padding="10dp"
-                android:textSize="20sp"/>
-            <TextView
-                android:id="@+id/cYear"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:gravity="center_horizontal"
-                android:background="@drawable/curved_view_bg"
-                android:text="cYear"
-                android:textColor="@color/black"
-                android:padding="10dp"
-                android:textSize="20sp"/>
-            <TextView
-                android:id="@+id/cName"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:gravity="center_horizontal"
-                android:background="@drawable/curved_view_bg"
-                android:text="cName"
-                android:textColor="@color/black"
-                android:padding="10dp"
-                android:textSize="20sp"/>
-            <TextView
-                android:id="@+id/cDuration"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:gravity="center_horizontal"
-                android:background="@drawable/curved_view_bg"
-                android:text="cDuration"
-                android:textColor="@color/black"
-                android:padding="10dp"
-                android:textSize="20sp"/>
-            <TextView
-                android:id="@+id/cFees"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:gravity="center_horizontal"
-                android:background="@drawable/curved_view_bg"
-                android:text="cFees"
-                android:textColor="@color/black"
-                android:padding="10dp"
-                android:textSize="20sp"/>
-            <TextView
-                android:id="@+id/curSem"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:gravity="center_horizontal"
-                android:background="@drawable/curved_view_bg"
-                android:text="curSem"
-                android:textColor="@color/black"
-                android:padding="10dp"
-                android:textSize="20sp"/>
+                app:columnCount="2">
+                <TextView
+                    android:id="@+id/batchId"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center_horizontal"
+                    android:background="@drawable/curved_view_bg"
+                    android:text="Batch ID"
+                    android:textColor="@color/black"
+                    android:padding="10dp"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/cYear"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center_horizontal"
+                    android:background="@drawable/curved_view_bg"
+                    android:text="cYear"
+                    android:textColor="@color/black"
+                    android:padding="10dp"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/cName"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center_horizontal"
+                    android:background="@drawable/curved_view_bg"
+                    android:text="cName"
+                    android:textColor="@color/black"
+                    android:padding="10dp"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/cDuration"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center_horizontal"
+                    android:background="@drawable/curved_view_bg"
+                    android:text="cDuration"
+                    android:textColor="@color/black"
+                    android:padding="10dp"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/cFees"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center_horizontal"
+                    android:background="@drawable/curved_view_bg"
+                    android:text="cFees"
+                    android:textColor="@color/black"
+                    android:padding="10dp"
+                    android:textSize="20sp"/>
+                <TextView
+                    android:id="@+id/curSem"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center_horizontal"
+                    android:background="@drawable/curved_view_bg"
+                    android:text="curSem"
+                    android:textColor="@color/black"
+                    android:padding="10dp"
+                    android:textSize="20sp"/>
 
-        </androidx.gridlayout.widget.GridLayout>
+            </androidx.gridlayout.widget.GridLayout>
 
 
-           <androidx.cardview.widget.CardView
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_marginTop="40dp"
-               android:layout_marginLeft="10dp"
-               app:cardBackgroundColor="#E489CFF0"
-               app:cardCornerRadius="8dp">
-               <TextView
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_margin="10dp"
-                   android:text="STUDENTS LIST"
-                   android:textColor="@color/white"
-                   android:textSize="20dp"
-                   android:textStyle="bold" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="10dp"
+                app:cardBackgroundColor="#E489CFF0"
+                app:cardCornerRadius="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="STUDENTS LIST"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
-           </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -632,8 +634,7 @@
 
             </HorizontalScrollView>
 
-       </LinearLayout>
-
+        </LinearLayout>
 
     </ScrollView>
 

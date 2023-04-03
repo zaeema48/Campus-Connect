@@ -32,7 +32,8 @@ public class ViewStudentAttendance extends AppCompatActivity {
     EditText studentId;
     Button submit;
     RecyclerView recyclerView;
-    int sId=23;
+    int sId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +42,6 @@ public class ViewStudentAttendance extends AppCompatActivity {
         studentId=findViewById(R.id.studentId);
         submit=findViewById(R.id.submit);
         recyclerView=findViewById(R.id.viewStudentRV);
-
 
         int subjectId=publicTeacher.getSubject().getSubjectId();
         List<AttendanceModel> attendances= new ArrayList<>();
@@ -55,13 +55,13 @@ public class ViewStudentAttendance extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 sId=Integer.parseInt(studentId.getText().toString());
-
                 TeacherApi.getTeacherApiInterface().studentAttendance(sId,subjectId).enqueue(new Callback<List<AttendanceModel>>() {
                     @Override
                     public void onResponse(Call<List<AttendanceModel>> call, Response<List<AttendanceModel>> response) {
                         progressDialog.show();
                         attendances.clear();
                         attendances.addAll(response.body());
+                        Toast.makeText(ViewStudentAttendance.this, ""+sId, Toast.LENGTH_SHORT).show();
                         adapter.notifyDataSetChanged();
                         progressDialog.dismiss();
                     }

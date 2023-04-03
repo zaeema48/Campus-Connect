@@ -38,8 +38,11 @@
             android:layout_marginLeft="30dp"
             android:background="@drawable/curved_view_bg"
             android:padding="5dp"
+            android:gravity="center"
             android:hint="ENTER BATCH ID"
+            android:textColorHint="#DD1E1E1E"
             android:textSize="22sp"
+            android:textColor="@color/black"
             android:textStyle="italic"/>
 
     <com.google.android.material.textfield.TextInputLayout

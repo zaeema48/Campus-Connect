@@ -4,8 +4,10 @@ import static com.example.campusconnect.AdminPage.publicAdmin;
 import static com.example.campusconnect.TeacherPage.publicTeacher;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -14,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.campusconnect.API.ApiUtilities;
 import com.example.campusconnect.API.TeacherApi;
+import com.example.campusconnect.AdminPage;
 import com.example.campusconnect.R;
 import com.example.campusconnect.Teacher.ChangePassword;
 
@@ -23,7 +26,7 @@ import retrofit2.Response;
 
 public class AdminPasswordChange extends AppCompatActivity {
     EditText oldPasw, newPasw, rePasw;
-    TextView save;
+    CardView save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +63,8 @@ public class AdminPasswordChange extends AppCompatActivity {
                             public void onResponse(Call<Void> call, Response<Void> response) {
                                 progressDialog.dismiss();
                                 Toast.makeText(AdminPasswordChange.this, "Password changed successfully.", Toast.LENGTH_SHORT).show();
+                                Intent intent=new Intent(AdminPasswordChange.this, AdminPage.class);
+                                startActivity(intent);
                             }
 
                             @Override
