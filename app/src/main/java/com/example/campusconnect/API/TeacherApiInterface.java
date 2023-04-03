@@ -2,6 +2,7 @@ package com.example.campusconnect.API;
 
 import com.example.campusconnect.Models.AttendanceModel;
 import com.example.campusconnect.Models.AvailableSlot;
+import com.example.campusconnect.Models.MarkAttendanceModel;
 import com.example.campusconnect.Models.StudentModel;
 import com.example.campusconnect.Models.StudentProgressModel;
 import com.example.campusconnect.Models.TeacherModel;
@@ -68,6 +69,18 @@ public interface TeacherApiInterface {
             @Query("teacherId") int teacherId,
             @Query("oldPassword") String oldPassword,
             @Query("newPassword") String newPassword
+    );
+
+    @POST("book_extra_class")
+    Call<Void> bookExtraClass (
+         @Body AvailableSlot slot
+    );
+
+    @POST("mark_attendance")
+    Call<Void> markAttendance (
+            @Query ("subjectId")int subjectId,
+            @Query ("batchId") String batchId,
+            @Body List<MarkAttendanceModel> attendances
     );
 
 }
