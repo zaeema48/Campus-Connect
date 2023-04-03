@@ -46,7 +46,7 @@ public class MarkAttendance extends AppCompatActivity {
         recyclerView=findViewById(R.id.rv);
 
         List<StudentModel> studentList= new ArrayList<>();
-        MarkAttendanceAdapter adapter= new MarkAttendanceAdapter(MarkAttendance.this, studentList, date);
+        MarkAttendanceAdapter adapter= new MarkAttendanceAdapter(MarkAttendance.this, studentList);
         recyclerView.setLayoutManager(new LinearLayoutManager(MarkAttendance.this));
         recyclerView.setAdapter(adapter);
 
@@ -80,6 +80,7 @@ public class MarkAttendance extends AppCompatActivity {
                         public void onResponse(Call<List<StudentModel>> call, Response<List<StudentModel>> response) {
                             studentList.clear();
                             studentList.addAll(response.body());
+                            adapter.setDate(date);
                             adapter.notifyDataSetChanged();
                         }
 

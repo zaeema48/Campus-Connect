@@ -45,7 +45,7 @@ public class ViewStudentAttendance extends AppCompatActivity {
 
         int subjectId=publicTeacher.getSubject().getSubjectId();
         List<AttendanceModel> attendances= new ArrayList<>();
-        StudentAttendanceAdapter adapter= new StudentAttendanceAdapter(ViewStudentAttendance.this,attendances,sId);
+        StudentAttendanceAdapter adapter= new StudentAttendanceAdapter(ViewStudentAttendance.this,attendances);
         recyclerView.setLayoutManager(new LinearLayoutManager(ViewStudentAttendance.this));
         recyclerView.setAdapter(adapter);
 
@@ -61,7 +61,7 @@ public class ViewStudentAttendance extends AppCompatActivity {
                         progressDialog.show();
                         attendances.clear();
                         attendances.addAll(response.body());
-                        Toast.makeText(ViewStudentAttendance.this, ""+sId, Toast.LENGTH_SHORT).show();
+                        adapter.setsID(sId);
                         adapter.notifyDataSetChanged();
                         progressDialog.dismiss();
                     }

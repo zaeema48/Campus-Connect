@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="10dp">
+    android:layout_marginTop="5dp">
 
     <TableRow
         android:layout_width="match_parent"
@@ -11,37 +11,39 @@
 
         <TextView
             android:id="@+id/sid"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/curved_view_bg"
-            android:padding="10dp"
+            android:layout_marginLeft="10dp"
             android:text="S Id"
-            android:textSize="20sp"
-            android:layout_marginRight="8dp"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
             android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/sname"
-            android:layout_width="150dp"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/curved_view_bg"
-            android:padding="10dp"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
             android:text="Student name"
-            android:textSize="20sp"
-            android:layout_marginRight="8dp"
+            android:textStyle="bold|italic"
+            android:textSize="18sp"
             android:textColor="@color/black"/>
 
         <EditText
             android:id="@+id/marks"
-            android:layout_width="120dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:background="@drawable/curved_view_bg"
             android:padding="10dp"
             android:gravity="center"
-            android:hint="Marks"
-            android:text=""
-            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:hint="marks"
+            android:textColorHint="#BE504F4F"
+            android:textSize="18sp"
             android:textColor="@color/black"
+            android:textStyle="bold|italic"
             android:inputType="number"/>
     </TableRow>
 

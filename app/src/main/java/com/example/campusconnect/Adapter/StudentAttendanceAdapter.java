@@ -29,12 +29,19 @@ public class StudentAttendanceAdapter extends RecyclerView.Adapter<StudentAttend
 
     Context context;
     List<AttendanceModel> attendances= new ArrayList<>();
-    int sID;
+    private int sID;
 
-    public StudentAttendanceAdapter(Context context, List<AttendanceModel> attendances, int sId) {
+    public int getsID() {
+        return sID;
+    }
+
+    public void setsID(int sID) {
+        this.sID = sID;
+    }
+
+    public StudentAttendanceAdapter(Context context, List<AttendanceModel> attendances) {
         this.context = context;
         this.attendances = attendances;
-        this.sID=sId;
     }
 
     @NonNull
