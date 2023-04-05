@@ -21,6 +21,7 @@ public class TeacherLogin extends AppCompatActivity {
     EditText tId, password;
     CardView button;
 
+    public static TeacherModel publicTeacher;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +40,7 @@ public class TeacherLogin extends AppCompatActivity {
                 String teacher_id= tId.getText().toString();
                 String teacherPassword=password.getText().toString();
 
-                if(teacher_id!=null && teacherPassword!=null){
+                if(!teacher_id.isEmpty() && !teacherPassword.isEmpty()){
                     progressDialog.show();
                     int teacherId=Integer.parseInt(teacher_id);
                     TeacherApi.getTeacherApiInterface().teacherLogin(teacherId, teacherPassword).enqueue(new Callback<TeacherModel>() {
@@ -49,11 +50,8 @@ public class TeacherLogin extends AppCompatActivity {
                             if(response.body()!=null){
                                 TeacherModel teacher=response.body();
                                 Intent intent= new Intent(TeacherLogin.this,TeacherPage.class);
-                                intent.putExtra("teacherId",teacher.getTeacherId());
-                                intent.putExtra("teacherName",teacher.getTeacherName());
-                                intent.putExtra("teacherPaswd",teacher.getTeacherPassword());
-                                intent.putExtra("subjectName", teacher.getSubject().getSubjectName());
-                                intent.putExtra("subjectId", teacher.getSubject().getSubjectId());
+                                publicTeacher=teacher;
+
                                 startActivity(intent);
                             }
                             else
@@ -68,7 +66,7 @@ public class TeacherLogin extends AppCompatActivity {
                     });
                 }
                 else
-                    Toast.makeText(TeacherLogin.this, "Enter the correct credentials!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TeacherLogin.this, "Please Enter the User Id and Password!!", Toast.LENGTH_SHORT).show();
             }
         });
     }

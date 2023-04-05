@@ -1,6 +1,7 @@
 package com.example.campusconnect.Adapter;
 
-import static com.example.campusconnect.TeacherPage.publicTeacher;
+
+import static com.example.campusconnect.TeacherLogin.publicTeacher;
 
 import android.content.Context;
 import android.text.Editable;

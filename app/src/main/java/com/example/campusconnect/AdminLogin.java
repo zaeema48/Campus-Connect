@@ -20,8 +20,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AdminLogin extends AppCompatActivity {
-EditText adminId, password;
-CardView button;
+    EditText adminId, password;
+    CardView button;
+    public static AdminModel publicAdmin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,8 +52,9 @@ CardView button;
                            if(response.body()!=null) {
                                AdminModel admin = response.body();
                                Intent intent= new Intent(AdminLogin.this,AdminPage.class);
-                               intent.putExtra("adminId",admin.getAdminId());
-                               intent.putExtra("adminPasw", admin.getPassword());
+//                               intent.putExtra("adminId",admin.getAdminId());
+//                               intent.putExtra("adminPasw", admin.getPassword());
+                               publicAdmin=admin;
                                startActivity(intent);
                            }
                            else

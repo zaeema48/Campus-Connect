@@ -1,9 +1,9 @@
 package com.example.campusconnect.Teacher;
 
-import static com.example.campusconnect.TeacherPage.publicTeacher;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import static com.example.campusconnect.TeacherLogin.publicTeacher;
+
+import androidx.appcompat.app.AppCompatActivity;;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -11,9 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.campusconnect.API.TeacherApi;
-import com.example.campusconnect.Adapter.StudentListAdapter;
-import com.example.campusconnect.Admin.SearchBatch;
-import com.example.campusconnect.Models.ScheduleModel;
 import com.example.campusconnect.Models.TeacherScheduleModel;
 import com.example.campusconnect.R;
 

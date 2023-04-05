@@ -31,7 +31,7 @@ public class MarkAttendance extends AppCompatActivity {
     EditText batch;
     TextView day;
     MaterialButton dateBtn;
-    AppCompatButton submit;
+    AppCompatButton submit, upload;
     RecyclerView recyclerView;
 
     String date="";
@@ -43,6 +43,7 @@ public class MarkAttendance extends AppCompatActivity {
         dateBtn=findViewById(R.id.dateBtn);
         day=findViewById(R.id.date);
         submit=findViewById(R.id.submit_button);
+        upload=findViewById(R.id.upload);
         recyclerView=findViewById(R.id.rv);
 
         List<StudentModel> studentList= new ArrayList<>();
@@ -80,6 +81,7 @@ public class MarkAttendance extends AppCompatActivity {
                         public void onResponse(Call<List<StudentModel>> call, Response<List<StudentModel>> response) {
                             studentList.clear();
                             studentList.addAll(response.body());
+                            adapter.setBatchId(batchId);
                             adapter.setDate(date);
                             adapter.notifyDataSetChanged();
                         }
@@ -94,6 +96,13 @@ public class MarkAttendance extends AppCompatActivity {
                     Toast.makeText(MarkAttendance.this, "Please Select Batch and Date!!", Toast.LENGTH_SHORT).show();
                 }
 
+            }
+        });
+
+        upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                adapter.uploadAttendance();
             }
         });
 

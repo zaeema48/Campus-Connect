@@ -17,8 +17,6 @@ public class AdminPage extends AppCompatActivity {
     ViewPager viewPager;
     PagerAdapter pagerAdapter;
 
-    public static AdminModel publicAdmin;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +29,10 @@ public class AdminPage extends AppCompatActivity {
         profileFragment = findViewById(R.id.profile);
         viewPager = findViewById(R.id.fragment_container);
 
-        //setting admin object
-        publicAdmin= new AdminModel();
-        publicAdmin.setAdminId(getIntent().getStringExtra("adminId"));
-        publicAdmin.setPassword(getIntent().getStringExtra("adminPasw"));
+//        //setting admin object
+//        publicAdmin= new AdminModel();
+//        publicAdmin.setAdminId(getIntent().getStringExtra("adminId"));
+//        publicAdmin.setPassword(getIntent().getStringExtra("adminPasw"));
 
         pagerAdapter = new PagerAdapter(getSupportFragmentManager(), 3);
         viewPager.setAdapter(pagerAdapter);

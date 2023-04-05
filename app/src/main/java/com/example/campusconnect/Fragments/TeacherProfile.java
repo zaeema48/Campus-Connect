@@ -1,6 +1,7 @@
 package com.example.campusconnect.Fragments;
 
-import static com.example.campusconnect.TeacherPage.publicTeacher;
+
+import static com.example.campusconnect.TeacherLogin.publicTeacher;
 
 import android.content.Intent;
 import android.os.Bundle;

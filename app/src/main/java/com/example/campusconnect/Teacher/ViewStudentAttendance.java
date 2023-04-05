@@ -1,9 +1,9 @@
 package com.example.campusconnect.Teacher;
 
-import static com.example.campusconnect.TeacherPage.publicTeacher;
+
+import static com.example.campusconnect.TeacherLogin.publicTeacher;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.ButtonBarLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,7 +16,6 @@ import android.widget.Toast;
 
 import com.example.campusconnect.API.TeacherApi;
 import com.example.campusconnect.Adapter.StudentAttendanceAdapter;
-import com.example.campusconnect.Adapter.StudentListAdapter;
 import com.example.campusconnect.Models.AttendanceModel;
 import com.example.campusconnect.R;
 

@@ -41,9 +41,9 @@
         android:textSize="20sp" />
 
     <com.google.android.material.button.MaterialButton
-        android:layout_width="100dp"
+        android:layout_width="70dp"
         android:layout_height="?attr/actionBarSize"
-        android:text="Date"
+        app:icon="@drawable/calendar"
         android:id="@+id/dateBtn"
         android:layout_below="@id/batch"
         android:layout_marginLeft="20dp"
@@ -55,7 +55,7 @@
         android:layout_width="110dp"
         android:layout_height="50dp"
         android:layout_below="@id/batch"
-        android:layout_marginLeft="130dp"
+        android:layout_marginLeft="100dp"
         android:layout_marginTop="18dp"
         android:background="@drawable/curved_view_bg"
         android:gravity="center"
@@ -128,6 +128,17 @@
             android:id="@+id/rv" />
     </TableLayout>
 
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/upload"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:background="#E489CFF0"
+        android:text="upload"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="18sp"/>
 
 </RelativeLayout>

@@ -13,6 +13,7 @@
             android:id="@+id/sid"
             android:text="S. Id"
             android:gravity="center"
+            android:layout_gravity="center"
             android:textSize="20sp"
             android:textColor="@color/black"
             android:textStyle="bold|italic"/>
@@ -23,12 +24,37 @@
             android:id="@+id/name"
             android:text="NAME"
             android:gravity="center"
+            android:layout_gravity="center"
             android:textSize="20sp"
             android:textColor="@color/black"
             android:textStyle="bold|italic"
             android:layout_marginLeft="15dp" />
 
-
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioGroup"
+            android:orientation="horizontal"
+            android:layout_marginLeft="15dp">
+            <RadioButton
+                android:id="@+id/present"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="P"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:buttonTint="#0915EC" />
+            <RadioButton
+            android:id="@+id/absent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:buttonTint="#E40B0B"/>
+    </RadioGroup>
 
     </TableRow>
 

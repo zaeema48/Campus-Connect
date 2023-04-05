@@ -1,6 +1,6 @@
 package com.example.campusconnect.Teacher;
 
-import static com.example.campusconnect.TeacherPage.publicTeacher;
+import static com.example.campusconnect.TeacherLogin.publicTeacher;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;

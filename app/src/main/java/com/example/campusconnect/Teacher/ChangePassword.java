@@ -1,6 +1,6 @@
 package com.example.campusconnect.Teacher;
 
-import static com.example.campusconnect.TeacherPage.publicTeacher;
+import static com.example.campusconnect.TeacherLogin.publicTeacher;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -9,9 +9,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.campusconnect.API.TeacherApi;

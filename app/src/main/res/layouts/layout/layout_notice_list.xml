@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#AEFFFFFF"
-    android:layout_marginTop="8dp">
+    android:layout_marginTop="6dp"
+    android:layout_marginLeft="6dp"
+    android:layout_marginRight="6dp">
     <LinearLayout
         android:id="@+id/notice"
         android:layout_width="match_parent"

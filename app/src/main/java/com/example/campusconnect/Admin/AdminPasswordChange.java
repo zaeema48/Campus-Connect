@@ -1,7 +1,6 @@
 package com.example.campusconnect.Admin;
 
-import static com.example.campusconnect.AdminPage.publicAdmin;
-import static com.example.campusconnect.TeacherPage.publicTeacher;
+import static com.example.campusconnect.AdminLogin.publicAdmin;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -11,14 +10,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.campusconnect.API.ApiUtilities;
-import com.example.campusconnect.API.TeacherApi;
 import com.example.campusconnect.AdminPage;
 import com.example.campusconnect.R;
-import com.example.campusconnect.Teacher.ChangePassword;
 
 import retrofit2.Call;
 import retrofit2.Callback;
