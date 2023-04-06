@@ -31,6 +31,7 @@ public class ProfileFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent= new Intent(getContext(), MainActivity.class);
                 startActivity(intent);
+                getActivity().finish();
             }
         });
 

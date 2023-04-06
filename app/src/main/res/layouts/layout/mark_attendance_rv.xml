@@ -35,25 +35,27 @@
             android:layout_height="wrap_content"
             android:id="@+id/radioGroup"
             android:orientation="horizontal"
-            android:layout_marginLeft="15dp">
+            android:layout_marginLeft="25dp">
             <RadioButton
                 android:id="@+id/present"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="P"
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="18sp"
                 android:buttonTint="#0915EC" />
             <RadioButton
-            android:id="@+id/absent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="A"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:buttonTint="#E40B0B"/>
+                android:id="@+id/absent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:buttonTint="#E40B0B"/>
     </RadioGroup>
 
     </TableRow>
