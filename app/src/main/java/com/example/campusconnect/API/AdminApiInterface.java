@@ -23,7 +23,7 @@ import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface AdminApiInterface {
-    String Base_URL="http://Campusaws-env.eba-xya6pvty.ap-south-1.elasticbeanstalk.com/";
+    String Base_URL="http://campusaws-env.eba-xya6pvty.ap-south-1.elasticbeanstalk.com/admin/";
 
     @GET("admin_login")
     Call<AdminModel>  adminLogin(

@@ -65,10 +65,16 @@ RecyclerView recyclerView;
                     TeacherApi.getTeacherApiInterface().availableSlot(teacherId, batch_id, slotDay).enqueue(new Callback<List<AvailableSlot>>() {
                         @Override
                         public void onResponse(Call<List<AvailableSlot>> call, Response<List<AvailableSlot>> response) {
-                            slots.clear();
-                            slots.addAll(response.body());
-                            adapter.notifyDataSetChanged();
-                            progressDialog.dismiss();
+                            if(response.body()!=null) {
+                                slots.clear();
+                                slots.addAll(response.body());
+                                adapter.notifyDataSetChanged();
+                                progressDialog.dismiss();
+                            }
+                            if(slots.isEmpty()){
+                                progressDialog.dismiss();
+                                Toast.makeText(SearchAvailableSlots.this, "NO AVAILABLE SLOT!!", Toast.LENGTH_SHORT).show();
+                            }
                         }
 
                         @Override

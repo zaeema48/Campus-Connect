@@ -1,5 +1,6 @@
 package com.example.campusconnect.API;
 
+import com.example.campusconnect.Models.NoticeModel;
 import com.example.campusconnect.Models.ScheduleModel;
 import com.example.campusconnect.Models.StudentModel;
 import com.example.campusconnect.Teacher.ViewSchedule;
@@ -22,5 +23,13 @@ public interface StudentApiInterface {
     @GET("class_schedules")
     public Call<List<ScheduleModel>> viewCLassSchedule(
             @Query("studentId") int studentId
+    );
+
+    @GET("notification")
+    public Call<List<NoticeModel>> getNotices();
+
+    @GET("search_notification")
+    public Call<List<NoticeModel>> searchNotices(
+            @Query("title") String title
     );
 }

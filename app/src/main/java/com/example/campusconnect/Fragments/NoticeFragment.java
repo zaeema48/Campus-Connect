@@ -60,9 +60,11 @@ public class NoticeFragment extends Fragment {
         ApiUtilities.getAdminApiInterface().allNotices().enqueue(new Callback<List<NoticeModel>>() {
             @Override
             public void onResponse(Call<List<NoticeModel>> call, Response<List<NoticeModel>> response) {
-                notices.clear();
-                notices.addAll(response.body());
-                adapter.notifyDataSetChanged();
+                if(response.body()!=null) {
+                    notices.clear();
+                    notices.addAll(response.body());
+                    adapter.notifyDataSetChanged();
+                }
             }
 
             @Override
@@ -79,10 +81,16 @@ public class NoticeFragment extends Fragment {
                 ApiUtilities.getAdminApiInterface().searchNotice(query).enqueue(new Callback<List<NoticeModel>>() {
                     @Override
                     public void onResponse(Call<List<NoticeModel>> call, Response<List<NoticeModel>> response) {
-                        notices.clear();
-                        notices.addAll(response.body());
-                        adapter.notifyDataSetChanged();
-                        progressDialog.dismiss();
+                        if(response.body()!=null) {
+                            notices.clear();
+                            notices.addAll(response.body());
+                            adapter.notifyDataSetChanged();
+                            progressDialog.dismiss();
+                        }
+                        if(notices.isEmpty()){
+                            progressDialog.dismiss();
+                            Toast.makeText(getContext(), "Nothing Found!!", Toast.LENGTH_SHORT).show();
+                        }
                     }
 
                     @Override
