@@ -17,6 +17,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".StudentPage"
+            android:exported="false" />
+        <activity
             android:name=".Admin.AdminPasswordChange"
             android:exported="false" />
         <activity
