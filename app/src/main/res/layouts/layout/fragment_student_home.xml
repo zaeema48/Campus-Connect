@@ -3,12 +3,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.StudentHomeFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.StudentHomeFragment"
+    android:background="@drawable/background">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.gridlayout.widget.GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="100dp"
+        app:columnCount="2"
+        app:rowCount="3">
+
+        <TextView
+            android:id="@+id/viewSchedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/curved_view_bg"
+            android:gravity="center_horizontal|center_vertical"
+            android:padding="8dp"
+            app:layout_rowWeight="1"
+            app:layout_gravity="fill"
+            android:text="View Schedule"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/viewAttendance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:padding="8dp"
+            app:layout_rowWeight="1"
+            app:layout_gravity="fill"
+            android:text="View \nAttendance"
+            android:gravity="center_horizontal|center_vertical"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:background="@drawable/curved_view_bg"/>
+
+        <TextView
+            android:id="@+id/viewMarks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_margin="20dp"
+            android:padding="8dp"
+            app:layout_rowWeight="1"
+            app:layout_gravity="fill"
+            android:text="View Marks"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:background="@drawable/curved_view_bg"/>
+
+        <TextView
+            android:id="@+id/attendancePercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_margin="20dp"
+            android:padding="8dp"
+            app:layout_rowWeight="1"
+            app:layout_gravity="fill"
+            android:text="Attendance \n Percentage"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:background="@drawable/curved_view_bg"/>
+
+    </androidx.gridlayout.widget.GridLayout>
+
 
 </FrameLayout>

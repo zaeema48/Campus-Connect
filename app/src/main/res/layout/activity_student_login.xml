@@ -55,7 +55,7 @@
                 android:src="@drawable/usericon" />
 
             <EditText
-                android:id="@+id/adminId"
+                android:id="@+id/studentId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"

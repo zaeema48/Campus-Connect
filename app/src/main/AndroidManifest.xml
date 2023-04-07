@@ -17,6 +17,18 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".AttendancePercentage"
+            android:exported="false" />
+        <activity
+            android:name=".ViewMarks"
+            android:exported="false" />
+        <activity
+            android:name=".ViewAttendance"
+            android:exported="false" />
+        <activity
+            android:name=".ViewSchedule"
+            android:exported="false" />
+        <activity
             android:name=".StudentPage"
             android:exported="false" />
         <activity

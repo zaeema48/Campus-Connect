@@ -98,7 +98,7 @@
             android:padding="8dp"
             app:layout_rowWeight="1"
             app:layout_gravity="fill"
-            android:text="Search Availabe \nSlots"
+            android:text="Search Available \nSlots"
             android:textSize="20sp"
             android:textColor="@color/black"
             android:textStyle="bold"
