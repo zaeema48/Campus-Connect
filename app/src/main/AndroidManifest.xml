@@ -16,8 +16,20 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".StudentPasswordChange"
+            android:name=".Student.AttendancePercentage"
             android:exported="false" />
+        <activity
+            android:name=".Student.StudentViewSchedule"
+            android:exported="false" />
+        <activity
+            android:name=".Student.ViewAttendance"
+            android:exported="false" />
+        <activity
+            android:name=".Student.ViewMarks"
+             android:exported="false" />
+        <activity 
+            android:name=".StudentPasswordChange"
+             android:exported="false" />
         <activity
             android:name=".StudentPage"
             android:exported="false" />
