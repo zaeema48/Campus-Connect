@@ -3,11 +3,13 @@ package com.example.campusconnect.API;
 import com.example.campusconnect.Models.NoticeModel;
 import com.example.campusconnect.Models.ScheduleModel;
 import com.example.campusconnect.Models.StudentModel;
+import com.example.campusconnect.Models.StudentProgressModel;
 import com.example.campusconnect.Teacher.ViewSchedule;
 
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
@@ -32,4 +34,10 @@ public interface StudentApiInterface {
     public Call<List<NoticeModel>> searchNotices(
             @Query("title") String title
     );
+
+    @GET("student_progress")
+    public Call<List<StudentProgressModel>> viewMarks(
+        @Query("studentId") int studentId
+    );
+
 }
