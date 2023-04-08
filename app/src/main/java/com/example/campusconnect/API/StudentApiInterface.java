@@ -11,6 +11,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.PUT;
 import retrofit2.http.Query;
 
 public interface StudentApiInterface {
@@ -38,6 +39,12 @@ public interface StudentApiInterface {
     @GET("student_progress")
     public Call<List<StudentProgressModel>> viewMarks(
         @Query("studentId") int studentId
+    );
+    
+    @PUT("change_password")
+    public Call<Void> passwordChange(
+            @Query("studentId") int studentId,
+            @Query("newPassword") String newPassword
     );
 
 }
