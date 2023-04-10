@@ -26,7 +26,10 @@
             android:exported="false" />
         <activity
             android:name=".Student.ViewMarks"
-            android:exported="false" />
+             android:exported="false" />
+        <activity 
+            android:name=".StudentPasswordChange"
+             android:exported="false" />
         <activity
             android:name=".StudentPage"
             android:exported="false" />
