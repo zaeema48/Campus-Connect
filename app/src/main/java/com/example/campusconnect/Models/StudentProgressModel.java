@@ -6,7 +6,7 @@ public class StudentProgressModel {
     int totalAttendance;
     int totalClasses;
     float attendancePercentage;
-    String marks;
+    int marks;
 
     public StudentProgressModel() {
     }
@@ -51,11 +51,11 @@ public class StudentProgressModel {
         this.attendancePercentage = attendancePercentage;
     }
 
-    public String getMarks() {
+    public int getMarks() {
         return marks;
     }
 
-    public void setMarks(String marks) {
+    public void setMarks(int marks) {
         this.marks = marks;
     }
 
