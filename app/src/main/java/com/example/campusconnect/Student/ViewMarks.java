@@ -4,8 +4,11 @@ import static com.example.campusconnect.StudentLogin.publicStudent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.campusconnect.API.StudentAPI;
 import com.example.campusconnect.Models.StudentProgressModel;
@@ -34,21 +37,49 @@ TextView subject1, subject2, subject3, subject4, subject5, marks1, marks2, marks
         marks3=findViewById(R.id.marks3);
         marks4=findViewById(R.id.marks4);
         marks5=findViewById(R.id.marks5);
+        total=findViewById(R.id.totalPercentage);
+
+        ProgressDialog progressDialog= new ProgressDialog(ViewMarks.this);
+        progressDialog.setTitle("Fetching Marks...");
 
         List<StudentProgressModel> marksList= new ArrayList<>();
 
         StudentAPI.getStudentApiInterface().viewMarks(publicStudent.getStudentId()).enqueue(new Callback<List<StudentProgressModel>>() {
             @Override
             public void onResponse(Call<List<StudentProgressModel>> call, Response<List<StudentProgressModel>> response) {
+                progressDialog.show();
                 marksList.clear();
                 marksList.addAll(response.body());
+                setSubjectAndMarksView(marksList);
+                progressDialog.dismiss();
             }
 
             @Override
             public void onFailure(Call<List<StudentProgressModel>> call, Throwable t) {
-
+                progressDialog.dismiss();
+                Toast.makeText(ViewMarks.this, "ERROR!!", Toast.LENGTH_SHORT).show();
             }
         });
 
+    }
+    public void setSubjectAndMarksView( List<StudentProgressModel> list){
+        subject1.setText(list.get(0).getProgressId().substring(4));
+        marks1.setText(""+ list.get(0).getMarks());
+
+        subject2.setText(list.get(1).getProgressId().substring(4));
+        marks2.setText(""+ list.get(1).getMarks());
+
+        subject3.setText(list.get(2).getProgressId().substring(4));
+        marks3.setText(""+ list.get(2).getMarks());
+
+        subject4.setText(list.get(3).getProgressId().substring(4));
+        marks4.setText(""+ list.get(3).getMarks());
+
+        subject5.setText(list.get(4).getProgressId().substring(4));
+        marks5.setText(""+ list.get(4).getMarks());
+
+        int marks=list.get(0).getMarks()+list.get(1).getMarks()+list.get(2).getMarks()+list.get(3).getMarks()+list.get(4).getMarks();
+        float percentage=marks/5;
+        total.setText(""+ percentage);
     }
 }

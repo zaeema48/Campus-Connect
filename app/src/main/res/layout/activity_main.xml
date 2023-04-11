@@ -11,8 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Campus Connect"
-        android:textStyle="bold"
-        android:textSize="35dp"
+        android:textStyle="bold|italic"
+        android:textSize="38sp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:textColor="@color/black"/>
@@ -23,7 +23,7 @@
         android:layout_height="130dp"
         app:cardCornerRadius="130dp"
         android:layout_marginTop="140dp"
-        android:layout_marginLeft="40dp">
+        android:layout_marginLeft="30dp">
         <ImageView
             android:layout_width="130dp"
             android:layout_height="130dp"
@@ -35,10 +35,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/adminImg"
-        android:layout_marginLeft="70dp"
+        android:layout_marginLeft="60dp"
         android:layout_marginTop="10dp"
         android:text="Admin"
         android:textColor="@color/black"
+        android:textStyle="bold"
         android:textSize="25sp" />
 
     <androidx.cardview.widget.CardView
@@ -47,7 +48,7 @@
         android:layout_height="130dp"
         app:cardCornerRadius="130dp"
         android:layout_marginTop="140dp"
-        android:layout_marginLeft="239dp">
+        android:layout_marginLeft="229dp">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -62,6 +63,7 @@
         android:layout_height="wrap_content"
         android:text="Teacher"
         android:textColor="@color/black"
+        android:textStyle="bold"
         android:textSize="25sp"
         android:layout_below="@id/teacherImg"
         android:layout_marginTop="12sp"
@@ -73,7 +75,7 @@
         android:layout_height="130dp"
         app:cardCornerRadius="130dp"
         android:layout_marginTop="400dp"
-        android:layout_marginLeft="40dp">
+        android:layout_marginLeft="20dp">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -87,8 +89,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/studentImg"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="50dp"
         android:text="Student"
+        android:textStyle="bold"
         android:textColor="@color/black"
         android:layout_marginTop="10dp"
         android:textSize="25sp" />
@@ -99,7 +102,7 @@
         android:layout_height="130dp"
         app:cardCornerRadius="130dp"
         android:layout_marginTop="400dp"
-        android:layout_marginLeft="230dp">
+        android:layout_marginLeft="220dp">
 
         <ImageView
 
@@ -114,8 +117,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/parentImg"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="260dp"
+        android:layout_marginLeft="250dp"
         android:text="Parent"
+        android:textStyle="bold"
         android:textColor="@color/black"
         android:textSize="25sp" />
 

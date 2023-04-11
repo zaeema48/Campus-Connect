@@ -1,5 +1,6 @@
 package com.example.campusconnect.API;
 
+import com.example.campusconnect.Models.AttendanceModel;
 import com.example.campusconnect.Models.NoticeModel;
 import com.example.campusconnect.Models.ScheduleModel;
 import com.example.campusconnect.Models.StudentModel;
@@ -45,6 +46,12 @@ public interface StudentApiInterface {
     public Call<Void> passwordChange(
             @Query("studentId") int studentId,
             @Query("newPassword") String newPassword
+    );
+
+    @GET("view_subject_attendance")
+    public Call<List<AttendanceModel>> viewSubjectAttendance(
+           @Query("studentId") int studentId,
+           @Query("subjectId") int subjectId
     );
 
 }

@@ -78,7 +78,7 @@ public class UploadMarksAdapter extends RecyclerView.Adapter<UploadMarksAdapter.
 
             @Override
             public void afterTextChanged(Editable editable) {
-                studentProgress.setMarks( holder.student_marks.getText().toString());
+                studentProgress.setMarks( Integer.parseInt(holder.student_marks.getText().toString()));
                 studentProgressList.add(studentProgress);
             }
         });
