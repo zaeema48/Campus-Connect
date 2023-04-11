@@ -7,104 +7,101 @@
     tools:context=".Fragments.TeacherHomeFragment"
     android:background="@drawable/background">
 
-    <androidx.gridlayout.widget.GridLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:columnCount="2"
-        app:rowCount="3">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/viewSchedule"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:background="@drawable/curved_view_bg"
-            android:gravity="center_horizontal|center_vertical"
-            android:padding="8dp"
-            app:layout_rowWeight="1"
-            app:layout_gravity="fill"
-            android:text="View Schedule"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/viewStudentAttendance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:padding="8dp"
-            app:layout_rowWeight="1"
-            app:layout_gravity="fill"
-            android:text="View Student \nAttendance"
-            android:gravity="center_horizontal|center_vertical"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:background="@drawable/curved_view_bg"/>
 
-        <TextView
-            android:id="@+id/viewBatchAttendance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal|center_vertical"
-            android:layout_margin="20dp"
-            android:padding="8dp"
-            app:layout_rowWeight="1"
-            app:layout_gravity="fill"
-            android:text="View Batch \nAttendance"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:background="@drawable/curved_view_bg"/>
+    <TextView
+        android:id="@+id/viewSchedule"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/curved_view_bg"
+        android:gravity="center_horizontal|center_vertical"
+        android:padding="8dp"
+        android:text="View Schedule"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/markAttendance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal|center_vertical"
-            android:layout_margin="20dp"
-            android:padding="8dp"
-            app:layout_rowWeight="1"
-            app:layout_gravity="fill"
-            android:text="Mark Attendance"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:background="@drawable/curved_view_bg"/>
+    <TextView
+        android:id="@+id/viewStudentAttendance"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="200dp"
+        android:padding="8dp"
+        android:text="View Student \nAttendance"
+        android:gravity="center_horizontal|center_vertical"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:background="@drawable/curved_view_bg"/>
+
+    <TextView
+        android:id="@+id/viewBatchAttendance"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_below="@id/viewSchedule"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="200dp"
+        android:padding="8dp"
+        android:text="View Batch \nAttendance"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:background="@drawable/curved_view_bg"/>
+
+    <TextView
+        android:id="@+id/markAttendance"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_below="@id/viewSchedule"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:padding="8dp"
+        android:text="Mark Attendance"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:background="@drawable/curved_view_bg"/>
 
 
         <TextView
             android:id="@+id/uploadMarks"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@id/markAttendance"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/curved_view_bg"
             android:gravity="center_horizontal|center_vertical"
-            android:layout_margin="20dp"
             android:padding="8dp"
-            app:layout_rowWeight="1"
-            app:layout_gravity="fill"
             android:text="Upload Marks"
-            android:textSize="20sp"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:background="@drawable/curved_view_bg"/>
-
-        <TextView
-            android:id="@+id/availableSlots"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal|center_vertical"
-            android:layout_margin="20dp"
-            android:padding="8dp"
-            app:layout_rowWeight="1"
-            app:layout_gravity="fill"
-            android:text="Search Available \nSlots"
             android:textSize="20sp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:background="@drawable/curved_view_bg"/>
+            android:textStyle="bold" />
 
-    </androidx.gridlayout.widget.GridLayout>
+    <TextView
+        android:id="@+id/availableSlots"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="200dp"
+        android:layout_below="@id/markAttendance"
+        android:padding="8dp"
+        android:text="Search Available \nSlots"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:background="@drawable/curved_view_bg"/>
 
+    </RelativeLayout>
 
 </FrameLayout>

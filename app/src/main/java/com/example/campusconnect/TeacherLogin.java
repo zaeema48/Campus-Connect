@@ -61,7 +61,7 @@ public class TeacherLogin extends AppCompatActivity {
                         @Override
                         public void onFailure(Call<TeacherModel> call, Throwable t) {
                             progressDialog.dismiss();
-                            Toast.makeText(TeacherLogin.this, "An Error Has Occurred!!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(TeacherLogin.this, "User Id Or Password is Incorrect!!", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }

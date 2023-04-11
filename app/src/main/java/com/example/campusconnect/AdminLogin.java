@@ -43,8 +43,6 @@ public class AdminLogin extends AppCompatActivity {
 
                if(!admin_id.isEmpty() && !admin_password.isEmpty()) {
                    progressDialog.show();
-                   Intent intent = new Intent(AdminLogin.this, AdminPage.class);
-                   startActivity(intent);
                    ApiUtilities.getAdminApiInterface().adminLogin(admin_id,admin_password).enqueue(new Callback<AdminModel>() {
                        @Override
                        public void onResponse(Call<AdminModel> call, Response<AdminModel> response) {
@@ -52,8 +50,6 @@ public class AdminLogin extends AppCompatActivity {
                            if(response.body()!=null) {
                                AdminModel admin = response.body();
                                Intent intent= new Intent(AdminLogin.this,AdminPage.class);
-//                               intent.putExtra("adminId",admin.getAdminId());
-//                               intent.putExtra("adminPasw", admin.getPassword());
                                publicAdmin=admin;
                                startActivity(intent);
                            }
@@ -64,7 +60,7 @@ public class AdminLogin extends AppCompatActivity {
                        @Override
                        public void onFailure(Call<AdminModel> call, Throwable t) {
                            progressDialog.dismiss();
-                           Toast.makeText(AdminLogin.this, "An Error Has Occurred!!", Toast.LENGTH_SHORT).show();
+                           Toast.makeText(AdminLogin.this, "User Id Or Password is Incorrect!!", Toast.LENGTH_SHORT).show();
                        }
                    });
 
