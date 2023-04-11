@@ -63,19 +63,19 @@ TextView subject1, subject2, subject3, subject4, subject5, marks1, marks2, marks
 
     }
     public void setSubjectAndMarksView( List<StudentProgressModel> list){
-        subject1.setText(list.get(0).getProgressId());
+        subject1.setText(list.get(0).getProgressId().substring(4));
         marks1.setText(""+ list.get(0).getMarks());
 
-        subject2.setText(list.get(1).getProgressId());
+        subject2.setText(list.get(1).getProgressId().substring(4));
         marks2.setText(""+ list.get(1).getMarks());
 
-        subject3.setText(list.get(2).getProgressId());
+        subject3.setText(list.get(2).getProgressId().substring(4));
         marks3.setText(""+ list.get(2).getMarks());
 
-        subject4.setText(list.get(3).getProgressId());
+        subject4.setText(list.get(3).getProgressId().substring(4));
         marks4.setText(""+ list.get(3).getMarks());
 
-        subject5.setText(list.get(4).getProgressId());
+        subject5.setText(list.get(4).getProgressId().substring(4));
         marks5.setText(""+ list.get(4).getMarks());
 
         int marks=list.get(0).getMarks()+list.get(1).getMarks()+list.get(2).getMarks()+list.get(3).getMarks()+list.get(4).getMarks();
