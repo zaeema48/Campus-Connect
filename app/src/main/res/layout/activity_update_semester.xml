@@ -41,6 +41,16 @@
         android:textColor="@color/black"
         android:textColorHint="#D0191919"
         android:textSize="20sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Batch ID"
+        android:textSize="10sp"
+        android:layout_alignStart="@id/batchId"
+        android:layout_alignTop="@id/batchId"
+        android:textColor="#A4000000"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="12dp"/>
 
     <EditText
         android:id="@+id/curSem"
@@ -57,6 +67,16 @@
         android:textColor="@color/black"
         android:textColorHint="#D0191919"
         android:textSize="20sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Semester"
+        android:textSize="10sp"
+        android:layout_alignStart="@id/curSem"
+        android:layout_alignTop="@id/curSem"
+        android:textColor="#A4000000"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="12dp"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/submit"

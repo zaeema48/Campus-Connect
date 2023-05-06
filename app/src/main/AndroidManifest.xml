@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ParentPage"
+            android:exported="false" />
+        <activity
             android:name=".Student.AttendancePercentage"
             android:exported="false" />
         <activity
@@ -26,10 +29,10 @@
             android:exported="false" />
         <activity
             android:name=".Student.ViewMarks"
-             android:exported="false" />
-        <activity 
+            android:exported="false" />
+        <activity
             android:name=".StudentPasswordChange"
-             android:exported="false" />
+            android:exported="false" />
         <activity
             android:name=".StudentPage"
             android:exported="false" />

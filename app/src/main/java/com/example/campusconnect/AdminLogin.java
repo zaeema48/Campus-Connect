@@ -67,7 +67,7 @@ public class AdminLogin extends AppCompatActivity {
                }
 
                else{
-                   Toast.makeText(AdminLogin.this, "Enter the correct credentials!!", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(AdminLogin.this, "Please Enter the User Id and Password!!", Toast.LENGTH_SHORT).show();
                }
             }
 

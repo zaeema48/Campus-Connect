@@ -34,8 +34,17 @@
         android:layout_centerHorizontal="true"
         app:cardBackgroundColor="#FAFFFFFF"
         app:cardCornerRadius="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Admin ID"
+            android:textSize="13sp"
+            android:layout_marginTop="62dp"
+            android:layout_marginLeft="35dp"
+            android:textColor="#A4000000" />
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/ihj"
             android:layout_width="250dp"
             android:layout_height="40dp"
             android:layout_marginLeft="30dp"
@@ -65,6 +74,14 @@
 
         </androidx.cardview.widget.CardView>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textSize="13sp"
+            android:layout_marginTop="152dp"
+            android:layout_marginLeft="35dp"
+            android:textColor="#A4000000" />
         <androidx.cardview.widget.CardView
             android:layout_width="250dp"
             android:layout_height="40dp"

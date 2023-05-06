@@ -64,10 +64,13 @@
                     android:layout_marginLeft="20dp"
                     android:gravity="center_horizontal"
                     android:background="@drawable/curved_view_bg"
+                    android:singleLine="true"
+                    android:scrollHorizontally="true"
                     android:text="Batch ID"
                     android:textColor="@color/black"
                     android:padding="8dp"
                     android:textSize="20sp"/>
+
                 <TextView
                     android:id="@+id/cYear"
                     android:layout_width="160dp"
@@ -89,6 +92,8 @@
                     android:gravity="center_horizontal"
                     android:background="@drawable/curved_view_bg"
                     android:text="cName"
+                    android:singleLine="true"
+                    android:scrollHorizontally="true"
                     android:textColor="@color/black"
                     android:padding="10dp"
                     android:textSize="20sp"/>
@@ -101,6 +106,8 @@
                     android:gravity="center_horizontal"
                     android:background="@drawable/curved_view_bg"
                     android:text="cDuration"
+                    android:singleLine="true"
+                    android:scrollHorizontally="true"
                     android:textColor="@color/black"
                     android:padding="10dp"
                     android:textSize="20sp"/>
@@ -125,6 +132,8 @@
                     android:gravity="center_horizontal"
                     android:background="@drawable/curved_view_bg"
                     android:text="curSem"
+                    android:singleLine="true"
+                    android:scrollHorizontally="true"
                     android:textColor="@color/black"
                     android:padding="10dp"
                     android:textSize="20sp"/>

@@ -40,7 +40,7 @@ public class ViewAttendance extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_attendance);
 
-        subjectId=findViewById(R.id.studentId);
+        subjectId=findViewById(R.id.subjectId);
         submit=findViewById(R.id.submit);
         recyclerView=findViewById(R.id.viewStudentRV);
 

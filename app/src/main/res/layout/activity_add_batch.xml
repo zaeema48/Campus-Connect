@@ -57,7 +57,8 @@
                         android:text="Course Name"
                         android:background="@drawable/curved_view_bg"
                         android:textColor="@color/black"
-                        android:textSize="15dp" />
+                        android:textSize="15dp"/>
+
 
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -70,7 +71,15 @@
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="6dp">
-
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Batch Year"
+                        android:textSize="10sp"
+                        android:textColor="#A4000000"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginBottom="2dp"/>
                     <EditText
                         android:id="@+id/year"
                         android:layout_width="match_parent"
@@ -119,6 +128,15 @@
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="6dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Batch Fees"
+                        android:textSize="10sp"
+                        android:textColor="#A4000000"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginBottom="2dp"/>
 
                     <EditText
                         android:id="@+id/fees"

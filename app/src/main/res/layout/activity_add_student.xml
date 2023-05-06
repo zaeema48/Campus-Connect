@@ -12,6 +12,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+
+
         <androidx.cardview.widget.CardView
             android:id="@+id/tag"
             android:layout_width="wrap_content"
@@ -45,13 +47,23 @@
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="6dp">
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Student Name"
+                    android:textSize="10sp"
+                    android:textColor="#A4000000"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="2dp"/>
                 <EditText
                     android:id="@+id/student_name"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:hint="Student Name"
+                    android:singleLine="true"
+                    android:scrollHorizontally="true"
                     android:textColor="@color/black"
                     android:textColorHint="#75000000"
                     android:textSize="18dp" />
@@ -66,6 +78,15 @@
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="6dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Student Email"
+                    android:textSize="10sp"
+                    android:textColor="#A4000000"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="2dp"/>
 
                 <EditText
                     android:id="@+id/student_email"
@@ -73,6 +94,8 @@
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:hint="Student Email"
+                    android:singleLine="true"
+                    android:scrollHorizontally="true"
                     android:textColor="@color/black"
                     android:textColorHint="#75000000"
                     android:textSize="18dp" />
@@ -94,6 +117,15 @@
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="6dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Batch ID"
+                    android:textSize="10sp"
+                    android:textColor="#A4000000"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="2dp"/>
 
                 <EditText
                     android:id="@+id/batch_id"
@@ -101,6 +133,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:hint="Batch Id"
+                    android:singleLine="true"
+                    android:scrollHorizontally="true"
                     android:textColor="@color/black"
                     android:textColorHint="#75000000"
                     android:textSize="18dp" />
@@ -116,6 +150,15 @@
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="6dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Parent Email"
+                    android:textSize="10sp"
+                    android:textColor="#A4000000"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="2dp"/>
 
                 <EditText
                     android:id="@+id/parent_email"
@@ -123,6 +166,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:hint="Parent Email"
+                    android:singleLine="true"
+                    android:scrollHorizontally="true"
                     android:textColor="@color/black"
                     android:textColorHint="#75000000"
                     android:textSize="18dp" />

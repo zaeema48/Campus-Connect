@@ -39,10 +39,22 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/curved_view_bg"
         android:gravity="center"
+        android:singleLine="true"
+        android:scrollHorizontally="true"
         android:hint="Batch ID"
         android:textColor="@color/black"
         android:textColorHint="#75000000"
         android:textSize="20sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Batch ID"
+        android:textSize="10sp"
+        android:layout_alignStart="@id/batch"
+        android:layout_alignTop="@id/batch"
+        android:textColor="#A4000000"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="12dp"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/submit_button"
