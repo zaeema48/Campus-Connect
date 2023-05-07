@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Admin.TeacherManagement">
+
+    <TextView
+        android:id="@+id/addTeacher"
+        android:layout_width="170dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/curved_view_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Add Teacher"/>
+    <TextView
+        android:id="@+id/removeTeacher"
+        android:layout_width="170dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="210dp"
+        android:background="@drawable/curved_view_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Remove Teacher"/>
+    <TextView
+        android:id="@+id/searchTeacher"
+        android:layout_width="170dp"
+        android:layout_height="65dp"
+        android:layout_below="@id/addTeacher"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/curved_view_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Search Teacher"/>
+    <TextView
+        android:id="@+id/teacherList"
+        android:layout_width="170dp"
+        android:layout_height="65dp"
+        android:layout_below="@id/removeTeacher"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="210dp"
+        android:background="@drawable/curved_view_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="List of Teacher"/>
+    <TextView
+        android:id="@+id/updateTeacher"
+        android:layout_width="170dp"
+        android:layout_height="65dp"
+        android:layout_below="@id/searchTeacher"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/curved_view_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Update Teacher Detail"/>
+    <TextView
+        android:id="@+id/updateTeacherSchedule"
+        android:layout_width="170dp"
+        android:layout_height="65dp"
+        android:layout_below="@id/teacherList"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="210dp"
+        android:background="@drawable/curved_view_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Update Teacher Schedule"/>
+    <TextView
+        android:id="@+id/subjectList"
+        android:layout_width="170dp"
+        android:layout_height="65dp"
+        android:layout_below="@id/updateTeacher"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/curved_view_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="List of Subject"/>
+
+</RelativeLayout>

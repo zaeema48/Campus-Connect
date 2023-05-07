@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Admin.StudentManagement">
+
+    <TextView
+        android:id="@+id/addStudent"
+        android:layout_width="170dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/curved_view_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Add Student"/>
+    <TextView
+        android:id="@+id/removeStudent"
+        android:layout_width="170dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginLeft="210dp"
+        android:background="@drawable/curved_view_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Remove Student"/>
+    <TextView
+        android:id="@+id/searchStudent"
+        android:layout_width="170dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/addStudent"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/curved_view_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Search Student"/>
+    <TextView
+        android:id="@+id/updateFee"
+        android:layout_width="170dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/removeStudent"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="210dp"
+        android:background="@drawable/curved_view_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Update Fee\nStatus"/>
+
+</RelativeLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Admin.BatchManagement">
+
+    <TextView
+        android:id="@+id/addBatch"
+        android:layout_width="170dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/curved_view_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Add new Batch"/>
+    <TextView
+        android:id="@+id/batchList"
+        android:layout_width="170dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="210dp"
+        android:background="@drawable/curved_view_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="List of Batch"/>
+    <TextView
+        android:id="@+id/searchBatch"
+        android:layout_width="170dp"
+        android:layout_height="65dp"
+        android:layout_below="@id/addBatch"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/curved_view_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Search Batch"/>
+    <TextView
+        android:id="@+id/addExamSchedule"
+        android:layout_width="170dp"
+        android:layout_height="65dp"
+        android:layout_below="@id/batchList"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="210dp"
+        android:background="@drawable/curved_view_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Add Exam Schedule"/>
+    <TextView
+        android:id="@+id/updateBatchSchedule"
+        android:layout_width="170dp"
+        android:layout_height="65dp"
+        android:layout_below="@id/searchBatch"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/curved_view_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Update Batch Schedule"/>
+    <TextView
+        android:id="@+id/examSchedule"
+        android:layout_width="170dp"
+        android:layout_height="65dp"
+        android:layout_below="@id/addExamSchedule"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="210dp"
+        android:background="@drawable/curved_view_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="View Exam Schedule"/>
+    <TextView
+        android:id="@+id/updateSem"
+        android:layout_width="170dp"
+        android:layout_height="65dp"
+        android:layout_below="@id/examSchedule"
+        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/curved_view_bg"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Update Batch Semester"/>
+
+</RelativeLayout>
