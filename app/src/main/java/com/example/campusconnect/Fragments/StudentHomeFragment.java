@@ -13,19 +13,22 @@ import android.widget.TextView;
 import com.example.campusconnect.R;
 import com.example.campusconnect.Student.AttendancePercentage;
 import com.example.campusconnect.Student.ViewAttendance;
+import com.example.campusconnect.Student.ViewExamSchedule;
 import com.example.campusconnect.Student.ViewMarks;
 import com.example.campusconnect.Student.StudentViewSchedule;
 
 public class StudentHomeFragment extends Fragment {
-    TextView schedule, view_attendance, view_marks, attendance_percent;
+    TextView schedule, view_attendance, view_result, attendance_percent, exam_schedule;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
        View view= inflater.inflate(R.layout.fragment_student_home, container, false);
+
        schedule=view.findViewById(R.id.viewSchedule);
        view_attendance=view.findViewById(R.id.viewAttendance);
-       view_marks=view.findViewById(R.id.viewMarks);
+       view_result=view.findViewById(R.id.viewResult);
        attendance_percent=view.findViewById(R.id.attendancePercent);
+       exam_schedule= view.findViewById(R.id.examSchedule);
 
         schedule.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +46,7 @@ public class StudentHomeFragment extends Fragment {
             }
         });
 
-        view_marks.setOnClickListener(new View.OnClickListener() {
+        view_result.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), ViewMarks.class);
@@ -55,6 +58,14 @@ public class StudentHomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), AttendancePercentage.class);
+                startActivity(intent);
+            }
+        });
+
+        exam_schedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), ViewExamSchedule.class);
                 startActivity(intent);
             }
         });

@@ -7,79 +7,73 @@
     tools:context=".Fragments.StudentHomeFragment"
     android:background="@drawable/background">
 
-    <androidx.gridlayout.widget.GridLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp"
-        app:columnCount="2"
-        app:rowCount="3">
-
+        android:layout_height="match_parent">
         <TextView
             android:id="@+id/viewSchedule"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_width="170dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="110dp"
+            android:layout_marginLeft="20dp"
             android:background="@drawable/curved_view_bg"
-            android:gravity="center_horizontal|center_vertical"
-            android:padding="8dp"
-            app:layout_rowWeight="1"
-            app:layout_gravity="fill"
-            android:text="View Schedule"
+            android:gravity="center"
             android:textColor="@color/black"
+            android:textStyle="bold"
             android:textSize="20sp"
-            android:textStyle="bold" />
-
+            android:text="View Class\nSchedule"/>
         <TextView
             android:id="@+id/viewAttendance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:padding="8dp"
-            app:layout_rowWeight="1"
-            app:layout_gravity="fill"
-            android:text="View \nAttendance"
-            android:gravity="center_horizontal|center_vertical"
-            android:textSize="20sp"
+            android:layout_width="170dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="110dp"
+            android:layout_marginLeft="210dp"
+            android:background="@drawable/curved_view_bg"
+            android:gravity="center"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:background="@drawable/curved_view_bg"/>
-
+            android:textSize="20sp"
+            android:text="View Subject\nAttendance"/>
         <TextView
-            android:id="@+id/viewMarks"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal|center_vertical"
-            android:layout_margin="20dp"
-            android:padding="8dp"
-            app:layout_rowWeight="1"
-            app:layout_gravity="fill"
-            android:text="View Marks"
-            android:textSize="20sp"
+            android:id="@+id/viewResult"
+            android:layout_width="170dp"
+            android:layout_height="80dp"
+            android:layout_below="@id/viewSchedule"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/curved_view_bg"
+            android:gravity="center"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:background="@drawable/curved_view_bg"/>
+            android:textSize="20sp"
+            android:text="View Results"/>
+        <TextView
+            android:id="@+id/examSchedule"
+            android:layout_width="170dp"
+            android:layout_height="80dp"
+            android:layout_below="@id/viewResult"
+            android:layout_marginTop="80dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/curved_view_bg"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="View Exam\nSchedule"/>
 
         <TextView
             android:id="@+id/attendancePercent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal|center_vertical"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:padding="8dp"
-            app:layout_rowWeight="1"
-            app:layout_gravity="fill"
-            android:text="Attendance \n Percentage"
-            android:textSize="20sp"
+            android:layout_width="170dp"
+            android:layout_height="80dp"
+            android:layout_below="@id/viewAttendance"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="210dp"
+            android:background="@drawable/curved_view_bg"
+            android:gravity="center"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:background="@drawable/curved_view_bg"/>
-
-    </androidx.gridlayout.widget.GridLayout>
-
+            android:textSize="20sp"
+            android:text="View Attendance\nPercent %"/>
+    </RelativeLayout>
 
 </FrameLayout>

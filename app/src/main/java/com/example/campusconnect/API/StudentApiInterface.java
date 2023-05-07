@@ -1,16 +1,15 @@
 package com.example.campusconnect.API;
 
 import com.example.campusconnect.Models.AttendanceModel;
+import com.example.campusconnect.Models.ExamScheduleModel;
 import com.example.campusconnect.Models.NoticeModel;
 import com.example.campusconnect.Models.ScheduleModel;
 import com.example.campusconnect.Models.StudentModel;
 import com.example.campusconnect.Models.StudentProgressModel;
-import com.example.campusconnect.Teacher.ViewSchedule;
 
 import java.util.List;
 
 import retrofit2.Call;
-import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.PUT;
 import retrofit2.http.Query;
@@ -52,6 +51,11 @@ public interface StudentApiInterface {
     public Call<List<AttendanceModel>> viewSubjectAttendance(
            @Query("studentId") int studentId,
            @Query("subjectId") int subjectId
+    );
+
+    @GET("fetch_exam_schedule")
+    public Call<List<ExamScheduleModel>> fetchExamSchedule(
+            @Query("studentId") int studentId
     );
 
 }
