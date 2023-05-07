@@ -3,9 +3,13 @@ package com.example.campusconnect.Student;
 import static com.example.campusconnect.StudentLogin.publicStudent;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,11 +26,16 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class ViewMarks extends AppCompatActivity {
-TextView subject1, subject2, subject3, subject4, subject5, marks1, marks2, marks3, marks4, marks5, total ;
+    TextView subject1, subject2, subject3, subject4, subject5, marks1, marks2, marks3, marks4, marks5, total ;
+    AutoCompleteTextView sem;
+    AppCompatButton search;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_marks);
+
+        sem=findViewById(R.id.semester);
+        search=findViewById(R.id.searchButton);
         subject1=findViewById(R.id.sub1);
         subject2=findViewById(R.id.sub2);
         subject3=findViewById(R.id.sub3);
@@ -39,25 +48,46 @@ TextView subject1, subject2, subject3, subject4, subject5, marks1, marks2, marks
         marks5=findViewById(R.id.marks5);
         total=findViewById(R.id.totalPercentage);
 
+        String [] semesters= {"1st Sem", "2nd Sem", "3rd Sem", "4th Sem", "5th Sem", "6th Sem", "7th Sem", "8th Sem"};
+        ArrayAdapter<String> dropdownAdapter =new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, semesters);
+        sem.setThreshold(1);
+        sem.setAdapter(dropdownAdapter);
+
         ProgressDialog progressDialog= new ProgressDialog(ViewMarks.this);
-        progressDialog.setTitle("Fetching Marks...");
+        progressDialog.setTitle("Fetching Results...");
 
         List<StudentProgressModel> marksList= new ArrayList<>();
 
-        StudentAPI.getStudentApiInterface().viewMarks(publicStudent.getStudentId()).enqueue(new Callback<List<StudentProgressModel>>() {
+        search.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onResponse(Call<List<StudentProgressModel>> call, Response<List<StudentProgressModel>> response) {
-                progressDialog.show();
-                marksList.clear();
-                marksList.addAll(response.body());
-                setSubjectAndMarksView(marksList);
-                progressDialog.dismiss();
-            }
+            public void onClick(View view) {
 
-            @Override
-            public void onFailure(Call<List<StudentProgressModel>> call, Throwable t) {
-                progressDialog.dismiss();
-                Toast.makeText(ViewMarks.this, "ERROR!!", Toast.LENGTH_SHORT).show();
+                String semester=sem.getText().toString();
+                if(!semester.isEmpty()){
+                    progressDialog.show();
+                    StudentAPI.getStudentApiInterface().semesterProgress(publicStudent.getStudentId(), semester).enqueue(new Callback<List<StudentProgressModel>>() {
+                        @Override
+                        public void onResponse(Call<List<StudentProgressModel>> call, Response<List<StudentProgressModel>> response) {
+                            marksList.clear();
+                            marksList.addAll(response.body());
+                            if(marksList.size()!=0)
+                            setSubjectAndMarksView(marksList);
+                            else
+                                Toast.makeText(ViewMarks.this, "Result of this Semester has not yet Uploaded!!", Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();
+                        }
+
+                        @Override
+                        public void onFailure(Call<List<StudentProgressModel>> call, Throwable t) {
+                            progressDialog.dismiss();
+                            Toast.makeText(ViewMarks.this, "ERROR!!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+                else
+                    Toast.makeText(ViewMarks.this, "Select Semester!!", Toast.LENGTH_SHORT).show();
+
+
             }
         });
 

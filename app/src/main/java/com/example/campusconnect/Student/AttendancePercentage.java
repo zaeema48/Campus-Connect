@@ -3,8 +3,13 @@ package com.example.campusconnect.Student;
 import static com.example.campusconnect.StudentLogin.publicStudent;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,10 +26,15 @@ import retrofit2.Response;
 
 public class AttendancePercentage extends AppCompatActivity {
     TextView sub1, sub2, sub3, sub4, sub5, s1, s2, s3, s4, s5;
+    AutoCompleteTextView sem;
+    AppCompatButton search;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendance_percentage);
+
+        sem=findViewById(R.id.semester);
+        search=findViewById(R.id.searchButton);
         sub1=findViewById(R.id.sub1);
         sub2=findViewById(R.id.sub2);
         sub3=findViewById(R.id.sub3);
@@ -36,20 +46,45 @@ public class AttendancePercentage extends AppCompatActivity {
         s4=findViewById(R.id.s4);
         s5=findViewById(R.id.s5);
 
-        List<StudentProgressModel> studentProgress= new ArrayList<>();
-        StudentAPI.getStudentApiInterface().viewMarks(publicStudent.getStudentId()).enqueue(new Callback<List<StudentProgressModel>>() {
-            @Override
-            public void onResponse(Call<List<StudentProgressModel>> call, Response<List<StudentProgressModel>> response) {
-                studentProgress.clear();
-                studentProgress.addAll(response.body());
-                subjectPercentage(studentProgress);
-            }
+        String [] semesters= {"1st Sem", "2nd Sem", "3rd Sem", "4th Sem", "5th Sem", "6th Sem", "7th Sem", "8th Sem"};
+        ArrayAdapter<String> dropdownAdapter =new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, semesters);
+        sem.setThreshold(1);
+        sem.setAdapter(dropdownAdapter);
 
+        ProgressDialog progressDialog = new ProgressDialog(AttendancePercentage.this);
+        progressDialog.setTitle("Fetching Attendance...");
+        List<StudentProgressModel> studentProgress= new ArrayList<>();
+
+        search.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onFailure(Call<List<StudentProgressModel>> call, Throwable t) {
-                Toast.makeText(AttendancePercentage.this, "An Error Has Occurred!!", Toast.LENGTH_SHORT).show();
+            public void onClick(View view) {
+                String semester=sem.getText().toString();
+                if(!semester.isEmpty()) {
+                    progressDialog.show();
+                    StudentAPI.getStudentApiInterface().semesterProgress(publicStudent.getStudentId(), semester).enqueue(new Callback<List<StudentProgressModel>>() {
+                        @Override
+                        public void onResponse(Call<List<StudentProgressModel>> call, Response<List<StudentProgressModel>> response) {
+                            studentProgress.clear();
+                            studentProgress.addAll(response.body());
+                            if(studentProgress.size()!=0)
+                            subjectPercentage(studentProgress);
+                            else
+                                Toast.makeText(AttendancePercentage.this, "This Semester has not Started Yet!!", Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();
+                        }
+
+                        @Override
+                        public void onFailure(Call<List<StudentProgressModel>> call, Throwable t) {
+                            progressDialog.dismiss();
+                            Toast.makeText(AttendancePercentage.this, "An Error Has Occurred!!", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+
             }
         });
+
+
     }
 
     public void subjectPercentage(List<StudentProgressModel> studentProgress){

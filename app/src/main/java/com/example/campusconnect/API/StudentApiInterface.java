@@ -37,8 +37,9 @@ public interface StudentApiInterface {
     );
 
     @GET("student_progress")
-    public Call<List<StudentProgressModel>> viewMarks(
-        @Query("studentId") int studentId
+    public Call<List<StudentProgressModel>> semesterProgress(
+        @Query("studentId") int studentId,
+        @Query("semester") String semester
     );
     
     @PUT("change_password")

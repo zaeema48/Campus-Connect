@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,7 +34,7 @@ public class MarkAttendance extends AppCompatActivity {
     MaterialButton dateBtn;
     AppCompatButton submit, upload;
     RecyclerView recyclerView;
-
+    CheckBox selectAll;
     String date="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,7 @@ public class MarkAttendance extends AppCompatActivity {
         day=findViewById(R.id.date);
         submit=findViewById(R.id.submit_button);
         upload=findViewById(R.id.upload);
+        selectAll=findViewById(R.id.checkBox);
         recyclerView=findViewById(R.id.rv);
 
         List<StudentModel> studentList= new ArrayList<>();
@@ -103,6 +105,13 @@ public class MarkAttendance extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 adapter.uploadAttendance();
+            }
+        });
+
+        selectAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
 

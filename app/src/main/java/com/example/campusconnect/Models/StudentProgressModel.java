@@ -3,6 +3,8 @@ package com.example.campusconnect.Models;
 public class StudentProgressModel {
     String progressId;  //studentId+subjectName
     String batchId;
+
+    String semester;
     int totalAttendance;
     int totalClasses;
     float attendancePercentage;
@@ -59,4 +61,11 @@ public class StudentProgressModel {
         this.marks = marks;
     }
 
+    public String getSemester() {
+        return semester;
+    }
+
+    public void setSemester(String semester) {
+        this.semester = semester;
+    }
 }

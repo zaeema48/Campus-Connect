@@ -99,7 +99,6 @@ public class MarkAttendanceAdapter extends RecyclerView.Adapter<MarkAttendanceAd
             }
         });
 
-
     }
 
     @Override
@@ -121,6 +120,10 @@ public class MarkAttendanceAdapter extends RecyclerView.Adapter<MarkAttendanceAd
                 Toast.makeText(context, "An Error Has Occurred!!", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public void allPresent(ViewHolder holder){
+
     }
 
 }

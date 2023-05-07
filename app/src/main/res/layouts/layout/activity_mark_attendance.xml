@@ -61,7 +61,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="10dp"
         android:textColor="@color/white"
-        android:textSize="16sp"/>
+        android:textSize="16sp" />
     <TextView
         android:id="@+id/date"
         android:layout_width="110dp"
@@ -99,12 +99,25 @@
         android:textColor="@color/black"
         android:textSize="18sp"/>
 
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:text="Mark all as Present"
+        android:textSize="22sp"
+        android:textStyle="bold|italic"
+        android:textColor="@color/white" />
+
     <TableLayout
         android:id="@+id/table"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/dateBtn"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="60dp">
 
         <TableRow
             android:layout_width="match_parent"
@@ -124,7 +137,7 @@
                 android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginBottom="10dp"
                 android:background="#FCEAEAEA"
                 android:text="Name"
@@ -133,13 +146,13 @@
                 android:textStyle="bold"/>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="wrap_content"
+                android:layout_width="130dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginBottom="10dp"
                 android:background="#FCEAEAEA"
-                android:text="Attendance"
+                android:text="Present"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold"/>

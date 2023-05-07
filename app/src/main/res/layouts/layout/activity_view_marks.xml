@@ -20,18 +20,52 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="VIEW MARKS"
+            android:text="VIEW RESULT"
             android:textColor="@color/white"
             android:textSize="28dp"
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:id="@+id/autoText"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tag"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        app:boxBackgroundColor="@color/white">
+
+        <AutoCompleteTextView
+            android:id="@+id/semester"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="none"
+            android:text="Select Semester"
+            android:padding="5dp"
+            android:background="@drawable/curved_view_bg"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="italic"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="search"
+        android:background="#E489CFF0"
+        android:layout_below="@id/tag"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="22dp"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/sub1"
         android:layout_width="140dp"
         android:layout_height="?attr/actionBarSize"
         android:text="Subject 1: "
-        android:layout_below="@id/tag"
+        android:layout_below="@id/autoText"
         android:background="@drawable/curved_view_bg"
         android:textSize="20sp"
         android:gravity="center"
@@ -45,7 +79,7 @@
         android:layout_width="110dp"
         android:layout_height="?attr/actionBarSize"
         android:text="Marks "
-        android:layout_below="@id/tag"
+        android:layout_below="@id/autoText"
         android:background="@drawable/curved_view_bg"
         android:textSize="20sp"
         android:gravity="center"
