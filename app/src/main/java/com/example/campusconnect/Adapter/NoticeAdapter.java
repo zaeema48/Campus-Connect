@@ -52,6 +52,7 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context, ViewNotice.class);
+                intent.putExtra("date", notices.get(position).getDate());
                 intent.putExtra("title",notices.get(position).getNotificationTitle());
                 intent.putExtra("message",notices.get(position).getNotificationMessage());
                 intent.putExtra("author",notices.get(position).getAuthor());

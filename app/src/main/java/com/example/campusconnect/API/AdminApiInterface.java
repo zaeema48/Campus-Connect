@@ -126,7 +126,8 @@ public interface AdminApiInterface {
     @PUT("update_batch_semester")
     Call<Void> updateBatchSemester(
             @Query("batchId") String batchId,
-            @Query("currSem") String currSem
+            @Query("currSem") String currSem,
+            @Body List<ScheduleModel> schedules
     );
 
     @POST("add_notification")

@@ -27,13 +27,28 @@
 
     </androidx.cardview.widget.CardView>
 
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tag"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="06.May.2023 "
+        android:textSize="20sp"
+        android:padding="5dp"
+        android:background="@drawable/curved_view_bg"
+        android:textColor="@color/black"/>
+
     <EditText
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tag"
+        android:layout_below="@id/date"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="15dp"
         android:background="@drawable/curved_view_bg"
         android:gravity="center_horizontal"
