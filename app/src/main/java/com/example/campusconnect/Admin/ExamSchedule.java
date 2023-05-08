@@ -57,6 +57,8 @@ public class ExamSchedule extends AppCompatActivity {
                         public void onResponse(Call<List<ExamScheduleModel>> call, Response<List<ExamScheduleModel>> response) {
                             examSchedule.clear();
                             examSchedule.addAll(response.body());
+                            if(examSchedule.size()==0)
+                                Toast.makeText(ExamSchedule.this, "Exam Schedule has not yet Uploaded!!", Toast.LENGTH_SHORT).show();
                             adapter.notifyDataSetChanged();
                             progressDialog.dismiss();
                         }

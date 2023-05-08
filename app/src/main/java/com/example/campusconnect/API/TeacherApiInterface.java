@@ -19,7 +19,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface TeacherApiInterface {
-    String Base_URL="http://campusaws-env.eba-xya6pvty.ap-south-1.elasticbeanstalk.com/teacher/";
+    String Base_URL="http://campus-connect-env.eba-mujcxbff.ap-south-1.elasticbeanstalk.com/teacher/";
 
     @GET("teacher_login")
     Call<TeacherModel> teacherLogin(

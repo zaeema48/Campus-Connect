@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,13 +35,12 @@ import retrofit2.Response;
 public class MarkAttendanceAdapter extends RecyclerView.Adapter<MarkAttendanceAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView sid, name;
-        RadioButton presentBtn, absentBtn;
+        CheckBox presentBtn;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             sid=itemView.findViewById(R.id.sid);
             name=itemView.findViewById(R.id.name);
-            presentBtn=itemView.findViewById(R.id.present);
-            absentBtn=itemView.findViewById(R.id.absent);
+            presentBtn=itemView.findViewById(R.id.presentBtn);
         }
     }
 
@@ -48,6 +49,8 @@ public class MarkAttendanceAdapter extends RecyclerView.Adapter<MarkAttendanceAd
     List<StudentModel> studentList = new ArrayList<>(); //datasource
     String date;
     String batchId;
+
+    private ArrayList<CheckBox> checkBoxes = new ArrayList<>();
 
     public void setBatchId(String batchId) {
         this.batchId = batchId;
@@ -74,28 +77,33 @@ public class MarkAttendanceAdapter extends RecyclerView.Adapter<MarkAttendanceAd
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.sid.setText(""+studentList.get(position).getStudentId());
         holder.name.setText(studentList.get(position).getStudentName());
+        checkBoxes.add(holder.presentBtn);
 
         MarkAttendanceModel markAttendance= new MarkAttendanceModel();
         markAttendance.setStudentId(studentList.get(position).getStudentId());
         AttendanceModel attendance= new AttendanceModel();
         attendance.setDate(date);
+        attendance.setPresent("false");
 
-        holder.presentBtn.setOnClickListener(new View.OnClickListener() {
+        markAttendance.setAttendance(attendance);
+        attendanceList.add(markAttendance);
+
+        holder.presentBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View view) {
-                attendance.setPresent("true");
-                markAttendance.setAttendance(attendance);
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if(isChecked){
+                    attendance.setPresent("true");
 
-                attendanceList.add(markAttendance);
-            }
-        });
-        holder.absentBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                attendance.setPresent("false");
-                markAttendance.setAttendance(attendance);
+                    markAttendance.setAttendance(attendance);
+                    attendanceList.add(markAttendance);
+                }
+                else {
 
-                attendanceList.add(markAttendance);
+                    attendance.setPresent("false");
+
+                    markAttendance.setAttendance(attendance);
+                    attendanceList.add(markAttendance);
+                }
             }
         });
 
@@ -122,8 +130,19 @@ public class MarkAttendanceAdapter extends RecyclerView.Adapter<MarkAttendanceAd
         });
     }
 
-    public void allPresent(ViewHolder holder){
-
+    public void allPresent(){
+        for(int i=0;i<checkBoxes.size();i++){
+            CheckBox checkBox=checkBoxes.get(i);
+            checkBox.setChecked(true);
+            attendanceList.get(i).getAttendance().setPresent("true");
+        }
+    }
+    public void allAbsent(){
+        for(int i=0;i<checkBoxes.size();i++){
+            CheckBox checkBox=checkBoxes.get(i);
+            checkBox.setChecked(false);
+            attendanceList.get(i).getAttendance().setPresent("false");
+        }
     }
 
 }
