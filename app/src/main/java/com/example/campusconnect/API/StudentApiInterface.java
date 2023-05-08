@@ -15,7 +15,7 @@ import retrofit2.http.PUT;
 import retrofit2.http.Query;
 
 public interface StudentApiInterface {
-    String Base_URL="http://campusaws-env.eba-xya6pvty.ap-south-1.elasticbeanstalk.com/student/";
+    String Base_URL="http://campus-connect-env.eba-mujcxbff.ap-south-1.elasticbeanstalk.com/student/";
 
     @GET("student_login")
     public Call<StudentModel> studentLogin(

@@ -10,8 +10,8 @@
     <TextView
         android:id="@+id/batch_management"
         android:layout_width="280dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="100dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="50dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/curved_view_bg"
         android:textColor="@color/black"
@@ -22,8 +22,8 @@
     <TextView
         android:id="@+id/teacher_management"
         android:layout_width="280dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="300dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="240dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/curved_view_bg"
         android:textColor="@color/black"
@@ -34,8 +34,8 @@
     <TextView
         android:id="@+id/student_management"
         android:layout_width="280dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="500dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="440dp"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/curved_view_bg"
         android:textColor="@color/black"

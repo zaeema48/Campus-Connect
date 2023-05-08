@@ -40,16 +40,16 @@ public class AddNotice extends AppCompatActivity {
         ProgressDialog progressDialog= new ProgressDialog(AddNotice.this);
         progressDialog.setTitle("Adding Notice..");
 
+        Date dateObj= new Date();
+        SimpleDateFormat dateFormat= new SimpleDateFormat("dd.MMM.yyyy");
+        String date= dateFormat.format(dateObj);
+        dateView.setText(date);
+
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!title.getText().toString().isEmpty() && !noticeBody.getText().toString().isEmpty()  && !author.getText().toString().isEmpty()){
                     progressDialog.show();
-                    Date dateObj= new Date();
-                    SimpleDateFormat dateFormat= new SimpleDateFormat("dd.MMM.yyyy");
-                    String date= dateFormat.format(dateObj);
-                    dateView.setText(date);
-
                     NoticeModel notice= new NoticeModel();
                     notice.setDate(date);
                     notice.setNotificationTitle(title.getText().toString());
