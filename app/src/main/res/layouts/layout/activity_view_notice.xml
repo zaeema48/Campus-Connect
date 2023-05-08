@@ -8,25 +8,44 @@
     tools:context=".ViewNotice">
 
     <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="06.May.2023 "
+        android:textSize="20sp"
+        android:padding="5dp"
+        android:background="@drawable/curved_view_bg"
+        android:textColor="@color/black"/>
+
+    <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_below="@id/date"
+        android:layout_marginTop="15dp"
         android:padding="5dp"
         android:text="HEADING"
         android:gravity="center_horizontal"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:textSize="30sp"/>
+
     <TextView
         android:id="@+id/notice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:layout_below="@id/title"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:text="main body of the notice"
         android:textColor="@color/black"
-        android:textSize="22sp"/>
+        android:textSize="22sp" />
     <TextView
         android:id="@+id/author"
         android:layout_width="220dp"

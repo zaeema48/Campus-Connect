@@ -61,7 +61,6 @@ public class ViewMarks extends AppCompatActivity {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 String semester=sem.getText().toString();
                 if(!semester.isEmpty()){
                     progressDialog.show();

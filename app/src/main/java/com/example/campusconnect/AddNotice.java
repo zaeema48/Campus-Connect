@@ -9,10 +9,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.campusconnect.API.ApiUtilities;
 import com.example.campusconnect.Models.NoticeModel;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -20,11 +24,14 @@ import retrofit2.Response;
 
 public class AddNotice extends AppCompatActivity {
     EditText title, noticeBody, author;
+
+    TextView dateView;
     CardView save;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_notice);
+        dateView=findViewById(R.id.date);
         title=findViewById(R.id.title);
         noticeBody=findViewById(R.id.notice);
         author=findViewById(R.id.author);
@@ -38,7 +45,13 @@ public class AddNotice extends AppCompatActivity {
             public void onClick(View view) {
                 if(!title.getText().toString().isEmpty() && !noticeBody.getText().toString().isEmpty()  && !author.getText().toString().isEmpty()){
                     progressDialog.show();
+                    Date dateObj= new Date();
+                    SimpleDateFormat dateFormat= new SimpleDateFormat("dd.MMM.yyyy");
+                    String date= dateFormat.format(dateObj);
+                    dateView.setText(date);
+
                     NoticeModel notice= new NoticeModel();
+                    notice.setDate(date);
                     notice.setNotificationTitle(title.getText().toString());
                     notice.setNotificationMessage(noticeBody.getText().toString());
                     notice.setAuthor(author.getText().toString());
