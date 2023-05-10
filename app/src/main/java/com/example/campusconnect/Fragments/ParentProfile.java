@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.campusconnect.MainActivity;
+import com.example.campusconnect.Parent.ParentPasswordChange;
 import com.example.campusconnect.R;
 import com.example.campusconnect.Student.StudentPasswordChange;
 
@@ -44,7 +45,7 @@ public class ParentProfile extends Fragment {
         changePswBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(getContext(), StudentPasswordChange.class);
+                Intent intent= new Intent(getContext(), ParentPasswordChange.class);
                 startActivity(intent);
             }
         });

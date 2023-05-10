@@ -21,7 +21,7 @@ import retrofit2.Response;
 
 public class SignUp extends AppCompatActivity {
 
-    EditText pEmail, pasw, sId;
+    EditText pEmail, pasw, sId, pName;
     CardView sigUp;
 
     @Override
@@ -32,23 +32,27 @@ public class SignUp extends AppCompatActivity {
         pEmail=findViewById(R.id.parent_email);
         pasw=findViewById(R.id.password);
         sId=findViewById(R.id.student_id);
+        pName=findViewById(R.id.parent_name);
         sigUp=findViewById(R.id.sign_up);
 
         sigUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String parentEmail,password, studentId;
+                String parentEmail,password, studentId, name;
                 parentEmail=pEmail.getText().toString();
                 password=pasw.getText().toString();
                 studentId=sId.getText().toString();
+                name=pName.getText().toString();
 
                 ProgressDialog progressDialog= new ProgressDialog(SignUp.this);
                 progressDialog.setTitle("Creating the Account...");
-                if(!parentEmail.isEmpty()&& !password.isEmpty() && !studentId.isEmpty()){
+                if(!parentEmail.isEmpty()&& !password.isEmpty() && !studentId.isEmpty() && !name.isEmpty()){
                     progressDialog.show();
                     ParentModel parent = new ParentModel();
                     parent.setParentEmail(parentEmail);
                     parent.setPassword(password);
+                    parent.setName(name);
+                    parent.setStudentId(Integer.parseInt(studentId));
 
                     ParentAPI.getParentApiInterface().parentSignup(Integer.parseInt(studentId), parent).enqueue(new Callback<Void>() {
                         @Override

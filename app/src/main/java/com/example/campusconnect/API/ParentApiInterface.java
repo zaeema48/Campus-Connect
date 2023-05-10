@@ -6,6 +6,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Query;
 
 public interface ParentApiInterface {
@@ -20,5 +21,10 @@ public interface ParentApiInterface {
     Call<ParentModel> parentLogin(
             @Query("parentId") int parentId,
             @Query("password") String password
+    );
+    @PUT("change_password")
+    Call<Void> passwordChange(
+            @Query("parentId") int parentId,
+            @Query("newPassword") String newPassword
     );
 }

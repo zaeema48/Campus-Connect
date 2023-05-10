@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Parent.ParentPasswordChange"
+            android:exported="false" />
+        <activity
             android:name=".Parent.SignUp"
             android:exported="false" />
         <activity
