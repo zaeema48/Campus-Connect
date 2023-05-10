@@ -1,6 +1,9 @@
 package com.example.campusconnect.API;
 
 import com.example.campusconnect.Models.ParentModel;
+import com.example.campusconnect.Models.ScheduleModel;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -26,5 +29,9 @@ public interface ParentApiInterface {
     Call<Void> passwordChange(
             @Query("parentId") int parentId,
             @Query("newPassword") String newPassword
+    );
+    @GET("class_schedules")
+    Call<List<ScheduleModel>> classSchedule(
+            @Query("studentId") int studentId
     );
 }

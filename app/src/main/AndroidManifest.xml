@@ -16,6 +16,21 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Parent.ChildSubjectMarks"
+            android:exported="false" />
+        <activity
+            android:name=".Parent.ChildExamSchedule"
+            android:exported="false" />
+        <activity
+            android:name=".Parent.AttendancePercentage"
+            android:exported="false" />
+        <activity
+            android:name=".Parent.ChildAttendance"
+            android:exported="false" />
+        <activity
+            android:name=".Parent.ChildClassSchedule"
+            android:exported="false" />
+        <activity
             android:name=".Parent.ParentPasswordChange"
             android:exported="false" />
         <activity

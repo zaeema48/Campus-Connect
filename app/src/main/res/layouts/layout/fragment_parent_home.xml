@@ -3,12 +3,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".Fragments.ParentHomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/viewSchedule"
+            android:layout_width="170dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="110dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/curved_view_bg"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Child Class\nSchedule"/>
+        <TextView
+            android:id="@+id/viewAttendance"
+            android:layout_width="170dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="110dp"
+            android:layout_marginLeft="210dp"
+            android:background="@drawable/curved_view_bg"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Child Subject\nAttendance"/>
+        <TextView
+            android:id="@+id/viewResult"
+            android:layout_width="170dp"
+            android:layout_height="80dp"
+            android:layout_below="@id/viewSchedule"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/curved_view_bg"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Child Results"/>
+        <TextView
+            android:id="@+id/examSchedule"
+            android:layout_width="170dp"
+            android:layout_height="80dp"
+            android:layout_below="@id/viewResult"
+            android:layout_marginTop="80dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/curved_view_bg"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Child Exam\nSchedule"/>
+
+        <TextView
+            android:id="@+id/attendancePercent"
+            android:layout_width="170dp"
+            android:layout_height="80dp"
+            android:layout_below="@id/viewAttendance"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="210dp"
+            android:background="@drawable/curved_view_bg"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Child Attendance\nPercent %"/>
+    </RelativeLayout>
 
 </FrameLayout>
