@@ -1,9 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".Parent.AttendancePercentage">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        app:cardBackgroundColor="#E489CFF0"
+        app:cardCornerRadius="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="ATTENDANCE PERCENTAGE"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="28dp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:id="@+id/autoText"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tag"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        app:boxBackgroundColor="@color/white">
+
+        <AutoCompleteTextView
+            android:id="@+id/semester"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="none"
+            android:text="Select Semester"
+            android:padding="5dp"
+            android:background="@drawable/curved_view_bg"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="italic"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="search"
+        android:background="#E489CFF0"
+        android:layout_below="@id/tag"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="22dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/sub1"
+        android:layout_below="@id/autoText"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="40dp"
+        android:text="0%"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:background="@drawable/circle_bg"/>
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/s1"
+        android:layout_below="@id/sub1"
+        android:text="SUBJECT 1"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/sub2"
+        android:layout_below="@id/searchButton"
+        android:text="0%"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="240dp"
+        android:background="@drawable/circle_bg"/>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/s2"
+        android:layout_below="@id/sub1"
+        android:text="SUBJECT 2"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/sub3"
+        android:layout_below="@id/sub1"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="40dp"
+        android:text="0%"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:background="@drawable/circle_bg"/>
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/s3"
+        android:layout_below="@id/sub3"
+        android:text="SUBJECT 3"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/sub4"
+        android:layout_below="@id/sub1"
+        android:layout_marginTop="50dp"
+        android:text="0%"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:layout_marginLeft="240dp"
+        android:background="@drawable/circle_bg"/>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/s4"
+        android:layout_below="@id/sub4"
+        android:text="SUBJECT 4"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="8dp"/>
+
+
+    <TextView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/sub5"
+        android:layout_below="@id/sub3"
+        android:text="0%"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="140dp"
+        android:background="@drawable/circle_bg"/>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/s5"
+        android:layout_below="@id/sub5"
+        android:text="SUBJECT 5"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="8dp"/>
+
+</RelativeLayout>

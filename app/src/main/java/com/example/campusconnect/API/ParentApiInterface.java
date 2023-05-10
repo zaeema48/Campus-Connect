@@ -1,7 +1,10 @@
 package com.example.campusconnect.API;
 
+import com.example.campusconnect.Models.AttendanceModel;
+import com.example.campusconnect.Models.ExamScheduleModel;
 import com.example.campusconnect.Models.ParentModel;
 import com.example.campusconnect.Models.ScheduleModel;
+import com.example.campusconnect.Models.StudentProgressModel;
 
 import java.util.List;
 
@@ -34,4 +37,20 @@ public interface ParentApiInterface {
     Call<List<ScheduleModel>> classSchedule(
             @Query("studentId") int studentId
     );
+    @GET("student_progress")
+    Call<List<StudentProgressModel>> semesterProgress(
+                @Query("studentId") int studentId,
+                @Query("semester") String semester
+    );
+    @GET("view_subject_attendance")
+    Call<List<AttendanceModel>> getAttendance(
+            @Query("studentId") int studentId,
+            @Query("subjectId") int subjectId
+    );
+
+    @GET("fetch_exam_schedule")
+    Call<List<ExamScheduleModel>> fetchExamSchedule(
+            @Query("studentId") int studentId
+    );
+
 }
