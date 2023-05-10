@@ -8,7 +8,7 @@ public class ParentAPI {
 
     public static ParentApiInterface getParentApiInterface(){
         if(retrofit==null){
-            retrofit = new Retrofit.Builder().baseUrl(StudentApiInterface.Base_URL).addConverterFactory(GsonConverterFactory.create())
+            retrofit = new Retrofit.Builder().baseUrl(ParentApiInterface.Base_URL).addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
         return retrofit.create(ParentApiInterface.class);

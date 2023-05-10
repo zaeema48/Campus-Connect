@@ -3,15 +3,15 @@ package com.example.campusconnect.Models;
 public class ParentModel {
     int parentId;
     String password;
-    String parentEmail;
+    String parentEmail, name;
 
     public ParentModel() {
     }
-
-    public ParentModel(int parentId, String password, String parentEmail) {
+    public ParentModel(int parentId, String password, String parentEmail, String name) {
         this.parentId = parentId;
         this.password = password;
         this.parentEmail = parentEmail;
+        this.name= name;
     }
 
     public int getParentId() {
@@ -36,5 +36,13 @@ public class ParentModel {
 
     public void setParentEmail(String parentEmail) {
         this.parentEmail = parentEmail;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

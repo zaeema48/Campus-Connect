@@ -25,8 +25,7 @@ public class ParentLogin extends AppCompatActivity {
     TextView signUp;
     CardView signIn;
 
-    public static int chidId;
-    public static ParentModel parent;
+    public static ParentModel publicParent;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,21 +51,22 @@ public class ParentLogin extends AppCompatActivity {
                     ParentAPI.getParentApiInterface().parentLogin(pId, password).enqueue(new Callback<ParentModel>() {
                         @Override
                         public void onResponse(Call<ParentModel> call, Response<ParentModel> response) {
-                            parent=response.body();
                             progressDialog.dismiss();
-                            if(parent==null)
-                                Toast.makeText(ParentLogin.this, "Parent credential is Incorrect!!", Toast.LENGTH_SHORT).show();
 
-                            else {
+                            if(response.isSuccessful()){
+                                publicParent=response.body();
                                 Intent intent = new Intent(ParentLogin.this, ParentPage.class);
                                 startActivity(intent);
                             }
+                            else
+                                Toast.makeText(ParentLogin.this, "Parent credential is Incorrect!!", Toast.LENGTH_SHORT).show();
+
                         }
 
                         @Override
                         public void onFailure(Call<ParentModel> call, Throwable t) {
                             progressDialog.dismiss();
-                            Toast.makeText(ParentLogin.this, "Parent credential is Incorrect!!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ParentLogin.this, "An Error has occurred!!", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }

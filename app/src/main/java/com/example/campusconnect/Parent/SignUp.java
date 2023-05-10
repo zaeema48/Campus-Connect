@@ -54,15 +54,18 @@ public class SignUp extends AppCompatActivity {
                         @Override
                         public void onResponse(Call<Void> call, Response<Void> response) {
                             progressDialog.dismiss();
+                            if(response.isSuccessful()){
                             Toast.makeText(SignUp.this, "Kindly check your mail for unique Parent Id.", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(SignUp.this, ParentLogin.class);
-                            startActivity(intent);
+                            startActivity(intent);}
+                            else
+                                Toast.makeText(SignUp.this, "Parent account already exist for this Student!!", Toast.LENGTH_SHORT).show();
                         }
 
                         @Override
                         public void onFailure(Call<Void> call, Throwable t) {
                             progressDialog.dismiss();
-                            Toast.makeText(SignUp.this, "Parent account already exist for this Student!!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUp.this, "An Error Has Occurred!!", Toast.LENGTH_SHORT).show();
                         }
                     });
                 }

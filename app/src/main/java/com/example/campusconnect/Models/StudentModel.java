@@ -1,5 +1,7 @@
 package com.example.campusconnect.Models;
 
+import java.util.List;
+
 public class StudentModel {
     int studentId;
     String password;
@@ -8,6 +10,10 @@ public class StudentModel {
     String parentEmail;
     Boolean feesPaid;
     String transactionId;
+
+    List<AttendanceModel> attendances;
+    List<StudentProgressModel> studentProgress;
+    ParentModel parent;
 
     public StudentModel() {
     }
@@ -75,5 +81,29 @@ public class StudentModel {
 
     public void setTransactionId(String transactionId) {
         this.transactionId = transactionId;
+    }
+
+    public List<AttendanceModel> getAttendances() {
+        return attendances;
+    }
+
+    public void setAttendances(List<AttendanceModel> attendances) {
+        this.attendances = attendances;
+    }
+
+    public List<StudentProgressModel> getStudentProgress() {
+        return studentProgress;
+    }
+
+    public void setStudentProgress(List<StudentProgressModel> studentProgress) {
+        this.studentProgress = studentProgress;
+    }
+
+    public ParentModel getParent() {
+        return parent;
+    }
+
+    public void setParent(ParentModel parent) {
+        this.parent = parent;
     }
 }

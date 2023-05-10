@@ -36,7 +36,9 @@ public class ParentPage extends AppCompatActivity {
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-
+                viewPager.setCurrentItem(tab.getPosition());
+                if(tab.getPosition()==0||tab.getPosition()==1||tab.getPosition()==2)
+                    parentPagerAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -49,5 +51,8 @@ public class ParentPage extends AppCompatActivity {
 
             }
         });
+
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
     }
 }
