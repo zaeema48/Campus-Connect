@@ -1,9 +1,230 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".Parent.ChildSubjectMarks">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        app:cardBackgroundColor="#E489CFF0"
+        app:cardCornerRadius="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="VIEW RESULT"
+            android:textColor="@color/white"
+            android:textSize="28dp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:id="@+id/autoText"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tag"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        app:boxBackgroundColor="@color/white">
+
+        <AutoCompleteTextView
+            android:id="@+id/semester"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="none"
+            android:text="Select Semester"
+            android:padding="5dp"
+            android:background="@drawable/curved_view_bg"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="italic"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="search"
+        android:background="#E489CFF0"
+        android:layout_below="@id/tag"
+        android:layout_marginLeft="270dp"
+        android:layout_marginTop="22dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/sub1"
+        android:layout_width="140dp"
+        android:layout_height="?attr/actionBarSize"
+        android:text="Subject 1: "
+        android:layout_below="@id/autoText"
+        android:background="@drawable/curved_view_bg"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginLeft="30dp"
+        android:textStyle="bold|italic"
+        android:textColor="@color/black"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/marks1"
+        android:layout_width="110dp"
+        android:layout_height="?attr/actionBarSize"
+        android:text="Marks "
+        android:layout_below="@id/autoText"
+        android:background="@drawable/curved_view_bg"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/sub2"
+        android:layout_width="140dp"
+        android:layout_height="?attr/actionBarSize"
+        android:text="Subject 2: "
+        android:layout_below="@id/sub1"
+        android:background="@drawable/curved_view_bg"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/marks2"
+        android:layout_width="110dp"
+        android:layout_height="?attr/actionBarSize"
+        android:text="Marks "
+        android:layout_below="@id/marks1"
+        android:background="@drawable/curved_view_bg"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/sub3"
+        android:layout_width="140dp"
+        android:layout_height="?attr/actionBarSize"
+        android:text="Subject 3: "
+        android:layout_below="@id/sub2"
+        android:background="@drawable/curved_view_bg"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/marks3"
+        android:layout_width="110dp"
+        android:layout_height="?attr/actionBarSize"
+        android:text="Marks "
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_below="@id/marks2"
+        android:background="@drawable/curved_view_bg"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/sub4"
+        android:layout_width="140dp"
+        android:layout_height="?attr/actionBarSize"
+        android:text="Subject 4: "
+        android:layout_below="@id/sub3"
+        android:background="@drawable/curved_view_bg"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/marks4"
+        android:layout_width="110dp"
+        android:layout_height="?attr/actionBarSize"
+        android:text="Marks "
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_below="@id/marks3"
+        android:background="@drawable/curved_view_bg"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/sub5"
+        android:layout_width="140dp"
+        android:layout_height="?attr/actionBarSize"
+        android:text="Subject 5: "
+        android:textStyle="bold|italic"
+        android:textColor="@color/black"
+        android:layout_below="@id/sub4"
+        android:background="@drawable/curved_view_bg"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/marks5"
+        android:layout_width="110dp"
+        android:layout_height="?attr/actionBarSize"
+        android:text="Marks "
+        android:layout_below="@id/marks4"
+        android:background="@drawable/curved_view_bg"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:layout_width="140dp"
+        android:layout_height="?attr/actionBarSize"
+        android:text="Total: "
+        android:textStyle="bold|italic"
+        android:textColor="@color/black"
+        android:layout_below="@id/sub5"
+        android:background="@drawable/percentage_background"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/totalPercentage"
+        android:layout_width="110dp"
+        android:layout_height="?attr/actionBarSize"
+        android:text="Percentage "
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_below="@id/marks5"
+        android:background="@drawable/percentage_background"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="30dp"/>
+
+</RelativeLayout>

@@ -69,8 +69,9 @@ public class ViewMarks extends AppCompatActivity {
                         public void onResponse(Call<List<StudentProgressModel>> call, Response<List<StudentProgressModel>> response) {
                             marksList.clear();
                             marksList.addAll(response.body());
-                            if(marksList.size()!=0)
-                            setSubjectAndMarksView(marksList);
+                            if(marksList.size()!=0) {
+                                setSubjectAndMarksView(marksList);
+                            }
                             else
                                 Toast.makeText(ViewMarks.this, "Result of this Semester has not yet Uploaded!!", Toast.LENGTH_SHORT).show();
                             progressDialog.dismiss();

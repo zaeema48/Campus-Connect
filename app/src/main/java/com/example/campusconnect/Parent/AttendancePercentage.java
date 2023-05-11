@@ -67,8 +67,9 @@ public class AttendancePercentage extends AppCompatActivity {
                         public void onResponse(Call<List<StudentProgressModel>> call, Response<List<StudentProgressModel>> response) {
                             studentProgress.clear();
                             studentProgress.addAll(response.body());
-                            if(studentProgress.size()!=0)
+                            if(studentProgress.size()!=0) {
                                 subjectPercentage(studentProgress);
+                            }
                             else
                                 Toast.makeText(AttendancePercentage.this, "This Semester has not Started Yet!!", Toast.LENGTH_SHORT).show();
                             progressDialog.dismiss();
