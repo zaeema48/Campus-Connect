@@ -60,9 +60,16 @@ UploadMarksAdapter adapter;
                         @Override
                         public void onResponse(Call<List<StudentModel>> call, Response<List<StudentModel>> response) {
                             studentList.clear();
-                            studentList.addAll(response.body());
-                            adapter.notifyDataSetChanged();
-                            progressDialog.dismiss();
+                            if(response.isSuccessful()) {
+                                studentList.addAll(response.body());
+                                adapter.notifyDataSetChanged();
+                                progressDialog.dismiss();
+                            }
+                            else{
+                                adapter.notifyDataSetChanged();
+                                progressDialog.dismiss();
+                                Toast.makeText(UploadMarks.this, "Enter the right Batch Id!!", Toast.LENGTH_SHORT).show();
+                            }
                         }
 
                         @Override

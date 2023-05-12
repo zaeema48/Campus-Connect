@@ -53,16 +53,23 @@ public class ViewStudentAttendance extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressDialog.show();
                 sId=Integer.parseInt(studentId.getText().toString());
                 TeacherApi.getTeacherApiInterface().studentAttendance(sId,subjectId).enqueue(new Callback<List<AttendanceModel>>() {
                     @Override
                     public void onResponse(Call<List<AttendanceModel>> call, Response<List<AttendanceModel>> response) {
-                        progressDialog.show();
                         attendances.clear();
-                        attendances.addAll(response.body());
-                        adapter.setsID(sId);
-                        adapter.notifyDataSetChanged();
-                        progressDialog.dismiss();
+                        if(response.isSuccessful()) {
+                            attendances.addAll(response.body());
+                            adapter.setsID(sId);
+                            adapter.notifyDataSetChanged();
+                            progressDialog.dismiss();
+                        }
+                        else{
+                            adapter.notifyDataSetChanged();
+                            progressDialog.dismiss();
+                            Toast.makeText(ViewStudentAttendance.this, "No record found!!", Toast.LENGTH_SHORT).show();
+                        }
                     }
 
                     @Override

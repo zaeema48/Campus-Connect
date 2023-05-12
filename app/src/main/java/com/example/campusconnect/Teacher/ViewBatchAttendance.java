@@ -58,35 +58,47 @@ AppCompatButton btn;
                         @Override
                         public void onResponse(Call<List<StudentModel>> call, Response<List<StudentModel>> response) {
                             students.clear();
-                            students.addAll(response.body());
+                            if (response.isSuccessful()) {
+                                students.addAll(response.body());
 //                          GETTING BATCH ATTENDANCE
-                            int sId=publicTeacher.getSubject().getSubjectId();
-                            TeacherApi.getTeacherApiInterface().viewBatchAttendance(bId, sId).enqueue(new Callback<List<StudentProgressModel>>() {
-                                @Override
-                                public void onResponse(Call<List<StudentProgressModel>> call, Response<List<StudentProgressModel>> response) {
-                                    studentProgressList.clear();
-                                    studentProgressList.addAll(response.body());
-                                    adapter.notifyDataSetChanged();
-                                    progressDialog.dismiss();
-                                }
+                                int sId = publicTeacher.getSubject().getSubjectId();
+                                TeacherApi.getTeacherApiInterface().viewBatchAttendance(bId, sId).enqueue(new Callback<List<StudentProgressModel>>() {
+                                    @Override
+                                    public void onResponse(Call<List<StudentProgressModel>> call, Response<List<StudentProgressModel>> response) {
+                                        studentProgressList.clear();
+                                        if (response.isSuccessful()) {
+                                            studentProgressList.addAll(response.body());
+                                            adapter.notifyDataSetChanged();
+                                            progressDialog.dismiss();
+                                        } else {
+                                            students.clear();
+                                            adapter.notifyDataSetChanged(); // to check**
+                                            progressDialog.dismiss();
+                                            Toast.makeText(ViewBatchAttendance.this, "No attendance record found for this Batch!!", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
 
-                                @Override
-                                public void onFailure(Call<List<StudentProgressModel>> call, Throwable t) {
-                                    progressDialog.dismiss();
-                                    Toast.makeText(ViewBatchAttendance.this, "An Error Has Occurred!!", Toast.LENGTH_SHORT).show();
-                                }
-                            });
+                                    @Override
+                                    public void onFailure(Call<List<StudentProgressModel>> call, Throwable t) {
+                                        progressDialog.dismiss();
+                                        Toast.makeText(ViewBatchAttendance.this, "An Error Has Occurred!!", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
 
+                            }
+                            else{
+                                studentProgressList.clear();
+                                adapter.notifyDataSetChanged();
+                                progressDialog.dismiss();
+                                Toast.makeText(ViewBatchAttendance.this, "Enter the right Batch ID!!", Toast.LENGTH_SHORT).show();
+                            }
                         }
-
                         @Override
                         public void onFailure(Call<List<StudentModel>> call, Throwable t) {
                             progressDialog.dismiss();
                             Toast.makeText(ViewBatchAttendance.this, "An Error Has Occurred!!", Toast.LENGTH_SHORT).show();
                         }
                     });
-
-
                 }
             }
         });

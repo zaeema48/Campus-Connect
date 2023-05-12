@@ -44,10 +44,16 @@ public static StudentModel publicStudent;
                     StudentAPI.getStudentApiInterface().studentLogin(Integer.parseInt(studentId), studentPassword).enqueue(new Callback<StudentModel>() {
                         @Override
                         public void onResponse(Call<StudentModel> call, Response<StudentModel> response) {
-                            publicStudent=response.body();
-                            Intent intent = new Intent(StudentLogin.this, StudentPage.class);
-                            startActivity(intent);
-                            progressDialog.dismiss();
+                            if(response.isSuccessful()) {
+                                publicStudent = response.body();
+                                Intent intent = new Intent(StudentLogin.this, StudentPage.class);
+                                startActivity(intent);
+                                progressDialog.dismiss();
+                            }
+                            else{
+                                progressDialog.dismiss();
+                                Toast.makeText(StudentLogin.this, "Student credential is Incorrect!!", Toast.LENGTH_SHORT).show();
+                            }
                         }
 
                         @Override

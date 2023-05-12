@@ -51,15 +51,16 @@ public class ParentLogin extends AppCompatActivity {
                     ParentAPI.getParentApiInterface().parentLogin(pId, password).enqueue(new Callback<ParentModel>() {
                         @Override
                         public void onResponse(Call<ParentModel> call, Response<ParentModel> response) {
-                            progressDialog.dismiss();
-
                             if(response.isSuccessful()){
                                 publicParent=response.body();
                                 Intent intent = new Intent(ParentLogin.this, ParentPage.class);
                                 startActivity(intent);
+                                progressDialog.dismiss();
                             }
-                            else
+                            else {
+                                progressDialog.dismiss();
                                 Toast.makeText(ParentLogin.this, "Parent credential is Incorrect!!", Toast.LENGTH_SHORT).show();
+                            }
 
                         }
 

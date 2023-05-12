@@ -70,13 +70,13 @@ public class ChildSubjectMarks extends AppCompatActivity {
                         @Override
                         public void onResponse(Call<List<StudentProgressModel>> call, Response<List<StudentProgressModel>> response) {
                             marksList.clear();
-                            marksList.addAll(response.body());
-                            if(marksList.size()!=0) {
+                            if(response.isSuccessful()) {
+                                marksList.addAll(response.body());
                                 setSubjectAndMarksView(marksList);
                             }
                             else
                                 Toast.makeText(ChildSubjectMarks.this, "Result of this Semester has not yet Uploaded!!", Toast.LENGTH_SHORT).show();
-                            progressDialog.dismiss();
+                                progressDialog.dismiss();
                         }
 
                         @Override

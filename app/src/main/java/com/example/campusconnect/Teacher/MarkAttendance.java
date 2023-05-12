@@ -5,6 +5,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -54,6 +55,9 @@ public class MarkAttendance extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(MarkAttendance.this));
         recyclerView.setAdapter(adapter);
 
+        ProgressDialog progressDialog= new ProgressDialog(MarkAttendance.this);
+        progressDialog.setTitle("Fetching Students...");
+
         dateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,14 +83,23 @@ public class MarkAttendance extends AppCompatActivity {
                 batchId=batch.getText().toString();
 
                 if(!batchId.isEmpty() && !date.isEmpty()){
+                    progressDialog.show();
                     TeacherApi.getTeacherApiInterface().BatchStudents(batchId).enqueue(new Callback<List<StudentModel>>() {
                         @Override
                         public void onResponse(Call<List<StudentModel>> call, Response<List<StudentModel>> response) {
                             studentList.clear();
-                            studentList.addAll(response.body());
-                            adapter.setBatchId(batchId);
-                            adapter.setDate(date);
-                            adapter.notifyDataSetChanged();
+                            if(response.isSuccessful()) {
+                                studentList.addAll(response.body());
+                                adapter.setBatchId(batchId);
+                                adapter.setDate(date);
+                                adapter.notifyDataSetChanged();
+                                progressDialog.dismiss();
+                            }
+                            else{
+                                adapter.notifyDataSetChanged();
+                                progressDialog.dismiss();
+                                Toast.makeText(MarkAttendance.this, "Enter the right Batch Id!!", Toast.LENGTH_SHORT).show();
+                            }
                         }
 
                         @Override

@@ -62,10 +62,18 @@ public class ChildAttendance extends AppCompatActivity {
                         @Override
                         public void onResponse(Call<List<AttendanceModel>> call, Response<List<AttendanceModel>> response) {
                             attendanceList.clear();
-                            attendanceList.addAll(response.body());
-                            adapter.setSubject_id(Integer.parseInt(subject_id));
-                            adapter.notifyDataSetChanged();
-                            progressDialog.dismiss();
+                            if(response.isSuccessful()){
+                                attendanceList.addAll(response.body());
+                                adapter.setSubject_id(Integer.parseInt(subject_id));
+                                adapter.notifyDataSetChanged();
+                                progressDialog.dismiss();
+                            }
+                            else{
+                                adapter.notifyDataSetChanged();
+                                progressDialog.dismiss();
+                                Toast.makeText(ChildAttendance.this, "There is no attendance record for this subject!!", Toast.LENGTH_SHORT).show();
+                            }
+
                         }
 
                         @Override
