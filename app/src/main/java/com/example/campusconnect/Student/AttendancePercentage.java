@@ -65,9 +65,10 @@ public class AttendancePercentage extends AppCompatActivity {
                         @Override
                         public void onResponse(Call<List<StudentProgressModel>> call, Response<List<StudentProgressModel>> response) {
                             studentProgress.clear();
-                            if(response.isSuccessful()) {
+                            if(response.isSuccessful() ) {
                                 studentProgress.addAll(response.body());
-                                subjectPercentage(studentProgress);
+                                if(studentProgress.size()>=5)
+                                    subjectPercentage(studentProgress);
                             }
                             else
                                 Toast.makeText(AttendancePercentage.this, "This Semester has not Started Yet!!", Toast.LENGTH_SHORT).show();

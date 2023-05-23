@@ -23,7 +23,7 @@
         android:layout_height="130dp"
         app:cardCornerRadius="130dp"
         android:layout_marginTop="140dp"
-        android:layout_marginLeft="30dp">
+        android:layout_marginLeft="20dp">
         <ImageView
             android:layout_width="130dp"
             android:layout_height="130dp"
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/adminImg"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="10dp"
         android:text="Admin"
         android:textColor="@color/black"
@@ -48,7 +48,7 @@
         android:layout_height="130dp"
         app:cardCornerRadius="130dp"
         android:layout_marginTop="140dp"
-        android:layout_marginLeft="229dp">
+        android:layout_marginLeft="220dp">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -67,7 +67,7 @@
         android:textSize="25sp"
         android:layout_below="@id/teacherImg"
         android:layout_marginTop="12sp"
-        android:layout_marginLeft="250dp"/>
+        android:layout_marginLeft="240dp"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/studentImg"

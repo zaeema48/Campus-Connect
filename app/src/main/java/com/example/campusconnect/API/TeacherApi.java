@@ -1,5 +1,8 @@
 package com.example.campusconnect.API;
 
+import java.util.concurrent.TimeUnit;
+
+import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -9,7 +12,15 @@ public class TeacherApi {
     public static TeacherApiInterface getTeacherApiInterface(){
 
         if(retrofit==null) {
-            retrofit = new Retrofit.Builder().baseUrl(TeacherApiInterface.Base_URL).addConverterFactory(GsonConverterFactory.create())
+            OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                    .callTimeout(4,TimeUnit.MINUTES)
+                    .connectTimeout(4, TimeUnit.MINUTES)
+                    .readTimeout(4, TimeUnit.MINUTES)
+                    .writeTimeout(4, TimeUnit.MINUTES)
+                    .build();
+            retrofit = new Retrofit.Builder().baseUrl(TeacherApiInterface.Base_URL)
+                    .client(okHttpClient)
+                    .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
 

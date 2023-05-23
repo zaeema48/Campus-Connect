@@ -3,6 +3,7 @@ package com.example.campusconnect.Adapter;
 
 import static com.example.campusconnect.TeacherLogin.publicTeacher;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -113,11 +114,14 @@ public class MarkAttendanceAdapter extends RecyclerView.Adapter<MarkAttendanceAd
     public int getItemCount() {
         return studentList.size();
     }
-
     public void uploadAttendance(){
+        ProgressDialog progressDialog = new ProgressDialog(context);
+        progressDialog.setTitle("Uploading Attendance...");
+        progressDialog.show();
         TeacherApi.getTeacherApiInterface().markAttendance(publicTeacher.getSubject().getSubjectId(),batchId, attendanceList).enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
+                progressDialog.dismiss();
                 Toast.makeText(context, "Attendances Uploaded Successfully.", Toast.LENGTH_SHORT).show();
                 Intent intent= new Intent(context, TeacherPage.class);
                 context.startActivity(intent);
@@ -125,6 +129,7 @@ public class MarkAttendanceAdapter extends RecyclerView.Adapter<MarkAttendanceAd
 
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
+                progressDialog.dismiss();
                 Toast.makeText(context, "An Error Has Occurred!!", Toast.LENGTH_SHORT).show();
             }
         });

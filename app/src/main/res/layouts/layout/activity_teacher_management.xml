@@ -7,12 +7,36 @@
     android:background="@drawable/background"
     tools:context=".Admin.TeacherManagement">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        app:cardBackgroundColor="#E489CFF0"
+        app:cardCornerRadius="8dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="TEACHER MANAGEMENT"
+            android:textColor="@color/white"
+            android:textSize="28dp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
     <TextView
         android:id="@+id/addTeacher"
         android:layout_width="170dp"
         android:layout_height="65dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginLeft="20dp"
+        android:layout_below="@id/tag"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
         android:background="@drawable/curved_view_bg"
         android:gravity="center"
         android:textColor="@color/black"
@@ -23,8 +47,9 @@
         android:id="@+id/removeTeacher"
         android:layout_width="170dp"
         android:layout_height="65dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginLeft="210dp"
+        android:layout_below="@id/tag"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="200dp"
         android:background="@drawable/curved_view_bg"
         android:gravity="center"
         android:textColor="@color/black"
@@ -37,7 +62,7 @@
         android:layout_height="65dp"
         android:layout_below="@id/addTeacher"
         android:layout_marginTop="60dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="10dp"
         android:background="@drawable/curved_view_bg"
         android:gravity="center"
         android:textColor="@color/black"
@@ -50,7 +75,7 @@
         android:layout_height="65dp"
         android:layout_below="@id/removeTeacher"
         android:layout_marginTop="60dp"
-        android:layout_marginLeft="210dp"
+        android:layout_marginLeft="200dp"
         android:background="@drawable/curved_view_bg"
         android:gravity="center"
         android:textColor="@color/black"
@@ -63,7 +88,7 @@
         android:layout_height="65dp"
         android:layout_below="@id/searchTeacher"
         android:layout_marginTop="60dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="10dp"
         android:background="@drawable/curved_view_bg"
         android:gravity="center"
         android:textColor="@color/black"
@@ -76,7 +101,7 @@
         android:layout_height="65dp"
         android:layout_below="@id/teacherList"
         android:layout_marginTop="60dp"
-        android:layout_marginLeft="210dp"
+        android:layout_marginLeft="200dp"
         android:background="@drawable/curved_view_bg"
         android:gravity="center"
         android:textColor="@color/black"

@@ -7,9 +7,9 @@
     tools:context=".SplashScreen"
     android:background="@drawable/background">
 <androidx.cardview.widget.CardView
-    android:layout_width="140dp"
-    android:layout_height="140dp"
-    app:cardCornerRadius="140dp"
+    android:layout_width="180dp"
+    android:layout_height="180dp"
+    app:cardCornerRadius="180dp"
     android:layout_centerInParent="true">
 
     <ImageView
@@ -26,8 +26,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="80dp"
-        android:textStyle="bold"
+        android:textStyle="bold|italic"
         android:textColor="@color/black"
-        android:textSize="22dp"/>
+        android:textSize="32sp"/>
 
 </RelativeLayout>

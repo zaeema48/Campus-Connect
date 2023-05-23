@@ -1,5 +1,6 @@
 package com.example.campusconnect.Adapter;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -54,12 +55,17 @@ public class AvailableSlotAdapter extends RecyclerView.Adapter<AvailableSlotAdap
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.slot.setText(slots.get(position).getSlot());
+
+        ProgressDialog progressDialog= new ProgressDialog(context);
+        progressDialog.setTitle("Notifying students about the class...");
         holder.takeSlot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressDialog.show();
                 TeacherApi.getTeacherApiInterface().bookExtraClass(slots.get(position)).enqueue(new Callback<Void>() {
                     @Override
                     public void onResponse(Call<Void> call, Response<Void> response) {
+                        progressDialog.dismiss();
                         Toast.makeText(context, "Class booked successfully", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(context, TeacherPage.class);
                         context.startActivity(intent);
@@ -67,6 +73,7 @@ public class AvailableSlotAdapter extends RecyclerView.Adapter<AvailableSlotAdap
 
                     @Override
                     public void onFailure(Call<Void> call, Throwable t) {
+                        progressDialog.dismiss();
                         Toast.makeText(context, "An error has occurred!!", Toast.LENGTH_SHORT).show();
                     }
                 });

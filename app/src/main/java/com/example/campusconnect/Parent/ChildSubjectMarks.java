@@ -72,7 +72,8 @@ public class ChildSubjectMarks extends AppCompatActivity {
                             marksList.clear();
                             if(response.isSuccessful()) {
                                 marksList.addAll(response.body());
-                                setSubjectAndMarksView(marksList);
+                                if(marksList.size()>=5)
+                                    setSubjectAndMarksView(marksList);
                             }
                             else
                                 Toast.makeText(ChildSubjectMarks.this, "Result of this Semester has not yet Uploaded!!", Toast.LENGTH_SHORT).show();

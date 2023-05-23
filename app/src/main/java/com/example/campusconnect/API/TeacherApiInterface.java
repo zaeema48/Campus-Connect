@@ -40,7 +40,6 @@ public interface TeacherApiInterface {
 
     );
 
-
     @GET("detailed_attendance")
     Call<List<AttendanceModel>> studentAttendance(
             @Query("studentId") int studentId,

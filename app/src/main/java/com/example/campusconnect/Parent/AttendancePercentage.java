@@ -68,7 +68,8 @@ public class AttendancePercentage extends AppCompatActivity {
                             studentProgress.clear();
                             if(response.isSuccessful()) {
                                 studentProgress.addAll(response.body());
-                                subjectPercentage(studentProgress);
+                                if(studentProgress.size()>=5)
+                                    subjectPercentage(studentProgress);
                             }
                             else
                                 Toast.makeText(AttendancePercentage.this, "This Semester has not Started Yet!!", Toast.LENGTH_SHORT).show();
